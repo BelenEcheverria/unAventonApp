@@ -1,0 +1,258 @@
+.AlineacionCajasInicioSesion {
+	margin-top:2%;
+	margin-left:2%;
+	margin-right:2%;
+	padding:0px 20px 5px 5px;
+}
+.AlineacionCajasListaViajesHorizontal {
+	padding-top:20px;
+	padding-bottom:20px;
+	width:18%;
+}
+.AlineacionViajesInfoHorizontal {
+	width:18%;
+}
+.Bienvenida {
+	background-image: url(Imagenes/nube.jpg);
+	background-size:100%;
+	height:100%;
+}
+.BienvenidaMensaje {
+	height: 15%;
+    opacity: 0.9;
+    margin-top: 4%;
+    margin-left: 15;
+    margin-right: 15;
+    font-size: 65px;
+    text-align: center;
+    padding: 0;
+    font-family: Arial;
+    font-weight: 800;
+	text-shadow:3px 3px 4px #f00,
+               5px 5px 3px #aaa,
+               7px 7px 3px #00f;
+	color:#F16868;
+}
+.blanco {
+	height:8%;
+	width:100%;
+}
+.BotonBuscar {
+	background-color:#F16868; 
+    color:white; 
+    border:2px solid black;
+	height:7%;
+	width:35%;
+	font-size:15px;
+	opacity:0.8;
+	margin-left:32.5%;
+	margin-right:32.5%;
+	margin-top:5%;
+	font-weight:800;
+	font-family: Arial;
+	text-shadow:3px 3px 4px #f00,
+               3px 3px 3px #aaa,
+               4px 4px 4px #aaa;
+	
+}
+.BotonEntrar {
+	background-color:#F16868; 
+    color:white; 
+    border:2px solid black;
+	font-size:15px;
+	font-weight:800;
+	font-family: Arial;
+}
+.BotonIngresar {
+	background-color:#F16868; 
+    color:white; 
+    border-color:#BC3D3D;
+	height:10%;
+	width:12%;
+	font-size:25px;
+	opacity:0.9;
+	margin-left:45%;
+	margin-right:45%;
+	font-weight:800;
+	font-family: Arial;
+	text-shadow:3px 3px 4px #f00,
+               3px 3px 3px #aaa,
+               4px 4px 4px #00f;
+	
+}
+.BotonRegistrar {
+	background-color:#F16868; 
+    color:white; 
+    border:2px solid black;
+	height:7%;
+	width:35%;
+	font-size:25px;
+	opacity:0.8;
+	margin-left:32.5%;
+	margin-right:32.5%;
+	margin-top:5%;
+	font-weight:800;
+	font-family: Arial;
+	text-shadow:3px 3px 4px #f00,
+               3px 3px 3px #aaa,
+               4px 4px 4px #aaa;
+	
+}
+.BotonReservarAsiento {
+	background-color:#F16868; 
+    color:white; 
+    border:2px solid black;
+	margin-right:2%;
+	margin-top:1.8%;
+	float:right;
+	width:12%;
+	font-size:12px;
+	font-weight:800;
+	font-family: Arial;
+	text-shadow:3px 3px 4px #f00,
+               3px 3px 3px #aaa,
+               4px 4px 4px #aaa;
+	
+}
+.CajasInicioSesion {
+	float:right;
+	color:white;
+	width:25%;
+	margin-top:3%;
+	margin-bottom:1%;
+}
+.CajaMenuBusqueda {
+	margin-top:10%;
+	margin-left:3%;
+	margin-right:3%;
+	background-color:#BC3D3D;
+	border:6px solid #F16868;
+	border-radius:30px;
+}
+.CajaPaginacion{
+	background-color: black;
+	height:6%;
+	width: 100%;
+}
+.FormularioInicioSesion {
+    background-color:white;
+    color: red;
+}
+.FormularioMenuBusqueda {
+    width:86%;
+    padding:12px 20px;
+    margin:3% 7% 3% 7%;
+    box-sizing:border-box;
+    border:none;
+	border-radius:9px;
+    background-color:white;
+    color: black;
+	font-family:Arial;
+}
+.FormularioRegistrarse {
+    width:90%;
+    padding:12px 20px;
+    margin:7px 15px ;
+    box-sizing:border-box;
+    border:none;
+	border-radius:9px;
+    background-color:#F16868;
+    color: black;
+}
+.Header {
+	background-color:#F16868;
+	height:15%;
+}
+.IconoBienvenida {
+	width:20%;
+	height:40%;
+	margin-left:40%;
+	margin-bottom:5%;
+}
+.IconoInicio {
+	height:20%;
+	margin-bottom:1%;
+	margin-top:1%;
+	margin-left:1%;
+}
+.LabelFormularios {
+	margin-left:7%;
+}
+.LineaPiePagina {
+	width: 100%;
+	background-color:#F16868;
+	height: 4%;
+	display: inline-block;
+}
+.ListadoViajes {
+	width:100%;
+	height:10%;
+	background-color:grey;	
+}
+.Menu {
+	float:left;
+	background-color:#F16868;
+	width:20%;
+	height:100%;
+}
+.Paginacion {
+    display: inline-block;
+}
+.ParteViajes {
+	float:right;
+	background-color:green;
+	width:80%;
+	height:100%;
+}
+
+.registrar {
+	margin:10px 35%;
+	border:6px solid #F16868;
+	border-radius:8px;
+	width:30%;
+	float:right;
+	background-color:white;
+	opacity:0.8;
+}
+.UnAventonInicio {
+	font-family:Arial;
+	font-size:50px;
+	font-weight: 800;
+	text-shadow:3px 3px 4px #f00,
+               5px 5px 3px #aaa,
+               7px 7px 3px #00f;
+	color:white;
+	height:10%;
+}
+.ViajesInfoHorizontal {
+	height:5%;
+	width:100%;
+	background-color:orange;
+}
+ul {
+    list-style-type:none;
+    margin:0;
+    padding:0;
+    overflow:hidden;
+    background-color:#8000FF;
+	width:100%;
+}
+
+li {
+    float:left;
+}
+ul li {
+	position:relative;
+}
+li a {
+    display:block;
+    color:white;
+    text-align:center;
+    padding:14px 16px;
+    text-decoration:none;
+}
+
+li a:hover:not(.active) {
+    background-color:#111;
+}
+

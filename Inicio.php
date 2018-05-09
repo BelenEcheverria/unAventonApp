@@ -1,3 +1,7 @@
+<?php
+    include "php/conection.php"; // conectar y seleccionar la base de datos
+    $link = conectar();
+?>
 <html>
 <head>
 <link rel="stylesheet" href="estilos.css">
@@ -22,7 +26,7 @@
 	<table>
 		<tr>
 			<td class="AlineacionCajasInicioSesion">
-				<img class="IconoInicio" src="Facebook.png">
+				<img class="IconoInicio" src="Imagenes/Facebook.png">
 			</td>
 			<td class="UnAventonInicio">
 				UnAventón
@@ -47,8 +51,11 @@
 	<div class="ParteViajes">
 		<div>
 			<ul>
-				<li><a href="index.php"> Publicar </a></li>
-				<li><a href="index.php"> Mis Viajes </a></li>
+				<li><a href="inicio.php"> Inicio </a></li>
+				<li><a href="publicarviaje.php"> Publicar </a></li>
+				<li><a href="publicarviaje.php"> Mis Viajes </a></li>
+				<li><a href="publicarviaje.php"> Vehiculos </a></li>
+				<li><a href="publicarviaje.php"> Perfil </a></li>
 			</ul>
 		</div>
 		<div class="ViajesInfoHorizontal">

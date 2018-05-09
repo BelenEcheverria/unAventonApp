@@ -68,17 +68,24 @@
     color:white; 
     border-color:#BC3D3D;
 	height:10%;
-	width:12%;
 	font-size:25px;
 	opacity:0.9;
-	margin-left:45%;
-	margin-right:45%;
 	font-weight:800;
 	font-family: Arial;
 	text-shadow:3px 3px 4px #f00,
                3px 3px 3px #aaa,
                4px 4px 4px #00f;
 	
+}
+.main-container {
+      float: left;
+      position: relative;
+      left: 50%;
+    }
+.fixer-container {
+    float: left;
+    position: relative;
+    left: -50%;
 }
 .BotonRegistrar {
 	background-color:#F16868; 
@@ -121,6 +128,28 @@
 	margin-top:3%;
 	margin-bottom:1%;
 }
+.CajaInformacionUsuario {
+	background-color:#BC3D3D;
+	border:6px solid #F16868;
+	border-radius:30px;
+	width:97%;
+	height:80%;
+	margin:1% 1% 1% 1%;
+}
+.CajaInformacionPersonal {
+	width:48%;
+	height:93%;
+	background-color:green;
+	margin:1% 1% 1% 1%;
+	float:left;
+}
+.CajaInformacionCalificacion {
+	width:48%;
+	height:93%;
+	margin:1% 1% 1% 1%;
+	float:right;
+	background-color:blue;
+}
 .CajaMenuBusqueda {
 	margin-top:10%;
 	margin-left:3%;
@@ -159,6 +188,10 @@
     background-color:#F16868;
     color: black;
 }
+.FotoYNombre {
+	width:100%;
+	height:50%;
+}
 .Header {
 	background-color:#F16868;
 	height:15%;
@@ -174,6 +207,11 @@
 	margin-bottom:1%;
 	margin-top:1%;
 	margin-left:1%;
+}
+.ImagenPerfil {
+	height:50%;
+	width:50%;
+	background-color:blue;
 }
 .LabelFormularios {
 	margin-left:7%;
@@ -195,6 +233,13 @@
 	width:20%;
 	height:100%;
 }
+.NombreYApellido {
+	margin-left:4%;
+	margin-top:4%;
+	width:90%;
+	height:90%;
+	opacity:0.8;
+}
 .Paginacion {
     display: inline-block;
 }
@@ -213,6 +258,13 @@
 	float:right;
 	background-color:white;
 	opacity:0.8;
+}
+.AlineacionVotosNYP {
+	text-align:left;
+	margin-left:2%;
+	margin-bottom:10%;
+	height:10%;
+	width:90%;
 }
 .UnAventonInicio {
 	font-family:Arial;

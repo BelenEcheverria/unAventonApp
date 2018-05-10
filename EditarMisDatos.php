@@ -1,10 +1,3 @@
-<?php
-
-                include "php/conection.php"; // conectar y seleccionar la base de datos
-
-                $link = conectar();
-
-?>
 <html>
 <head>
 <link rel="stylesheet" href="estilos.css">
@@ -12,11 +5,8 @@
 <meta charset="utf-8"/>
 </head>
 <body>
-<?php
-include "Header.php";
-?>
 <div class= "registrar">
-<h1 style="color: black;text-align:center;font-family:Arial;font-weight:750;text-shadow:5px 5px 5px #aaa;"> Registrarse </h1> 
+<h1 style="color: black;text-align:center;font-family:Arial;font-weight:750;text-shadow:5px 5px 5px #aaa;"> Informacion Personal </h1> 
 <form method="POST" action="crearcuenta.php" class="input" onsubmit="return validar()">
   <label class="LabelFormularios"> Nombre </label>
   <input type="text" id="nombre" name="nombre" class="FormularioRegistrarse" placeholder="Nombre...">
@@ -30,7 +20,7 @@ include "Header.php";
   <input type="password" id="clave1" name="password" class="FormularioRegistrarse" placeholder="Contraseña...">
   <label class="LabelFormularios"> Repetir contraseña </label>
   <input type="password" id="clave2" name="password2" class="FormularioRegistrarse" placeholder="Repetir Contraseña...">
-  <div><input type="submit" class="BotonRegistrar" value="Registrar"></div>
+  <div><input type="submit" class="BotonRegistrar" value="Editar"></div>
 </form>
 </div>
 </body>

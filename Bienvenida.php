@@ -17,10 +17,14 @@
 	<div class="BienvenidaMensaje">Bienvenido a UnAventón!
 	</div>
 	<div>
-		<img class="IconoBienvenida" src="Facebook.png">
+		<img class="IconoBienvenida" src="Imagenes/Facebook.png">
 	</div>
-	<div>
-		<button class="BotonIngresar"> Ingresar </button>
+	<div class="main-container">
+	<table class="fixer-container">
+		<tr>
+			<td><button class="BotonIngresar"> Ingresar </button></td>
+		</tr>
+	</table>
 	</div>
 </div>
 </body>

@@ -8,6 +8,7 @@
 	padding-top:20px;
 	padding-bottom:20px;
 	width:18%;
+	color:white;
 }
 .AlineacionViajesInfoHorizontal {
 	width:18%;
@@ -154,7 +155,7 @@
 	margin-top:10%;
 	margin-left:3%;
 	margin-right:3%;
-	background-color:#BC3D3D;
+	background-color:#F16868;
 	border:6px solid #F16868;
 	border-radius:30px;
 }
@@ -193,7 +194,6 @@
 	height:50%;
 }
 .Header {
-	background-color:#F16868;
 	height:15%;
 }
 .IconoBienvenida {
@@ -219,17 +219,17 @@
 .LineaPiePagina {
 	width: 100%;
 	background-color:#F16868;
-	height: 4%;
+	height: 6%;
 	display: inline-block;
 }
 .ListadoViajes {
-	width:100%;
+	width:99.6%;
 	height:10%;
-	background-color:grey;	
+	color:white;
+	border:2px solid #F16868;	
 }
 .Menu {
 	float:left;
-	background-color:#F16868;
 	width:20%;
 	height:100%;
 }
@@ -245,7 +245,6 @@
 }
 .ParteViajes {
 	float:right;
-	background-color:green;
 	width:80%;
 	height:100%;
 }
@@ -286,7 +285,7 @@ ul {
     margin:0;
     padding:0;
     overflow:hidden;
-    background-color:#8000FF;
+    background-color:#F16868;
 	width:100%;
 }
 

@@ -5,6 +5,9 @@
 <meta charset="utf-8"/>
 </head>
 <body>
+<?php
+include "Header.php";
+?>
 <div class= "registrar">
 <h1 style="color: black;text-align:center;font-family:Arial;font-weight:750;text-shadow:5px 5px 5px #aaa;"> Registrarse </h1> 
 <form method="POST" action="crearcuenta.php" class="input" onsubmit="return validar()">

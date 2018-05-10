@@ -8,33 +8,20 @@
 <title> Inicio </title>
 <meta charset="utf-8"/>
 </head>
-<body>
-<div class="Header">
-	<table class="CajasInicioSesion">
-		<tr class="AlineacionCajasInicioSesion">
-			<td class="AlineacionCajasInicioSesion">
-				<input type="text" id="nombreusuario" class="FormularioInicioSesion" name="user" placeholder="Usuario...">
-			</td>
-			<td class="AlineacionCajasInicioSesion">
-				<input type="text" id="nombreusuario" class="FormularioInicioSesion" name="user" placeholder="Usuario...">
-			</td>
-			<td class="AlineacionCajasInicioSesion">
-				<input type="submit" class="BotonEntrar" value="Entrar" >
-			</td>
-		</tr>
-	</table>
-	<table>
-		<tr>
-			<td class="AlineacionCajasInicioSesion">
-				<img class="IconoInicio" src="Imagenes/Facebook.png">
-			</td>
-			<td class="UnAventonInicio">
-				UnAventón
-			</td>
-		</tr>
-	</table>
-</div>
+<body background="Imagenes/FondoColores.jpg">
+<?php
+include "Header.php";
+?>
 <div style="width:100%;height:81%">
+	<div>
+			<ul>
+				<li><a href="inicio.php"> Inicio </a></li>
+				<li><a href="publicarviaje.php"> Publicar </a></li>
+				<li><a href="publicarviaje.php"> Mis Viajes </a></li>
+				<li><a href="publicarviaje.php"> Vehiculos </a></li>
+				<li><a href="publicarviaje.php"> Perfil </a></li>
+			</ul>
+	</div>
 	<div class="Menu">
 		<div class="CajaMenuBusqueda">
 			<form method="POST" style="margin-top:15px"action="crearcuenta.php" class="input" onsubmit="return validar()">
@@ -49,15 +36,6 @@
 		</div>
 	</div>
 	<div class="ParteViajes">
-		<div>
-			<ul>
-				<li><a href="inicio.php"> Inicio </a></li>
-				<li><a href="publicarviaje.php"> Publicar </a></li>
-				<li><a href="publicarviaje.php"> Mis Viajes </a></li>
-				<li><a href="publicarviaje.php"> Vehiculos </a></li>
-				<li><a href="publicarviaje.php"> Perfil </a></li>
-			</ul>
-		</div>
 		<div class="ViajesInfoHorizontal">
 			<table style="width:80%; margin-left:2%;">
 				<tr>
@@ -70,48 +48,19 @@
 				</tr>
 			</table>
 		</div>
-		<div class="ListadoViajes">
-			<table style="width:80%; margin-left:2%;">
-				<tr>
-					<td class="AlineacionCajasListaViajesHorizontal">La Plata</td>
-					<td class="AlineacionCajasListaViajesHorizontal">Rosario</td>
-					<td class="AlineacionCajasListaViajesHorizontal">26/05</td>
-					<td class="AlineacionCajasListaViajesHorizontal">15:00</td>
-					<td class="AlineacionCajasListaViajesHorizontal">$500</td>
-					<td class="AlineacionCajasListaViajesHorizontal">3</td>
-				</tr>
-				<div><input type="submit" class="BotonReservarAsiento" value="Reserver Asiento"></div>
-			</table>
-		</div>
-		<div class="ListadoViajes">
-			<table style="width:80%; margin-left:2%;">
-				<tr>
-					<td class="AlineacionCajasListaViajesHorizontal">La Plata</td>
-					<td class="AlineacionCajasListaViajesHorizontal">Rosario</td>
-					<td class="AlineacionCajasListaViajesHorizontal">26/05</td>
-					<td class="AlineacionCajasListaViajesHorizontal">15:00</td>
-					<td class="AlineacionCajasListaViajesHorizontal">$500</td>
-					<td class="AlineacionCajasListaViajesHorizontal">3</td>
-				</tr>
-				<div><input type="submit" class="BotonReservarAsiento" value="Reserver Asiento"></div>
-			</table>
-		</div>
-		<div class="ListadoViajes">
-			<table style="width:80%; margin-left:2%;">
-				<tr>
-					<td class="AlineacionCajasListaViajesHorizontal">La Plata</td>
-					<td class="AlineacionCajasListaViajesHorizontal">Rosario</td>
-					<td class="AlineacionCajasListaViajesHorizontal">26/05</td>
-					<td class="AlineacionCajasListaViajesHorizontal">15:00</td>
-					<td class="AlineacionCajasListaViajesHorizontal">$500</td>
-					<td class="AlineacionCajasListaViajesHorizontal">3</td>
-				</tr>
-				<div><input type="submit" class="BotonReservarAsiento" value="Reserver Asiento"></div>
-			</table>
-		</div>
+		<?php
+			include "unViaje.php";
+			include "unViaje.php";
+			include "unViaje.php";
+			include "unViaje.php";
+			include "unViaje.php";
+			include "unViaje.php";
+			include "unViaje.php";
+			include "unViaje.php";
+			include "unViaje.php";
+		?>
 	</div>
 </div>
-<div class="CajaPaginacion"> </div>
 <div class="LineaPiePagina"></div>
 </body>
 </html>

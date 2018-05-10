@@ -5,6 +5,9 @@
 <meta charset="utf-8"/>
 </head>
 <body>
+<?php
+include "Header.php";
+?>
 <div class= "registrar">
 <form method="POST" action="crearcuenta.php" class="input" onsubmit="return validar()">
   <label class="LabelFormularios"> Origen </label>
@@ -22,5 +25,6 @@
   <div><input type="submit" class="BotonRegistrar" value="Agregar"></div>
 </form>
 </div>
+<div class="LineaPiePagina"></div>
 </body>
 </html>

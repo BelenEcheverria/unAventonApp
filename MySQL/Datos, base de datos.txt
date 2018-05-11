@@ -1,0 +1,12 @@
+Para borrar la base vieja: DROP DATABASE unaventon.
+La base nueva se llama unaventon, latin1_spanish_ci.
+
+Datos cargados
+Usuarios: 6 usuarios (id del 1 al 6) y un administrador
+Vehiculos: el usuario 1 tiene 1 vehiculo, el 2 tiene 2, el 3 tiene 3 (uno esta inactivo).
+	Nota: En tipo solo pondriamos los valores auto, moto, camioneta etc. (no hice una tabla aparte para el tipo porque sino queda un quilombo), pero cuando insertamos tenemos que poner los mismos nombres, todo en minuscula para que despues en las consultas quede bien
+EstadosViaje: del 1 al 6
+Estados postulaciones: del 1 al 3
+Ciudades: 11 cargadas
+
+

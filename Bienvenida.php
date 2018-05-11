@@ -22,3 +22,31 @@
 </div>
 </body>
 </html>
+
+
+.ul {
+    list-style-type:none;
+    margin:0;
+    padding:0;
+    overflow:hidden;
+    background-color:#F16868;
+	width:100%;
+}
+
+.li {
+    float:left;
+}
+.ul li {
+	position:relative;
+}
+.li a {
+    display:block;
+    color:white;
+    text-align:center;
+    padding:14px 16px;
+    text-decoration:none;
+}
+
+.li:hover, .li:focus {
+    background-color: #2980B9;
+}

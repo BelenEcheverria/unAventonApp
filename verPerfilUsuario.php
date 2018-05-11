@@ -6,6 +6,7 @@
 </head>
 <body class="FondoInicio">
 <?php
+include_once ("php/conection.php");
 include "Header.php";
 include "MenuBarra.php";
 	?>

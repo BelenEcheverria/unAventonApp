@@ -1,5 +1,5 @@
 <?php
-    include_once "php/conection.php"; // conectar y seleccionar la base de datos
+    include_once ("php/conection.php"); // conectar y seleccionar la base de datos
     $link = conectar();
 ?>
 <html>

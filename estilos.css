@@ -111,15 +111,14 @@
 .BotonRegistrar {
 	background-color:#F16868; 
     color:white; 
-    border:2px solid black;
+    border:2px solid #F16868;
 	height:7%;
 	width:35%;
-	font-size:25px;
-	opacity:0.8;
+	font-size:20px;
 	margin-left:32.5%;
 	margin-right:32.5%;
 	margin-top:5%;
-	font-weight:800;
+	font-weight:700;
 	font-family: Arial;
 	text-shadow:3px 3px 4px #f00,
                3px 3px 3px #aaa,
@@ -226,6 +225,16 @@
 	border-radius:9px;
     color: black;
 }
+.FormularioVehiculos {
+	width:90%;
+    padding:12px 20px;
+    margin:7px 15px ;
+    box-sizing:border-box;
+    border:none;
+	border-radius:9px;
+    background-color:white;
+    color: black;
+}
 .FotoYNombre {
 	width:100%;
 	height:50%;
@@ -252,6 +261,8 @@
 }
 .LabelFormularios {
 	margin-left:7%;
+	color:white;
+	font-weight:800;
 }
 .LineaPiePagina {
 	width: 100%;
@@ -293,12 +304,12 @@
 
 .registrar {
 	margin:10px 35%;
-	border:6px solid #F16868;
+	border:6px solid #ffa500;
 	border-radius:8px;
 	width:30%;
 	float:right;
-	background-color:white;
-	opacity:0.8;
+	opacity:0.9;
+	background-color:#ffa500;
 }
 .UnConductorPasajero {
 	text-shadow:3px 3px 4px #f00,

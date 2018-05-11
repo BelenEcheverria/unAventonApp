@@ -4,42 +4,11 @@
 <title> NombreUsuario </title>
 <meta charset="utf-8"/>
 </head>
-<body>
-<div class="Header">
-	<table class="CajasInicioSesion">
-		<tr class="AlineacionCajasInicioSesion">
-			<td class="AlineacionCajasInicioSesion">
-				<input type="text" id="nombreusuario" class="FormularioInicioSesion" name="user" placeholder="Usuario...">
-			</td>
-			<td class="AlineacionCajasInicioSesion">
-				<input type="text" id="nombreusuario" class="FormularioInicioSesion" name="user" placeholder="Usuario...">
-			</td>
-			<td class="AlineacionCajasInicioSesion">
-				<input type="submit" class="BotonEntrar" value="Entrar" >
-			</td>
-		</tr>
-	</table>
-	<table>
-		<tr>
-			<td class="AlineacionCajasInicioSesion">
-				<img class="IconoInicio" src="Imagenes/Facebook.png">
-			</td>
-			<td class="UnAventonInicio">
-				UnAventón
-			</td>
-		</tr>
-	</table>
-</div>
-<div style="background-color:black">
-<div>
-	<ul>
-		<li><a href="inicio.php"> Inicio </a></li>
-		<li><a href="publicarviaje.php"> Publicar </a></li>
-		<li><a href="publicarviaje.php"> Mis Viajes </a></li>
-		<li><a href="publicarviaje.php"> Agregar Vehiculo </a></li>
-		<li><a href="publicarviaje.php"> Editar Mis Datos </a></li>
-	</ul>
-</div>
+<body background="Imagenes/FondoColores.jpg">>
+<?php
+include "Header.php";
+include "MenuBarra.php";
+	?>
 	<div class="CajaInformacionUsuario">
 		<div class="CajaInformacionPersonal">
 			<table class="FotoYNombre">

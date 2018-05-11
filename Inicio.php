@@ -11,17 +11,9 @@
 <body background="Imagenes/FondoColores.jpg">
 <?php
 include "Header.php";
-?>
+include "MenuBarra.php";
+	?>
 <div style="width:100%;height:81%">
-	<div>
-			<ul>
-				<li><a href="inicio.php"> Inicio </a></li>
-				<li><a href="publicarviaje.php"> Publicar </a></li>
-				<li><a href="publicarviaje.php"> Mis Viajes </a></li>
-				<li><a href="publicarviaje.php"> Vehiculos </a></li>
-				<li><a href="publicarviaje.php"> Perfil </a></li>
-			</ul>
-	</div>
 	<div class="Menu">
 		<div class="CajaMenuBusqueda">
 			<form method="POST" style="margin-top:15px"action="crearcuenta.php" class="input" onsubmit="return validar()">

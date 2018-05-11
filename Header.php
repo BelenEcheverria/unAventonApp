@@ -1,3 +1,17 @@
+<?php
+
+                include "php/conection.php"; // conectar y seleccionar la base de datos
+
+                $link = conectar();
+
+?>
+<html>
+<head>
+<link rel="stylesheet" href="estilos.css">
+<title> Inicio </title>
+<meta charset="utf-8"/>
+</head>
+<body>
 <div class="Header">
 	<table class="CajasInicioSesion">
 		<tr class="AlineacionCajasInicioSesion">
@@ -27,3 +41,4 @@
 		</tr>
 	</table>
 </div>
+</body>

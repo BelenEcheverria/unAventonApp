@@ -1,3 +1,10 @@
+<?php
+
+                include "php/conection.php"; // conectar y seleccionar la base de datos
+
+                $link = conectar();
+
+?>
 <html>
 <head>
 <link rel="stylesheet" href="estilos.css">
@@ -28,3 +35,4 @@ include "Header.php";
 <div class="LineaPiePagina"></div>
 </body>
 </html>
+

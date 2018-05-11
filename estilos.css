@@ -3,6 +3,7 @@
 	margin-left:2%;
 	margin-right:2%;
 	padding:0px 20px 5px 5px;
+	font-size:15px;
 }
 .AlineacionCajasListaViajesHorizontal {
 	padding-top:20px;
@@ -12,6 +13,15 @@
 }
 .AlineacionViajesInfoHorizontal {
 	width:18%;
+}
+.AlineacionVotosNYP {
+	text-align:left;
+	margin-left:2%;
+	margin-bottom:10%;
+	height:10%;
+	width:90%;
+	color:white;
+	font-size:17px;
 }
 .ArreglarFondoMenuBarra{
 	background-color:#F16868;
@@ -23,10 +33,15 @@
 	background-size:100%;
 	height:100%;
 }
+.FondoInicio {
+	background-image: url(Imagenes/FondoColores.jpg);
+	background-size:100%;
+	height:100%;
+}
 .BienvenidaMensaje {
 	height: 15%;
     opacity: 0.9;
-    margin-top: 4%;
+    margin-top: 3%;
     margin-left: 15;
     margin-right: 15;
     font-size: 65px;
@@ -96,15 +111,14 @@
 .BotonRegistrar {
 	background-color:#F16868; 
     color:white; 
-    border:2px solid black;
+    border:2px solid #F16868;
 	height:7%;
 	width:35%;
-	font-size:25px;
-	opacity:0.8;
+	font-size:20px;
 	margin-left:32.5%;
 	margin-right:32.5%;
 	margin-top:5%;
-	font-weight:800;
+	font-weight:700;
 	font-family: Arial;
 	text-shadow:3px 3px 4px #f00,
                3px 3px 3px #aaa,
@@ -127,27 +141,33 @@
                4px 4px 4px #aaa;
 	
 }
+.CajaBienvenida {
+	width:47%;
+	height:70%;
+	margin:1% 1% 1% 1%;
+	float:left;
+	border:6px solid #F16868;
+	border-radius:30px;
+}
 .CajasInicioSesion {
 	float:right;
 	color:white;
 	width:25%;
-	margin-top:3%;
 	margin-bottom:1%;
+	margin-top:2.5%;
 }
 .CajaInformacionUsuario {
-	background-color:#BC3D3D;
-	border:6px solid #F16868;
-	border-radius:30px;
 	width:97%;
 	height:80%;
 	margin:1% 1% 1% 1%;
 }
 .CajaInformacionPersonal {
-	width:48%;
+	width:47%;
 	height:93%;
-	background-color:green;
 	margin:1% 1% 1% 1%;
 	float:left;
+	border:6px solid #F16868;
+	border-radius:30px;
 }
 .CajaInformacionCalificacion {
 	width:48%;
@@ -169,6 +189,18 @@
 	height:6%;
 	width: 100%;
 }
+.CajaRegistro {
+	margin-top:5%;
+	margin-left:17%;
+	margin-right:17%;
+}
+.CrearUnaCuenta {
+	font-size:28px;
+	font-family:Arial;
+	color:white;
+	width:100%;
+	text-align:center;
+}
 .FormularioInicioSesion {
     background-color:white;
     color: red;
@@ -185,13 +217,22 @@
 	font-family:Arial;
 }
 .FormularioRegistrarse {
-    width:90%;
+    width:50%;
+    padding:12px 20px;
+	margin-top:5%;
+    box-sizing:border-box;
+    border:none;
+	border-radius:9px;
+    color: black;
+}
+.FormularioVehiculos {
+	width:90%;
     padding:12px 20px;
     margin:7px 15px ;
     box-sizing:border-box;
     border:none;
 	border-radius:9px;
-    background-color:#F16868;
+    background-color:white;
     color: black;
 }
 .FotoYNombre {
@@ -210,16 +251,18 @@
 .IconoInicio {
 	height:20%;
 	margin-bottom:1%;
-	margin-top:1%;
 	margin-left:1%;
 }
 .ImagenPerfil {
 	height:50%;
 	width:50%;
-	background-color:blue;
+	background-color:#F16868;
+	border-radius:30px;
 }
 .LabelFormularios {
 	margin-left:7%;
+	color:white;
+	font-weight:800;
 }
 .LineaPiePagina {
 	width: 100%;
@@ -247,14 +290,16 @@
 	width:90%;
 	height:90%;
 	opacity:0.8;
+	color:white;
+	font-size:17px;
 }
 .Paginacion {
     display: inline-block;
 }
 .ParteViajes {
-	float:right;
 	width:80%;
 	height:100%;
+	margin-left:20%;
 }
 
 .ParteViajesDeAUno {
@@ -265,19 +310,23 @@
 
 .registrar {
 	margin:10px 35%;
-	border:6px solid #F16868;
+	border:6px solid #ffa500;
 	border-radius:8px;
 	width:30%;
 	float:right;
-	background-color:white;
-	opacity:0.8;
+	opacity:0.9;
+	background-color:#ffa500;
 }
-.AlineacionVotosNYP {
-	text-align:left;
-	margin-left:2%;
-	margin-bottom:10%;
-	height:10%;
-	width:90%;
+.UnConductorPasajero {
+	text-shadow:3px 3px 4px #f00,
+               5px 5px 3px #aaa,
+               7px 7px 3px #00f;
+	color: white;
+	text-align:center;
+	font-family:Arial;
+	font-weight:750;
+	font-size:30px;
+	margin-bottom:17%
 }
 .UnAventonInicio {
 	font-family:Arial;

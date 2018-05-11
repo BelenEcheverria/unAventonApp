@@ -1,4 +1,5 @@
 <?php
+
     include_once "php/conection.php"; // conectar y seleccionar la base de datos
     $link = conectar();
 ?>
@@ -8,12 +9,14 @@
 <title> Inicio </title>
 <meta charset="utf-8"/>
 </head>
+
 <?php
 	include "Header.php";
 	include "MenuBarra.php";
 ?>
 <body background="Imagenes/FondoColores.jpg">
 <div style="width:100%;height:81%">
+
 	<div class="Menu">
 		<div class="CajaMenuBusqueda">
 			<form method="POST" style="margin-top:15px"action="crearcuenta.php" class="input" onsubmit="return validar()">

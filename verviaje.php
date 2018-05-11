@@ -1,12 +1,7 @@
-<html>
-<meta charset="utf-8"/>
-<body>
 <?php
-
-                include ('php/conection.php'); // conectar y seleccionar la base de datos
-                $link = conectar();
-                $viaje_id = $_GET['id'];
-
+    include_once "php/conection.php"; // conectar y seleccionar la base de datos
+    $link = conectar();
+    $viaje_id = $_GET['id'];
 //Trae de base de datos la informacion de los viajes
 	$q = "SELECT * FROM viajes where id=$viaje_id ";
    	$result = mysqli_query($link,$q);
@@ -22,17 +17,32 @@
 	$tipo_vehiculo = $row['idVehiculo'];
 	$nombre_Conductor = $row['idConductor'];
 ?>
-<h1 style="color: black;text-align:center;font-family:Arial;font-weight:750;text-shadow:5px 5px 5px #aaa;"> Viaje a <?php echo utf8_encode($origen)?> </h1> 
-<div>
-
-  <label class="LabelFormularios"> <?php echo "Origen: " . utf8_encode($origen)?> </label>
-  <label class="LabelFormularios"> <?php echo "Destino: " .utf8_encode($destino)?> </label>
-  <label class="LabelFormularios"> <?php echo "Fecha: " . utf8_encode($fecha)?> </label>
-  <label class="LabelFormularios"> <?php echo "Duracion: " . utf8_encode($duracion)?> </label>
-  <label class="LabelFormularios"> <?php echo "Vehiculo: " . utf8_encode($tipo_vehiculo)?> </label>
-  <label class="LabelFormularios"> <?php echo "texto: " . utf8_encode($texto)?> </label>
-  <label class="LabelFormularios"> <?php echo "Precio: " . utf8_encode($precio)?> </label>
-
+<html>
+<head>
+<link rel="stylesheet" href="estilos.css">
+<meta charset="utf-8"/>
+</head>
+<body background="Imagenes/FondoColores.jpg">
+<?php
+include "Header.php";
+include "MenuBarra.php";
+?>
+<div style="width:100%;height:81%">
+	<div class="ParteViajesDeAUno">
+	<div class="ListadoViajes">
+			<table style="width:80%; margin-left:2%;">
+				<tr>
+					<td class="AlineacionCajasListaViajesHorizontal"><?php echo "Origen: " . utf8_encode($origen)?></td>
+					<td class="AlineacionCajasListaViajesHorizontal"><?php echo "Destino: " .utf8_encode($destino)?></td>
+					<td class="AlineacionCajasListaViajesHorizontal"><?php echo "Fecha: " . utf8_encode($fecha)?></td>
+					<td class="AlineacionCajasListaViajesHorizontal"><?php echo "Duracion: " . utf8_encode($duracion)?></td>
+					<td class="AlineacionCajasListaViajesHorizontal"><?php echo "Precio: " . utf8_encode($precio)?></td>
+					<td class="AlineacionCajasListaViajesHorizontal"><?php echo "texto: " . utf8_encode($texto)?></td>
+					<td class="AlineacionCajasListaViajesHorizontal"><?php echo "Vehiculo: " . utf8_encode($tipo_vehiculo)?></td>	
+				</tr>
+				<div><input type="submit" class="BotonReservarAsiento" value="Reservar Asiento"></div>
+			</table>
+	</div>
 </div>
 </body>
 </html>

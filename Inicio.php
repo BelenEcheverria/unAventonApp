@@ -1,5 +1,5 @@
 <?php
-    include "php/conection.php"; // conectar y seleccionar la base de datos
+    include_once "php/conection.php"; // conectar y seleccionar la base de datos
     $link = conectar();
 ?>
 <html>
@@ -8,11 +8,11 @@
 <title> Inicio </title>
 <meta charset="utf-8"/>
 </head>
-<body background="Imagenes/FondoColores.jpg">
 <?php
-include "Header.php";
-include "MenuBarra.php";
-	?>
+	include "Header.php";
+	include "MenuBarra.php";
+?>
+<body background="Imagenes/FondoColores.jpg">
 <div style="width:100%;height:81%">
 	<div class="Menu">
 		<div class="CajaMenuBusqueda">

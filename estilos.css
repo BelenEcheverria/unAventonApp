@@ -257,6 +257,12 @@
 	height:100%;
 }
 
+.ParteViajesDeAUno {
+	float:center;
+	width:100%;
+	height:200%;
+}
+
 .registrar {
 	margin:10px 35%;
 	border:6px solid #F16868;

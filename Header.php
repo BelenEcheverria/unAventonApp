@@ -11,6 +11,10 @@
 				<input type="submit" class="BotonEntrar" value="Entrar" >
 			</td>
 		</tr>
+		<tr class="AlineacionCajasInicioSesion">
+			<td class="AlineacionCajasInicioSesion"></td>
+			<td class="AlineacionCajasInicioSesion">¿Olvidaste tu contraseña?</td>
+		</tr>
 	</table>
 	<table>
 		<tr>

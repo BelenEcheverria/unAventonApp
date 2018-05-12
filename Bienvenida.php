@@ -14,58 +14,52 @@
 <body class="Bienvenida">
 	<div class="BienvenidaMensaje">Bienvenido a UnAventón!</div>
 	<div class="CajaBienvenida">
+		<div class="CrearUnaCUenta">Crear una cuenta</div>
 		<table class="CajaRegistro">
-			<tr style="width:100%">
-				<td><div style="width:90%"class="CrearUnaCuenta">Crear una cuenta</div></td>
-				<td><div style="width:1%"></div></td>
-			</tr>
 			<tr>
-				<td class="FormularioRegistrarse">
-					<input type="text" id="nombreusuario" class="FormularioInicioSesion" name="user" placeholder="Usuario...">
+				<td>
+					<input type="text" id="nombreusuario" class="FormularioRegistrarse" style="width:90%" name="user" placeholder="Nombre...">
 				</td>
-				<td class="FormularioRegistrarse">
-					<input type="text" id="nombreusuario" class="FormularioInicioSesion" name="user" placeholder="Usuario...">
+				<td>
+					<input type="text" id="nombreusuario" class="FormularioRegistrarse" style="width:90%" name="user" placeholder="Apellido...">
 				</td>
 			</tr>
 			<tr>
-				<td class="FormularioRegistrarse">
-					<input type="text" id="nombreusuario" class="FormularioInicioSesion" style="width:221.5%" name="user" placeholder="Usuario...">
+				<td>
+					<input type="text" id="nombreusuario" class="FormularioRegistrarse" style="width:192%" name="user" placeholder="Correo electronico...">
 				</td>
 			</tr>
 			<tr>
-				<td class="FormularioRegistrarse">
-					<input type="text" id="nombreusuario" class="FormularioInicioSesion"style="width:221.5%" name="user" placeholder="Usuario...">
+				<td>
+					<div class="FechaNacimiento">Fecha Nacimiento</div>
+				</td>
+			</tr>
+			<tr>
+				<td >
+					<input type="date" value="2013-01-08" id="nombreusuario" class="FormularioRegistrarse" name="user">
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<input type="text" id="nombreusuario" class="FormularioRegistrarse" style="width:192%" name="user" placeholder="Contraseña...">
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<input type="text" id="nombreusuario" class="FormularioRegistrarse" style="width:192%" name="user" placeholder="Repetri contraseña...">
 				</td>
 			</tr>
 		</table>
 	</div>
-	<div class="CajaBienvenida">
-		<table class="FotoYNombre">
-			<tr class="ImagenPerfil">
-				<td class="ImagenPerfil">
-					<div class="UnConductorPasajero">
-						Conductor
-					</div>
-					<div class="AlineacionVotosNYP">
-						Votos positivos:
-					</div>
-					<div class="AlineacionVotosNYP">
-						Votos negativos:
-					</div>
-				</td>
-				<td class="ImagenPerfil">
-					<div class="UnConductorPasajero">
-						Pasajero
-					</div>
-					<div class="AlineacionVotosNYP">
-						Votos positivos:
-					</div>
-					<div class="AlineacionVotosNYP">
-						Votos negativos:
-					</div>
-				</td>
-			</tr>
-		</table>
+	<div class="CajaDerechaCajaBienvenida">
+		<div>
+			<img class="IconoBienvenida" src="Imagenes/Facebook.png"> 
+		</div>
+		<div class="main-container">
+			<div class="fixer-container">
+				<input type="submit" class="BotonIngresar" value="Entrar" >
+			</div>
+		</div>
 	</div>
 </body>
 </html>

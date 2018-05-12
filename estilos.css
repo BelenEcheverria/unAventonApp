@@ -29,7 +29,7 @@
 	height:5.5%;
 }
 .Bienvenida {
-	background-image: url(Imagenes/nube.jpg);
+	background-image: url(Imagenes/FondoColores.jpg);
 	background-size:100%;
 	height:100%;
 }
@@ -52,7 +52,7 @@
 	text-shadow:3px 3px 4px #f00,
                5px 5px 3px #aaa,
                7px 7px 3px #00f;
-	color:#F16868;
+	color:white;
 }
 .blanco {
 	height:8%;
@@ -148,6 +148,16 @@
 	float:left;
 	border:6px solid #F16868;
 	border-radius:30px;
+	background-color:#F16868;
+	opacity:0.85;
+}
+.CajaDerechaCajaBienvenida {
+	width:47%;
+	height:70%;
+	margin:1% 1% 1% 1%;
+	float:left;
+	border:6px solid #F16868;
+	border-radius:30px;
 }
 .CajasInicioSesion {
 	float:right;
@@ -190,16 +200,23 @@
 	width: 100%;
 }
 .CajaRegistro {
-	margin-top:5%;
 	margin-left:17%;
 	margin-right:17%;
 }
 .CrearUnaCuenta {
-	font-size:28px;
+	text-align:left;
+	font-size:35px;
+	margin-top:5%;
+	margin-bottom:2%;
+	margin-left:18%;
 	font-family:Arial;
 	color:white;
-	width:100%;
-	text-align:center;
+}
+.FechaNacimiento {
+	font-size:20px;
+	font-family:Arial;
+	color:white;
+	margin-top:5%;
 }
 .FormularioInicioSesion {
     background-color:white;
@@ -217,9 +234,9 @@
 	font-family:Arial;
 }
 .FormularioRegistrarse {
-    width:50%;
     padding:12px 20px;
 	margin-top:5%;
+	margin-bottom:5%;
     box-sizing:border-box;
     border:none;
 	border-radius:9px;
@@ -243,9 +260,9 @@
 	height:15%;
 }
 .IconoBienvenida {
-	width:20%;
-	height:40%;
-	margin-left:40%;
+	width:80%;
+	height:60%;
+	margin-left:10%;
 	margin-bottom:5%;
 }
 .IconoInicio {

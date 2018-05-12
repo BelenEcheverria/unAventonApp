@@ -1,0 +1,254 @@
+a{ 
+	text-decoration: none; /* saca el subrayado de los enlaces*/
+	color: white;
+}
+
+select {
+	font-family: Verdana, Sans, "Sans-serif";
+	font-size: 95%;
+	color: white;
+	background-color: DarkRed ;
+	border-color: white white white white;
+}
+
+hr {
+  height: 10px;
+  background-color: pink;
+}
+
+/** Index **/
+
+.div_izquierda{
+	background-image: url("Imagenes/Fondo colores.jpg");
+	float: left;
+	width: 20%;
+	height: 500%;
+	background-size: cover;
+	font-size: 120%;
+}
+.form_izquierda {
+	font-size: 75%;
+	padding: 5%;
+}
+
+.div_5peliculas{
+	background-image: url("Imagenes/Fondo negro.jpg");	
+	height: 500%;
+}
+
+.div_imagen{
+	float:left;
+	padding: 10px;
+  	max-width: 400px;
+  	max-height: 400px;
+}
+
+.imagen{
+	width: 300px;
+  	height: 300px;
+}
+
+.imagenBack{
+	width: 150px;
+  	height: 150px;
+}
+
+.info_pelicula{	
+	min-width: 400px;
+	min-height: 400px;
+}
+
+.info_peliculaBack{	
+	min-width: 250px;
+	min-height: 250px;
+}
+
+.nombre_pelicula{
+	text-decoration: none;
+	color: white;
+}
+
+.siguiente{
+	float: right;
+	color: red;
+}
+.medio {
+	color: red;
+}
+
+/** Inicio Sesion **/
+
+.divRegistro{
+ 	height: 100%;
+	width: 100%;
+	background-image: url("Imagenes/fondoprueba3.jpg");
+	background-size: 100%;
+}
+
+/** Registro **/
+
+.imagenFondoRegistro{
+ 	height: 700px;
+	width: 100%;
+	background-image: url("Imagenes/fondoprueba3.jpg");
+	background-size: 100%;
+	color: white;
+	
+}
+
+.div_cajaRegistro{
+ 	text-align: left;	
+	color: #D8D8D8;
+	font-family: Arial, sans-serif;
+	width: 300px;
+    border: 25px;
+    padding: 25px;
+   	text-decoration: none;
+	font-size: 130%;
+	font-weight: bold;
+ }
+
+#link_registro{
+	color: #D8D8D8;
+	text-decoration: none;
+	font-size: 90%;
+}
+
+.fuente125 {
+	font-size: 150%;
+	font-weight: bold;
+}
+
+/** Informacion Pelicula **/
+
+.div_body_pelicula {
+	height: 400%;
+	width: 100%;
+	font-size: 100%;
+	font-size: 100%;
+	background-image: url("Imagenes/Fondo negro.jpg");
+	text-align: center;
+	color: white;
+	font-family: Verdana, Sans, "Sans-serif";
+	font-weight: bold;
+}
+
+.imagen2{
+	width: 400px;
+  	height: 400px;
+}
+
+.estrella {
+	width: 35px;
+  	height: 35px;
+}
+
+.Comentarios{
+	font-size: 150%;
+}
+
+.selectNegro {
+	font-family: Verdana, Sans, "Sans-serif";
+	font-size: 95%;
+	color: white;
+	background-color: black ;
+	border-color: white white white white;
+}
+
+.agregarBack {
+	float: right;
+	font-size: 125%;
+	color: HotPink;
+}
+
+.agregarBack2 {
+	font-size: 125%;
+	color: HotPink;
+}
+
+/** unAventon **/
+
+.IconoInicio {
+	height:50%;
+	margin-bottom:1%;
+	margin-left:1%;
+	margin-right: 3%;
+	margin-right: 3%;
+	vertical-align: middle;
+
+}
+
+.unAventon {
+	font-size: 300%;
+}
+
+.div_body{
+	height: 100%;
+	width: 100%;
+	font-size: 100%;
+	font-size: 100%;
+	font-family: Verdana, Sans, "Sans-serif";
+	color: white;
+	font-weight: bold;
+	background-image: url("Imagenes/Fondo colores.jpg");
+	background-size: cover;
+}
+
+.div_titulo{
+	text-align: center;
+	font-size: 100%;
+}
+
+.div_superior{
+	height: 25%;
+}
+.div_cajaInicioSesion{
+	text-align: center;	
+	color: #D8D8D8;
+	font-family: Arial, sans-serif;
+	width: 300px;
+    border: 25px;
+    padding:50px;
+    text-decoration: none;
+	font-size: 125%
+}
+
+.imagenInicioSesion{
+	height: 100%;
+	width: 100%;
+	text-align: center;
+}
+
+.div_iniciar_sesion {
+	text-align: right;
+	font-size: 75%; 
+	font-weight: bold;
+	font-family: Verdana, Sans, "Sans-serif";
+	color: white;
+}
+
+.BotonEntrar {
+	background-color:#F16868; 
+    color:white; 
+    border:2px solid black;
+	font-size:15px;
+	font-weight:800;
+	font-family: Arial;
+}
+
+.nombre_usuario {
+	float: right;
+	color:white; 
+}
+
+.UnAventonInicio2 {
+	font-family: Arial;
+	font-size: 400%;
+	font-weight: 800;
+	text-shadow:3px 3px 4px #f00,
+				5px 5px 3px #aaa,
+				7px 7px 3px #00f;
+	color:white;
+	height:10%;
+}
+

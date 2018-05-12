@@ -1,6 +1,10 @@
 <?php
 
+<<<<<<< HEAD
+                include_once "php/conection.php"; // conectar y seleccionar la base de datos
+=======
                 include_once ("php/conection.php"); // conectar y seleccionar la base de datos
+>>>>>>> 2f0327af698cdb4ae7e3d8b1373fdc0c2051c223
 
                 $link = conectar();
 

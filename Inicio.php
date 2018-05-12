@@ -1,7 +1,9 @@
 <?php
-
     include_once "php/conection.php"; // conectar y seleccionar la base de datos
     $link = conectar();
+	include_once "php/classLogin.php";
+	$usuario= new usuario();
+	$usuario -> session ($usuarioID, $admin);
 ?>
 <html>
 <head>
@@ -9,14 +11,12 @@
 <title> Inicio </title>
 <meta charset="utf-8"/>
 </head>
-
 <?php
 	include "Header.php";
 	include "MenuBarra.php";
 ?>
 <body background="Imagenes/FondoColores.jpg">
 <div style="width:100%;height:81%">
-
 	<div class="Menu">
 		<div class="CajaMenuBusqueda">
 			<form method="POST" style="margin-top:15px"action="crearcuenta.php" class="input" onsubmit="return validar()">
@@ -59,3 +59,10 @@
 <div class="LineaPiePagina"></div>
 </body>
 </html>
+<!--
+Cuando creamos o accedemos al contenido de variables de sesión debemos llamar a la función session_start() antes de cualquier salida de etiquetas HTML, copiar:
+	include_once "php/classLogin.php";
+	$usuario= new usuario();
+	$usuario -> session ($usuarioID, $admin);
+Tengamos en cuenta que en cualquier otra página del sitio tenemos acceso a las variables de sesión sólo con llamar inicialmente a la función session_start().
+-->

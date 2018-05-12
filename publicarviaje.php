@@ -15,7 +15,7 @@
 <title> Nuevo Viaje Ocasional </title>
 <meta charset="utf-8"/>
 </head>
-<body>
+<body class="FondoInicio">
 <?php
 include "Header.php";
 ?>

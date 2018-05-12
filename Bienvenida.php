@@ -11,7 +11,7 @@
 <title> Bienvenida </title>
 <meta charset="utf-8"/>
 </head>
-<body class="Bienvenida">
+<body class="FondoInicio">
 	<div class="BienvenidaMensaje">Bienvenido a UnAventón!</div>
 	<div class="CajaBienvenida">
 		<div class="CrearUnaCUenta">Crear una cuenta</div>

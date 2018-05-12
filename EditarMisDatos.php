@@ -11,7 +11,7 @@
 <title> Registrar </title>
 <meta charset="utf-8"/>
 </head>
-<body>
+<body class="FondoInicio">
 <?php
 include_once ("php/conection.php");
 ?>

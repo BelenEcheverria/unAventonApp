@@ -11,11 +11,11 @@
 <title> Inicio </title>
 <meta charset="utf-8"/>
 </head>
+<body class="FondoInicio">
 <?php
 	include "Header.php";
 	include "MenuBarra.php";
 ?>
-<body background="Imagenes/FondoColores.jpg">
 <div style="width:100%;height:81%">
 	<div class="Menu">
 		<div class="CajaMenuBusqueda">

@@ -9,4 +9,12 @@ EstadosViaje: del 1 al 6
 Estados postulaciones: del 1 al 3
 Ciudades: 11 cargadas
 
+CalificacionesPendientes
+-- en idUsuarioAutor, se guarda el id del usuario que debe calificar
+-- en idUsuarioCalificado, se guarda el usuario que tiene que ser calificado
+-- el id en realidad no se va a usar, pero tiene que haber una clave primaria
+-- los pasajeros solo califican al conductor
+-- los conductores tienen que calificar a todos los pasajeros, entonces se va a tener que insertar mas de una fila
+En los datos cargados el ejemplo seria que el usuario 1 (conductor hizo un viaje con el 2 y el 3), y todavia ninguno califico, por lo tanto ninguno de los tres puede publicar
+
 

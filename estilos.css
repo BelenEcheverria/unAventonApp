@@ -334,6 +334,15 @@
 	opacity:0.9;
 	background-color:#ffa500;
 }
+.publicarUnviaje {
+	margin:10px 35%;
+	border:6px solid #ffa500;
+	border-radius:8px;
+	width:30%;
+	float:right;
+	opacity:0.9;
+	background-color:#ffa500;
+}
 .UnConductorPasajero {
 	text-shadow:3px 3px 4px #f00,
                5px 5px 3px #aaa,

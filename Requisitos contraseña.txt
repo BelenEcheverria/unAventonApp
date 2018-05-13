@@ -1,0 +1,4 @@
+para la contraseña validar que tenga:
+	minimo 8 caracteres
+	minimo 1 letra mayuscula
+	minimo 1 numero

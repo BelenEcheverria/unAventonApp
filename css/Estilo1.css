@@ -238,7 +238,8 @@ hr {
 
 .nombre_usuario {
 	float: right;
-	color:white; 
+	color:white;
+	font-size: 150%;
 }
 
 .UnAventonInicio2 {

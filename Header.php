@@ -9,6 +9,7 @@
 <head>
 <link rel="stylesheet" href="estilos.css">
 <link rel="stylesheet" type="text/css" href= "css/Estilo1.css" media="all" >
+<script type="text/javascript" src="js/validacionInicioSesion.js"></script>
 <title> Inicio </title>
 <meta charset="utf-8"/>
 </head>
@@ -25,10 +26,10 @@
 					<input type="text" id="nombreusuario" class="FormularioInicioSesion" name="nombreU" placeholder="Usuario...">
 				</td>
 				<td class="AlineacionCajasInicioSesion">
-					<input type="text" id="nombreusuario" class="FormularioInicioSesion" name="contraU" placeholder="Contraseña ...">
+					<input type="password" id="nombreusuario" class="FormularioInicioSesion" name="contraU" placeholder="Contraseña ...">
 				</td>
 				<td class="AlineacionCajasInicioSesion">
-					<input type="submit" class="BotonEntrar" value="Entrar" >
+					<input type="button" class="BotonEntrar" value="Entrar" onclick="validarInicioSesion()" >
 				</td>
 			</tr>
 			</form>

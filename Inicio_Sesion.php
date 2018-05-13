@@ -6,10 +6,11 @@
 	$usuario -> session ($usuarioID, $admin);
 ?>
 <html>
-	<head>
-		<link rel="stylesheet" type="text/css" href= "css/Estilo1.css" media="all" >
-		<title>Iniciar Sesion</title>
-	</head>
+<head>
+	<link rel="stylesheet" type="text/css" href= "css/Estilo1.css" media="all" >
+	<script type="text/javascript" src="js/validacionInicioSesion.js"></script>
+	<title>Iniciar Sesion</title>
+</head>
 <body class="div_body">
 <div class="div_body">
 <div class= "div_superior">
@@ -36,7 +37,7 @@
 					<input type="text" name="nombreU">
 					<p>Contrase&nacute;a</p>
 					<input type="password" name="contraU"> <br><br>
-					<input type="submit" value="Iniciar sesi&oacute;n" class="BotonEntrar">
+					<input type="button" value="Iniciar sesi&oacute;n" class="BotonEntrar" onclick="validarInicioSesion()">
 					<br> <br>
 					<a href="Registrarse.php" id="link_registro">¿No tenes cuenta? Registrate </a>
 			</form>

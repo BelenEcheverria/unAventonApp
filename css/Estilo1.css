@@ -3,33 +3,14 @@ a{
 	color: white;
 }
 
-select {
-	font-family: Verdana, Sans, "Sans-serif";
-	font-size: 95%;
-	color: white;
-	background-color: DarkRed ;
-	border-color: white white white white;
-}
 
 hr {
   height: 10px;
   background-color: pink;
 }
 
-/** Index **/
 
-.div_izquierda{
-	background-image: url("Imagenes/Fondo colores.jpg");
-	float: left;
-	width: 20%;
-	height: 500%;
-	background-size: cover;
-	font-size: 120%;
-}
-.form_izquierda {
-	font-size: 75%;
-	padding: 5%;
-}
+/** Index **/
 
 .div_5peliculas{
 	background-image: url("Imagenes/Fondo negro.jpg");	
@@ -252,4 +233,3 @@ hr {
 	color:white;
 	height:10%;
 }
-

@@ -12,6 +12,7 @@
 			</li>
 			<li><a href="#">Perfil</a></li>
 			<li><a href="#">Editar Perfil</a></li>
+			<li><a href="Listado_Usuarios.php"> Ver usuarios </a></li>
 		</ul>
 	</div>
 </div>

@@ -40,7 +40,8 @@
 		
 		public function session (&$usuarioID, &$admin){
 			if (isset ($_SESSION['nombreUsuario'])){
-				$usuarioID= $_SESSION['nombreUsuario'];
+				$usuarioNombre= $_SESSION['nombreUsuario'];
+				$usuarioID = $_SESSION['id'];
 				if ((isset ($_SESSION['admin'])) and ($_SESSION['admin']= true)){
 					$admin= false;
 				} else {

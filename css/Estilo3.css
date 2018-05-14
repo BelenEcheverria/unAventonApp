@@ -1,0 +1,20 @@
+.body_usuarios {
+	background-image: url("Imagenes/Fondo colores.jpg");
+	color: white;
+	font-family: Verdana, Sans, "Sans-serif";
+	font-weight: bold;
+}
+
+.div_body_usuarios {
+}
+
+.div_imagen{
+	float:left;
+  	max-width: 200px;
+  	max-height: 200px;
+}
+
+.imagen_perfil{
+	width: 300px;
+  	height: 300px;
+}

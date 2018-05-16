@@ -53,7 +53,7 @@
 	</div>
 	<div class="CajaDerechaCajaBienvenida">
 		<div>
-			<img class="IconoBienvenida" src="Imagenes/Facebook.png"> 
+			<img class="IconoBienvenida" src= "css/Imagenes/Logo.jpg"> 
 		</div>
 		<div class="main-container">
 			<div class="fixer-container">

@@ -23,10 +23,10 @@
 			<form name="inicioSesion" method="post" action="php/inicioSesion.php">
 			<tr class="AlineacionCajasInicioSesion">
 				<td class="AlineacionCajasInicioSesion">
-					<input type="text" id="nombreusuario" class="FormularioInicioSesion" name="nombreU" placeholder="Usuario...">
+					<input type="text" id="nombreusuario" class="FormularioInicioSesion" name="nombreU" placeholder="Usuario..." class="input_menu_busqueda">
 				</td>
 				<td class="AlineacionCajasInicioSesion">
-					<input type="password" id="nombreusuario" class="FormularioInicioSesion" name="contraU" placeholder="Contraseña ...">
+					<input type="password" id="nombreusuario" class="FormularioInicioSesion" name="contraU" placeholder="Contraseña ..." class="input_menu_busqueda">
 				</td>
 				<td class="AlineacionCajasInicioSesion">
 					<input type="button" class="BotonEntrar" value="Entrar" onclick="validarInicioSesion()" >

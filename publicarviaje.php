@@ -4,7 +4,7 @@
              include "php/classLogin.php";
              $usuario= new usuario();
              $usuario -> session ($usuarioID, $admin);
-             $ID= $_SESSION['id'];
+             $ID= $usuarioID;
 ?>
 <html>
 <head>
@@ -18,9 +18,9 @@ include "Header.php";
     if (isset($usuarioID)){
     ?>
         <div class= "publicarUnviaje">
-        <form method="POST" action="crearviaje.php" class="input" onsubmit="return validarviaje()">
+        <form method="POST" action="CrearViaje.php" class="input" onsubmit="return ValidarViaje()">
           <label class="LabelFormularios"> Origen </label>
-          <select name = "origen_id" value="<?php echo $origen_id ?>"> 
+          <select name = "origen" value="<?php echo $origen ?>"> 
                 <?php
                   $consulta_ciudades = "SELECT * FROM ciudades ORDER BY ciudad ASC"; 
                   $result_origen = mysqli_query($link,$consulta_ciudades); ?>
@@ -34,7 +34,7 @@ include "Header.php";
           </select>
           <br></br>
           <label class="LabelFormularios"> Destino </label>
-          <select name = "destino_id" value="<?php echo $destino_id ?>"> 
+          <select name = "destino" value="<?php echo $destino ?>"> 
                 <?php
                   $consulta_ciudades = "SELECT * FROM ciudades ORDER BY ciudad ASC";
                   $result_Destino = mysqli_query($link,$consulta_ciudades); ?>
@@ -50,18 +50,18 @@ include "Header.php";
           <input type="text" id="fecha" name="fecha" class="FormularioCrearviaje" placeholder="Ingrese fecha AAAA-MM-DD..">
           <br></br>
           <label class="LabelFormularios"> Hora de partida </label>
-          <input type="int" id="horapartida" name="hora" class="FormularioCrearviaje"  placeholder="">
-          <input type="int" id="minutospartida" name="minutospartida" class="FormularioCrearviaje"  placeholder="">
+          <input type="int" id="horapartida" name="horapartida" class="FormularioCrearviaje">
+          <input type="int" id="minutospartida" name="minutospartida" class="FormularioCrearviaje">
           <br></br>
           <label class="LabelFormularios"> Duracion estimada </label>
-          <input type="int" id="duracionhoras" name="hora" class="FormularioCrearviaje"  placeholder="">
-          <input type="int" id="duracionmin" name="hora" class="FormularioCrearviaje"  placeholder="">
+          <input type="int" id="duracionhoras" name="duracionhoras" class="FormularioCrearviaje">
+          <input type="int" id="duracionmin" name="duracionmin" class="FormularioCrearviaje">
           <br></br>
           <label class="LabelFormularios"> Informacion adicional </label>
-          <textarea class="enmarcado" name = "texto" size=200></textarea>
+          <textarea name = "texto" size=200></textarea>
           <br></br>
           <label class="LabelFormularios"> Vehiculo </label>
-          <select name = "vehiculo_id" value="<?php echo $vehiculo_id ?>"> 
+          <select name = "vehiculo" value="<?php echo $vehiculo ?>"> 
                 <?php
                   $consulta_vehiculos = "SELECT * FROM vehiculos WHERE idUsuario=$ID"; 
                   $result_vehiculos = mysqli_query($link,$consulta_vehiculos); ?>

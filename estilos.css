@@ -155,6 +155,21 @@
                4px 4px 4px #aaa;
 	
 }
+.BotonCrearViaje{
+	background-color:#F16868; 
+    color:white; 
+    border:2px solid black;
+	margin-right:2%;
+	margin-top:1.8%;
+	float:right;
+	width:12%;
+	font-size:12px;
+	font-weight:800;
+	font-family: Arial;
+	text-shadow:3px 3px 4px #f00,
+               3px 3px 3px #aaa,
+               4px 4px 4px #aaa;
+}
 .CajaBienvenida {
 	width:47%;
 	height:70%;

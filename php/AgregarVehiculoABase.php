@@ -11,13 +11,20 @@
 	$color = $_POST['color'];
 	$patente = $_POST['patente'];
 	$asientos = $_POST['asientos'];
-	$yaExiste = ("SELECT * FROM `vehiculos` WHERE (idUsuario = '$usuarioID') AND (patente = '$patente')");
+	$yaExiste = ("SELECT * FROM vehiculos WHERE (idUsuario = '$usuarioID') AND (patente = '$patente')");
 	$result = mysqli_query ($link,$yaExiste) or die ('Consulta fallida: ' .mysqli_error($link));
-	if (isset ($result)){
-	$var = "INSERT INTO vehiculos (idUsuario,patente,tipo,asientos,modelo,color,marca,anio)
-	VALUES ('$usuarioID','$patente', '$tipo', '$asientos','$modelo','$color','$marca','$anio')";
-	mysqli_query($link,$var) or die ('Consulta fallida: ' .mysqli_error($link));
+	$cumple = true;
+	while ($patenteTabla = mysqli_fetch_array($result)){
+		if ($patente == $patenteTabla['patente']){
+			$cumple = false;
+			$mensaje = 'El vehiculo ya esta cargado';
+		}
+	}
+	if ($cumple) {
+		$var = "INSERT INTO vehiculos (idUsuario,patente,tipo,asientos,modelo,color,marca,anio)
+		VALUES ('$usuarioID','$patente', '$tipo', '$asientos','$modelo','$color','$marca','$anio')";
+		mysqli_query($link,$var) or die ('Consulta fallida: ' .mysqli_error($link));
 	} else {
-			throw new Exception ('El nombre de usuario no se encunatra registrado');
+		echo $mensaje;
 	}
 ?>

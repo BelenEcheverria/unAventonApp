@@ -8,14 +8,21 @@
 <html>
 <head>
 <link rel="stylesheet" href="estilos.css">
-<link rel="stylesheet" type="text/css" href= "css/Estilo1.css" media="all" >
 <script type="text/javascript" src="js/validacionInicioSesion.js"></script>
 <title> Inicio </title>
 <meta charset="utf-8"/>
 </head>
 <body>
-<div class="div_superior">
-	<div class="div_iniciar_sesion">
+	<div class="Header">
+		<table class="CajaIconoMasTitulo">
+			<tr>
+				<td class="CajaIconoInicio">
+					<img class="IconoInicio" src= "css/Imagenes/Logo.jpg">
+				</td>
+				<td class="UnAventonInicio"> UnAventón </td>
+
+			<tr>
+		</table>
 	<?php
 		if (!isset($usuarioID)){
 	?>
@@ -23,10 +30,10 @@
 			<form name="inicioSesion" method="post" action="php/inicioSesion.php">
 			<tr class="AlineacionCajasInicioSesion">
 				<td class="AlineacionCajasInicioSesion">
-					<input type="text" id="nombreusuario" class="FormularioInicioSesion" name="nombreU" placeholder="Usuario..." class="input_menu_busqueda">
+					<input type="text" id="nombreusuario" class="FormularioInicioSesion" name="nombreU" placeholder="Usuario..."
 				</td>
 				<td class="AlineacionCajasInicioSesion">
-					<input type="password" id="nombreusuario" class="FormularioInicioSesion" name="contraU" placeholder="Contraseña ..." class="input_menu_busqueda">
+					<input type="password" id="nombreusuario" class="FormularioInicioSesion" name="contraU" placeholder="Contraseña ...">
 				</td>
 				<td class="AlineacionCajasInicioSesion">
 					<input type="button" class="BotonEntrar" value="Entrar" onclick="validarInicioSesion()" >
@@ -41,17 +48,21 @@
 	<?php
 		} else {
 	?>
-		<div class="nombre_usuario"> &nbsp; <?php echo ("Bienvenido " . $_SESSION['nombreUsuario']); ?>
-		<br> <a href="php/cerrarSesion.php"> Cerrar Sesion &nbsp;&nbsp;&nbsp; </a> </div>
+		<table class="CajaNombreYCierreSesion">
+			<tr>
+				<td class="BienvenidaUsuarioLogueado">
+					&nbsp; <?php echo ("Bienvenido, " . $_SESSION['nombreUsuario']); ?>
+				</td>
+				<td>
+					<a href="php/cerrarSesion.php"> 
+						<input type="submit" class="BotonCerrarSesion" value="Cerrar Sesion">
+					</a>
+				</td>
+			<tr>
+		</table>
+		
 	<?php
 		}
 	?>
 	</div>
-	<div class="div_titulo">
-		<a href="Inicio.php" class="AlineacionCajasInicioSesion">
-			<img class="IconoInicio" src= "css/Imagenes/Logo.jpg">
-			<span class="UnAventonInicio2"> UnAventón </span>
-		</a>
-	</div>
-</div>
 </body>

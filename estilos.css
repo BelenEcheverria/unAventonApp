@@ -33,6 +33,11 @@
 	background-size:100%;
 	height:100%;
 }
+.BienvenidaUsuarioLogueado {
+	color:white;
+	font-size:25px;
+	font-weight:800;
+}
 .FondoInicio {
 	background-image: url(Imagenes/FondoColores.jpg);
 	background-size:100%;
@@ -75,6 +80,15 @@
                3px 3px 3px #aaa,
                4px 4px 4px #aaa;
 	
+}
+.BotonCerrarSesion {
+	background-color:#F16868; 
+    color:white; 
+    border:2px solid black;
+	font-size:15px;
+	font-weight:800;
+	font-family: Arial;
+	margin-right:10%;
 }
 .BotonEntrar {
 	background-color:#F16868; 
@@ -156,8 +170,6 @@
 	height:70%;
 	margin:1% 1% 1% 1%;
 	float:left;
-	border:6px solid #F16868;
-	border-radius:30px;
 }
 .CajasInicioSesion {
 	float:right;
@@ -165,6 +177,15 @@
 	width:25%;
 	margin-bottom:1%;
 	margin-top:2.5%;
+}
+.CajaIconoInicio {
+	height:100%;
+	width:15%;
+}
+.CajaIconoMasTitulo {
+	width:60%;
+	float:left;
+	height:100%;
 }
 .CajaInformacionUsuario {
 	width:97%;
@@ -193,6 +214,12 @@
 	background-color:#F16868;
 	border:6px solid #F16868;
 	border-radius:30px;
+}
+.CajaNombreYCierreSesion {
+	width:35%;
+	float:right;
+	margin-right:2%;
+	margin-top:2%;
 }
 .CajaPaginacion{
 	background-color: black;
@@ -260,15 +287,19 @@
 	height:15%;
 }
 .IconoBienvenida {
-	width:80%;
+	width:50%;
 	height:60%;
-	margin-left:10%;
+	margin-left:25%;
+	margin-top:10%;
 	margin-bottom:5%;
+	
 }
 .IconoInicio {
-	height:20%;
-	margin-bottom:1%;
-	margin-left:1%;
+	margin-bottom:2%;
+	margin-left:2%;
+	float:left;
+	height:25%;
+	width:100%;
 }
 .ImagenPerfil {
 	height:50%;
@@ -362,7 +393,7 @@
                5px 5px 3px #aaa,
                7px 7px 3px #00f;
 	color:white;
-	height:10%;
+	margin-left:5%;
 }
 .ViajesInfoHorizontal {
 	height:5%;

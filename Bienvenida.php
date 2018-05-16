@@ -41,12 +41,12 @@
 			</tr>
 			<tr>
 				<td>
-					<input type="text" id="nombreusuario" class="FormularioRegistrarse" style="width:192%" name="user" placeholder="Contraseña...">
+					<input type="password" id="nombreusuario" class="FormularioRegistrarse" style="width:192%" name="user" placeholder="Contraseña...">
 				</td>
 			</tr>
 			<tr>
 				<td>
-					<input type="text" id="nombreusuario" class="FormularioRegistrarse" style="width:192%" name="user" placeholder="Repetri contraseña...">
+					<input type="password" id="nombreusuario" class="FormularioRegistrarse" style="width:192%" name="user" placeholder="Repetri contraseña...">
 				</td>
 			</tr>
 		</table>
@@ -57,7 +57,7 @@
 		</div>
 		<div class="main-container">
 			<div class="fixer-container">
-				<input type="submit" class="BotonIngresar" value="Entrar" >
+				<input type="submit" class="BotonIngresar" value="Ingresar" >
 			</div>
 		</div>
 	</div>

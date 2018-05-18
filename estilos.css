@@ -210,18 +210,20 @@
 	background-color:blue;
 }
 .CajaMenuBusqueda {
-	margin-top:10%;
+	margin-top:15%;
 	margin-left:3%;
 	margin-right:3%;
 	background-color:#F16868;
 	border:6px solid #F16868;
 	border-radius:30px;
+	width:80%;
+	float:left;
 }
 .CajaNombreYCierreSesion {
 	width:35%;
 	float:right;
 	margin-right:2%;
-	margin-top:2%;
+	margin-top:3%;
 }
 .CajaPaginacion{
 	background-color: black;
@@ -361,7 +363,7 @@
 }
 .Menu {
 	float:left;
-	width:20%;
+	width:25%;
 	height:100%;
 }
 .NombreYApellido {
@@ -377,9 +379,9 @@
     display: inline-block;
 }
 .ParteViajes {
-	width:80%;
+	width:75%;
 	height:100%;
-	margin-left:20%;
+	float:left;
 }
 
 .ParteViajesDeAUno {
@@ -441,6 +443,7 @@
     margin:0;
     padding:0;
 	width:100%;
+	float:left;
 }
 
 .menuBarra ul a {

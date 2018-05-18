@@ -17,10 +17,8 @@
 		<table class="CajaIconoMasTitulo">
 			<tr>
 				<td class="CajaIconoInicio">
-					<img class="IconoInicio" src= "css/Imagenes/Logo.jpg">
+					<img class="IconoInicio" src= "css/Imagenes/UNAVENTON2.png">
 				</td>
-				<td class="UnAventonInicio"> UnAventón </td>
-
 			<tr>
 		</table>
 	<?php

@@ -11,7 +11,7 @@
 <title> Bienvenida </title>
 <meta charset="utf-8"/>
 </head>
-<body class="FondoInicio">
+<body class="FondoBienvenida">
 	<div class="BienvenidaMensaje">Bienvenido a UnAventón!</div>
 	<div class="CajaBienvenida">
 		<div class="CrearUnaCUenta">Crear una cuenta</div>
@@ -52,8 +52,8 @@
 		</table>
 	</div>
 	<div class="CajaDerechaCajaBienvenida">
-		<div>
-			<img class="IconoBienvenida" src= "css/Imagenes/Logo.jpg"> 
+		<div class="FraseCompartiendoDestinos">
+			Ve a donde quieras, desde donde quieras.
 		</div>
 		<div class="main-container">
 			<div class="fixer-container">

@@ -38,14 +38,9 @@
 	font-size:25px;
 	font-weight:800;
 }
-.FondoInicio {
-	background-image: url(Imagenes/FondoColores.jpg);
-	background-size:100%;
-	height:100%;
-}
+
 .BienvenidaMensaje {
 	height: 15%;
-    opacity: 0.9;
     margin-top: 3%;
     margin-left: 15;
     margin-right: 15;
@@ -54,9 +49,6 @@
     padding: 0;
     font-family: Arial;
     font-weight: 800;
-	text-shadow:3px 3px 4px #f00,
-               5px 5px 3px #aaa,
-               7px 7px 3px #00f;
 	color:white;
 }
 .blanco {
@@ -102,15 +94,10 @@
 	background-color:#F16868; 
     color:white; 
     border-color:#BC3D3D;
-	height:10%;
+	height:12%;
 	font-size:25px;
-	opacity:0.9;
 	font-weight:800;
-	font-family: Arial;
-	text-shadow:3px 3px 4px #f00,
-               3px 3px 3px #aaa,
-               4px 4px 4px #00f;
-	
+	font-family: Arial;	
 }
 .main-container {
       float: left;
@@ -284,6 +271,17 @@
 	border-radius:9px;
     color: black;
 }
+.FormularioPublicarViaje {
+	margin-left:25%;
+	margin-right:25%;
+	margin-top:2.5%;
+	margin-bottom:2.5%;
+	border:6px solid #ffa500;
+	border-radius:8px;
+	width:50%;
+	opacity:0.9;
+	background-color:#ffa500;
+}
 .FormularioVehiculos {
 	width:90%;
     padding:12px 20px;
@@ -293,6 +291,25 @@
 	border-radius:9px;
     background-color:white;
     color: black;
+}
+.FraseCompartiendoDestinos {
+	font-size:40px;
+	text-align:center;
+	color:white;
+	margin-top:15%;
+	margin-bottom:25%;
+	font-weight:800;
+	font-family:Arial;
+}
+.FondoInicio {
+	background-image: url(Imagenes/FondoColores.jpg);
+	background-size:100%;
+	height:100%;
+}
+.FondoBienvenida {
+	background-image: url(Imagenes/6c6.jpg);
+	background-size:100%;
+	height:100%;
 }
 .FotoYNombre {
 	width:100%;
@@ -313,8 +330,8 @@
 	margin-bottom:2%;
 	margin-left:2%;
 	float:left;
-	height:25%;
-	width:100%;
+	height:8%;
+	width:50%;
 }
 .ImagenPerfil {
 	height:50%;

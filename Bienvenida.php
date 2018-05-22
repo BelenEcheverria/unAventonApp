@@ -57,7 +57,7 @@
 		</div>
 		<div class="main-container">
 			<div class="fixer-container">
-				<input type="submit" class="BotonIngresar" value="Ingresar" >
+				<a href="Inicio.php"><input type="submit" class="BotonIngresar" value="Ingresar" ></a>
 			</div>
 		</div>
 	</div>

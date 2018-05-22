@@ -40,7 +40,7 @@ include "MenuBarra.php";
 					<div class="UnConductorPasajero">
 						Conductor
 					</div>
-					<div class="AlineacionVotosNYP">
+					<div class="AlineacionVotosNYP" style="margin-top:30%">
 						Votos positivos:
 					</div>
 					<div class="AlineacionVotosNYP">
@@ -51,7 +51,7 @@ include "MenuBarra.php";
 					<div class="UnConductorPasajero">
 						Pasajero
 					</div>
-					<div class="AlineacionVotosNYP">
+					<div class="AlineacionVotosNYP" style="margin-top:30%">
 						Votos positivos:
 					</div>
 					<div class="AlineacionVotosNYP">
@@ -60,6 +60,22 @@ include "MenuBarra.php";
 				</td>
 			</tr>
 		</table>
+	</div>
+</div>
+<div class="ComentariosConductor">
+	<div class="UnComentario">
+		El comentario
+	</div>
+	<div class="UnComentario">
+		El comentario
+	</div>
+</div>
+<div class="ComentariosPasajero">
+	<div class="UnComentario">
+		El comentario
+	</div>
+	<div class="UnComentario">
+		El comentario
 	</div>
 </div>
 <div class="LineaPiePagina"></div>

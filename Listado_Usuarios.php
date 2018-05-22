@@ -1,31 +1,34 @@
 <head>
-	<link rel="stylesheet" type="text/css" href= "css/Estilo2.css" media="all" >
+	<link rel="stylesheet" href="estilos.css">
 	<title> Listado de usuarios </title>
 </head>
-<body class= "body_usuarios" >
+<body class= "FondoInicio" >
 	<?php
 	include "Header.php";
 	include "MenuBarra.php";
 ?>
-	<div class= "div_body_usuarios">
-		<div class= "div_izquierda">
+<div style="width:100%;height:81%">
+	<div class="Menu">
+		<div class="CajaMenuBusqueda">
 			<form class= "form_buscar_usuario" name= "buscarUsuario" action= "Listado_Usuarios.php" method= "get" >
-				<p class="p_titulo_formulario" > Buscar usuario </p> <br> 
-				<p> Nombre </p>
-				<input class= "input_formulario" type= "text" name= "nombre" value= "<?php if (isset($_GET['nombre'])) {echo ($_GET['nombre']);} ?>" > <br><br>
-				<p> Apellido </p>
-				<input class= "input_formulario" type= "text" name= "apellido" value= "<?php if (isset($_GET['apellido'])) {echo ($_GET['apellido']);} ?>" > <br><br>
-				<p> Ordenar por </p>		
-				<select class="input_formulario" name="ordenar">
+				<label class="LabelFormularios"> Nombre </label>
+				<input type="password" id="clave1" name="password" class="FormularioMenuBusqueda" value= "<?php if (isset($_GET['nombre'])) {echo ($_GET['nombre']);} ?>">
+				<label class="LabelFormularios"> Apellido </label>
+				<input type="password" id="clave1" name="password" class="FormularioMenuBusqueda" value= "<?php if (isset($_GET['apellido'])) {echo ($_GET['apellido']);} ?>">		
+				<label class="LabelFormularios"> Ordenar por </label>
+				<select class="FormularioMenuBusqueda" name="ordenar">
 					<option value= ""> </option>
 					<option value="nombre ASC" <?php if ((isset ($_GET['ordenar'])) and ($_GET['ordenar']== "nombre ASC")) {echo "selected";} ?>> Nombre ascendente </option> 
 					<option value="nombre DESC" <?php if ((isset ($_GET['ordenar'])) and ($_GET['ordenar']== "nombre DESC")) {echo "selected";} ?>> Nombre descendente </option>
 					<option value="apellido ASC" <?php if ((isset ($_GET['ordenar'])) and ($_GET['ordenar']== "apellido ASC")) {echo "selected";} ?>> Apellido ascendente </option> 
 					<option value="apellido DESC" <?php if ((isset ($_GET['ordenar'])) and ($_GET['ordenar']== "apellido DESC")) {echo "selected";} ?>> Apellido descendente </option> 
 				</select> <br><br><br>
-				<input class="button_formulario" type="submit" value="Buscar">
+				<div><input type="submit" class="BotonBuscar" value="Buscar"></div>
 			</form>
 		</div>
+	</div>
+</div>
+	<div class= "div_body_usuarios">
 		<div class= "div_listado_usuarios">
 			<p class="p_titulo_listado" > Usuarios de unAventon </p>
 			<?php
@@ -69,7 +72,60 @@
 			<?php
 			}
 			?>
-	
 		</div>
 	</div>
+	<table class="TablaListadoUsuarios">
+		<tr style="border-radius:8px">
+			<td class="ImagenPerfilListado">
+				Aca va la Imagen
+			</td>
+			<td class="NombreApellidoListado">
+				Carlos Carlitos
+			</td>
+			<td class="ImagenPerfilListado">
+				Aca va la Imagen
+			</td>
+			<td class="NombreApellidoListado">
+				Carlos Carlitos
+			</td>
+			<td class="ImagenPerfilListado">
+				Aca va la Imagen
+			</td>
+			<td class="NombreApellidoListado">
+				Carlos Carlitos
+			</td>
+			<td class="ImagenPerfilListado">
+				Aca va la Imagen
+			</td>
+			<td class="NombreApellidoListado">
+				Carlos Carlitos
+			</td>
+		</tr>
+		<tr>
+			<td class="ImagenPerfilListado">
+				Aca va la Imagen
+			</td>
+			<td class="NombreApellidoListado">
+				Carlos Carlitos
+			</td>
+			<td class="ImagenPerfilListado">
+				Aca va la Imagen
+			</td>
+			<td class="NombreApellidoListado">
+				Carlos Carlitos
+			</td>
+			<td class="ImagenPerfilListado">
+				Aca va la Imagen
+			</td>
+			<td class="NombreApellidoListado">
+				Carlos Carlitos
+			</td>
+			<td class="ImagenPerfilListado">
+				Aca va la Imagen
+			</td>
+			<td class="NombreApellidoListado">
+				Carlos Carlitos
+			</td>
+		</tr>
+	</table>
 </body>

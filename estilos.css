@@ -191,12 +191,10 @@
 }
 .CajaInformacionUsuario {
 	width:97%;
-	height:80%;
 	margin:1% 1% 1% 1%;
 }
 .CajaInformacionPersonal {
 	width:47%;
-	height:93%;
 	margin:1% 1% 1% 1%;
 	float:left;
 	border:6px solid #F16868;
@@ -233,6 +231,23 @@
 .CajaRegistro {
 	margin-left:17%;
 	margin-right:17%;
+}
+.ComentariosConductor {
+	margin-left:3%;
+	margin-top:2%;
+	margin-bottom:2%;
+	background-color:green;
+	width:45%;
+	float:left;
+}
+.ComentariosPasajero {
+	margin-right:3%;
+	margin-top:2%;
+	margin-bottom:2%;
+	margin-left:3%;
+	background-color:green;
+	width:45%;
+	float:left;
 }
 .CrearUnaCuenta {
 	text-align:left;
@@ -336,10 +351,20 @@
 	width:50%;
 }
 .ImagenPerfil {
-	height:50%;
+	height:100%;
 	width:50%;
 	background-color:#F16868;
 	border-radius:30px;
+}
+.ImagenPerfilListado {
+	width:5%;
+	height:50%;
+	margin-left:5%;
+	margin-top:5%;
+	background-color:#ffa500;
+	border-bottom-left-radius: 8px;
+    border-top-left-radius: 8px;
+	border-style:groove;
 }
 .LabelFormularios {
 	margin-left:7%;
@@ -367,13 +392,22 @@
 	height:100%;
 }
 .NombreYApellido {
-	margin-left:4%;
-	margin-top:4%;
-	width:90%;
+	width:100%;
 	height:90%;
 	opacity:0.8;
 	color:white;
 	font-size:17px;
+	margin-top:20%;
+}
+.NombreApellidoListado {
+	width:18%;
+	height:50%;
+	margin-left:5%;
+	margin-top:5%;
+	background-color:#ffa500;
+	border-bottom-right-radius: 8px;
+    border-top-right-radius: 8px;
+	border-style:groove;
 }
 .Paginacion {
     display: inline-block;
@@ -408,6 +442,20 @@
 	opacity:0.9;
 	background-color:#ffa500;
 }
+.TablaListadoUsuarios {
+	width:75%;
+	float:left;
+}
+.UnComentario {
+	height:8%;
+	width:90%;
+	background-color:white;
+	font-size:15px;
+	margin-left:5%;
+	margin-right:5%;
+	margin-top:2%;
+	margin-bottom:2%;
+}
 .UnConductorPasajero {
 	text-shadow:3px 3px 4px #f00,
                5px 5px 3px #aaa,
@@ -417,7 +465,6 @@
 	font-family:Arial;
 	font-weight:750;
 	font-size:30px;
-	margin-bottom:17%
 }
 .UnAventonInicio {
 	font-family:Arial;

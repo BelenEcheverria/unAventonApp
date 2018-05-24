@@ -21,13 +21,14 @@ include "MenuBarra.php";
 	<div class="CajaInformacionPersonal">
 		<table class="FotoYNombre">
 			<tr class="ImagenPerfil">
-				<td class="ImagenPerfil">Aca va la foto de Perfil</td>
+				<td class="ImagenPerfil"><img class="LaImagenDePerfil" src="Imagenes/nube.jpg"></td>
 				<td class="ImagenPerfil">					
-					<div class="NombreYApellido">Nombre
-						<br><br>Apellido
-						<br><br>Nacimiento(No se si va esto)
+					<div class="NombreYApellido">
+						Nombre: Ian
+						<br><br>Apellido: Caballero
+						<br><br>Nacimiento: 06/10/97
 						<br><br>Informacion de contacto (si se hace click aca y se tiene permiso aparece el mail)
-						<br><br>El mail
+						<br><br>E-mail: caballeroian97@gmail.com
 						</div>
 				</td>
 			</tr>
@@ -40,30 +41,48 @@ include "MenuBarra.php";
 					<div class="UnConductorPasajero">
 						Conductor
 					</div>
-					<div class="AlineacionVotosNYP" style="margin-top:30%">
-						Votos positivos:
+					<div class="AlineacionVotosNYP">
+						-Viajes Realizados: 25
 					</div>
 					<div class="AlineacionVotosNYP">
-						Votos negativos:
+						-Votos positivos: 20
+					</div>
+					<div class="AlineacionVotosNYP">
+						-Votos negativos: 2
 					</div>
 				</td>
 				<td class="ImagenPerfil">
 					<div class="UnConductorPasajero">
 						Pasajero
 					</div>
-					<div class="AlineacionVotosNYP" style="margin-top:30%">
-						Votos positivos:
+					<div class="AlineacionVotosNYP">
+						-Viajes Realizados: 5
 					</div>
 					<div class="AlineacionVotosNYP">
-						Votos negativos:
+						-Votos positivos: 4
+					</div>
+					<div class="AlineacionVotosNYP">
+						-Votos negativos: 0
 					</div>
 				</td>
 			</tr>
 		</table>
 	</div>
 </div>
+<div class="SeMeTerminoLaOriginalidad">
+	Comentarios como Conductor
+</div>
+<div class="SeMeTerminoLaOriginalidad">
+	Comentarios como Pasajero
+</div>
+
 <div class="ComentariosConductor">
 	<div class="UnComentario">
+		<div>
+			Claudio Fernandez
+			<br>
+			4-10-18
+		</div>
 		El comentario
 	</div>
 	<div class="UnComentario">

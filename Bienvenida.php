@@ -15,6 +15,7 @@
 	<div class="BienvenidaMensaje">Bienvenido a UnAventón!</div>
 	<div class="CajaBienvenida">
 		<div class="CrearUnaCUenta">Crear una cuenta</div>
+		<form>
 		<table class="CajaRegistro">
 			<tr>
 				<td>
@@ -50,6 +51,8 @@
 				</td>
 			</tr>
 		</table>
+			<input type="submit" class="BotonRegistrar" value="Registrar">
+		</form>
 	</div>
 	<div class="CajaDerechaCajaBienvenida">
 		<div class="FraseCompartiendoDestinos">

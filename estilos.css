@@ -16,12 +16,12 @@
 }
 .AlineacionVotosNYP {
 	text-align:left;
-	margin-left:2%;
+	margin-left:20%;
 	margin-bottom:10%;
 	height:10%;
 	width:90%;
 	color:white;
-	font-size:17px;
+	font-size:20px;
 }
 .ArreglarFondoMenuBarra{
 	background-color:#F16868;
@@ -110,21 +110,18 @@
     left: -50%;
 }
 .BotonRegistrar {
+	opacity:1;
 	background-color:#F16868; 
     color:white; 
-    border:2px solid #F16868;
-	height:7%;
-	width:35%;
-	font-size:20px;
-	margin-left:32.5%;
-	margin-right:32.5%;
-	margin-top:5%;
-	font-weight:700;
-	font-family: Arial;
-	text-shadow:3px 3px 4px #f00,
-               3px 3px 3px #aaa,
-               4px 4px 4px #aaa;
-	
+    border:2px solid #BC3D3D;
+	height:10%;
+	width:30%;
+	font-size:25px;
+	margin-left:35%;
+	margin-top:15%;
+	font-weight:800;
+	font-family: Arial;	
+	float:left;
 }
 .BotonReservarAsiento {
 	background-color:#F16868; 
@@ -194,11 +191,14 @@
 	margin:1% 1% 1% 1%;
 }
 .CajaInformacionPersonal {
-	width:47%;
-	margin:1% 1% 1% 1%;
+	width:45%;
+	margin-left:3%;
+	margin-top:2%;
+	margin-bottom:2%;
 	float:left;
-	border:6px solid #F16868;
-	border-radius:30px;
+	border: 6px solid #ffa500;
+    border-radius: 8px;
+	background-color:#ffa500;
 }
 .CajaInformacionCalificacion {
 	width:48%;
@@ -233,19 +233,18 @@
 	margin-right:17%;
 }
 .ComentariosConductor {
-	margin-left:3%;
+	margin-left:3.5%;
 	margin-top:2%;
 	margin-bottom:2%;
-	background-color:green;
+	background-color:#ffa500;
 	width:45%;
 	float:left;
 }
 .ComentariosPasajero {
-	margin-right:3%;
 	margin-top:2%;
 	margin-bottom:2%;
-	margin-left:3%;
-	background-color:green;
+	margin-left:3.5%;
+	background-color:#ffa500;
 	width:45%;
 	float:left;
 }
@@ -353,8 +352,6 @@
 .ImagenPerfil {
 	height:100%;
 	width:50%;
-	background-color:#F16868;
-	border-radius:30px;
 }
 .ImagenPerfilListado {
 	width:5%;
@@ -370,6 +367,11 @@
 	margin-left:7%;
 	color:white;
 	font-weight:800;
+}
+.LaImagenDePerfil {
+	height:30%;
+	max-height:31%;
+	width:100%;
 }
 .LineaPiePagina {
 	width: 100%;
@@ -394,9 +396,8 @@
 .NombreYApellido {
 	width:100%;
 	height:90%;
-	opacity:0.8;
 	color:white;
-	font-size:17px;
+	font-size:20px;
 	margin-top:20%;
 }
 .NombreApellidoListado {
@@ -442,6 +443,18 @@
 	opacity:0.9;
 	background-color:#ffa500;
 }
+.SeMeTerminoLaOriginalidad {
+	width:50%;
+	color:white;
+	font-size:25px;
+	float:left;
+	text-align:center;	
+	text-shadow:3px 3px 4px #f00,
+               5px 5px 3px #aaa,
+               7px 7px 3px #00f;
+	font-weight:800;
+	font-family:Arial;
+}
 .TablaListadoUsuarios {
 	width:75%;
 	float:left;
@@ -465,6 +478,7 @@
 	font-family:Arial;
 	font-weight:750;
 	font-size:30px;
+	margin-bottom:15%;
 }
 .UnAventonInicio {
 	font-family:Arial;
@@ -480,6 +494,10 @@
 	height:5%;
 	width:100%;
 	background-color:orange;
+}
+.Votos {
+	height:10%;
+	width:10%;
 }
 .menuBarra ul li {
     background-color:#F16868;

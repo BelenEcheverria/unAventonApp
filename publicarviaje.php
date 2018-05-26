@@ -28,6 +28,7 @@ include "Header.php";
 include "MenuBarra.php";
     if (isset($usuarioID)){
     ?>
+<br/>
 <form method="POST" action="CrearViaje.php" class="input" onsubmit="return ValidarViaje()">
 <table class="FormularioPublicarViaje">
 	<tr>
@@ -37,7 +38,8 @@ include "MenuBarra.php";
             <option value= "1"> Ocasional </option>
             <option value= "2"> Periodico </option>
           </select>
-      <div id="viajePeriodico">
+      </td>
+      <td id="selectorDeDias">
             <label class="LabelFormularios"> Dias </label>
             <select class="js-example-basic-multiple" id = "dias" name="dias[]" multiple="multiple">
               <option value='1'>Lunes</option>
@@ -48,21 +50,18 @@ include "MenuBarra.php";
               <option value='6'>Sabado</option>
               <option value='7'>Domingo</option>
             </select>
-            <br>
-            </br>
-            <label class="LabelFormularios"> Fecha </label>
-            <input type="date" id="fechainicio" name="fechainicio" class="FormularioVehiculos" placeholder="Fecha inicial...">
-            <br></br>
-            <input type="date" id="fechafinal" name="fechafinal" class="FormularioVehiculos" placeholder="Fecha final...">
-          </td>
-     </div>
-
-     <td>
-     <div id="viajeOcasional">
-    			<label class="LabelFormularios"> Dia </label>
-    			<input type="text" id="fecha" name="fecha" class="FormularioVehiculos" placeholder="Ingrese fecha AAAA-MM-DD..">
-    		</td>
-     </div>
+      </td>
+      <td id="viajeOcasional">
+  			<label class="LabelFormularios"> Dia </label>
+  			<input type="text" id="fecha" name="fecha" class="FormularioVehiculos" placeholder="Ingrese fecha AAAA-MM-DD..">
+      </td>
+  </tr>
+  <tr>
+    <td id="rangoDeFechas">
+      <label class="LabelFormularios"> Fecha </label>
+      <input type="date" id="fechainicio" name="fechainicio" class="FormularioVehiculos" placeholder="Fecha inicial..."/>
+      <input type="date" id="fechafinal" name="fechafinal" class="FormularioVehiculos" placeholder="Fecha final..."/>
+    </td>
 
       <div>
           <td>

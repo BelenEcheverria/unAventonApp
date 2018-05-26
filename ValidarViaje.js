@@ -6,18 +6,26 @@ function cambioTipoDeViaje(){
 		if (tipoDeViajeSeleccionado == "1") {
 			var viajePeriodico = document.getElementById("viajePeriodico");
 			var viajeOcasional = document.getElementById("viajeOcasional");	
-			$("#viajePeriodico").fadeTo("slow", 0);
-			$("#viajeOcasional").fadeTo("slow", 1);
+			//$("#viajePeriodico").fadeTo("slow", 0);
+			$("#selectorDeDias").fadeOut();
+			//$("#viajeOcasional").fadeTo("slow", 1);
+			$("#rangoDeFechas").fadeOut();
+			$("#viajeOcasional").fadeIn();
 			console.log(viajeOcasional);
 		}
 		if (tipoDeViajeSeleccionado == "2") {
 			var viajeOcasional = document.getElementById("viajeOcasional");
 			var viajePeriodico = document.getElementById("viajePeriodico");
-			$("#viajeOcasional").fadeTo("slow", 0);
-			$("#viajePeriodico").fadeTo("slow", 1);
+			//$("#viajeOcasional").fadeTo("slow", 0);
+			$("#viajeOcasional").fadeOut()
+			$//("#viajePeriodico").fadeTo("slow", 1);
+			$("#selectorDeDias").fadeIn();
+			$("#rangoDeFechas").fadeIn();
 			console.log(viajePeriodico);
+		    $('.js-example-basic-multiple').select2(); //como el elemento se vuelve a mostrar, se le debe aplicar nuevamente el script select2
 		}
 	})
+	$("#selectorDeDias").hide(); 
     $('.js-example-basic-multiple').select2();
 }
 //La funcion, crea una variable que obtiene el valor del tipo de viaje deseado  e-->hace referencia al evento que se ejecutó

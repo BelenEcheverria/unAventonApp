@@ -77,6 +77,22 @@
 		$result31= mysqli_query ($link, $query31) or die ('Consuluta query1 fallida: ' .mysqli_error($link));
 		$exito= true;
 	}
+	
+	if (!empty($_FILES['foto']['name'])){
+			if ((($_FILES['foto']['type'] == "image/gif") || ($_FILES["foto"]["type"] == "image/jpeg") || ($_FILES["foto"]["type"] == "image/pjpeg"))){
+			$imagen = $_FILES['foto']['tmp_name'];
+			$aux = file_get_contents ($imagen);
+			$aux = addslashes($aux);
+			$tipoimagen = $_FILES['foto']['type'];
+			$query63= "UPDATE usuarios SET contenidoimagen= '$aux', tipoimagen= '$tipoimagen' WHERE mail = '$_POST[nombreUsuario]'";
+			$result63= mysqli_query ($link, $query63) or die ('Consuluta query63 fallida: ' .mysqli_error($link));
+			$mensaje ="Usuario agregado con foto";
+			} else {
+				$mensaje= "El formato de la imagen no es valido";
+			}
+	} else {
+		$mensaje= "Usuario registrado, sin foto de perfil";
+	}
 ?>
 <html>
 <head> 

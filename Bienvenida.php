@@ -12,7 +12,7 @@
 	<div class="BienvenidaMensaje">Bienvenido a UnAventón!</div>
 	<div class="CajaBienvenida">
 	<div class="CrearUnaCUenta">Crear una cuenta</div>
-		<form name="registro" method="post" action="php/registroUsuario.php">
+		<form name="registro" method="post" action="php/registroUsuario.php" enctype="multipart/form-data">
 			<table class="CajaRegistro">
 				<tr>
 					<td>
@@ -45,6 +45,14 @@
 				<tr>
 					<td>
 						<input type="password" id="nombreusuario" class="FormularioRegistrarse" style="width:192%"name="contrasenia2" placeholder="Repetri contraseña...">
+					</td>
+				</tr>
+			</table>
+			<table class="CajaRegistro">
+				<tr>
+					<td>
+						<div class="FechaNacimiento"> Foto de perfil </div>
+						<input class="FormularioRegistrarse" name="foto" type="file"/>
 					</td>
 				</tr>
 			</table>

@@ -1,0 +1,16 @@
+a{ 
+	text-decoration: none; /* saca el subrayado de los enlaces*/
+	color: #F16868 ;
+}
+
+.body_registro {
+	padding: 5%;
+	text-align: center;
+	background-image: url(Imagenes/registro2.jpg);
+	background-size:cover;
+	height:100%;
+	color: #F16868 ;
+	font-family: Verdana, Sans, "Sans-serif";
+	font-weight: bold;
+	font-size: 125%;
+}

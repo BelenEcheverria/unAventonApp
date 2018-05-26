@@ -1,3 +1,19 @@
+#viajePeriodico{
+	display: none;
+}
+
+#selectorDeDias{
+	width:80%;
+}
+
+#rangoDeFechas{
+	display:none;
+}
+
+.js-example-basic-multiple{
+	width:100%;
+}
+
 .AlineacionCajasInicioSesion {
 	margin-top:2%;
 	margin-left:2%;

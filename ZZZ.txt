@@ -1,0 +1,3 @@
+* Corregir en pivotal la HU ver datos de usuario
+* En Bienvenida.php la parte de agregar imagen que queda afuera de la tabla
+* Agregar la imagen de despues de registrarse

@@ -1,6 +1,0 @@
-Modificaciones belen 12/05:
-* Iniciar y cerrar sesion ya esta hecho
-* Agregue la pagina Iniciar_Sesion.php (ahi te redirige cuando pones usuario o contraseña incorrecta, y explica el error, y aparece nuevamente el formulario, y un link a la pagina de registro)
-* Acomode el icono de un aventon que nos mandaron
-* En el header tuve que hacer algunos cambios para que aparezca cuando bienvenido ... o el iniciar sesion, (cuando lo abri aparecia el menu de buscar flotando en el medio, pero por si es solo mi compu no toque nada)
-* Para no romper nada en la carpeta css puse una hoja de estilos nueva, y use los de ahi, despues si andan los ponemos todos en la misma, o los dejamos asi como quieran

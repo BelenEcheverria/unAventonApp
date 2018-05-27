@@ -1,2 +1,0 @@
-* agregar el header, y la barra en Inicio_Sesion.php
-* acomodar el formato de las cajas de iniciar sesion en el header, para que coincidan con las del formulario

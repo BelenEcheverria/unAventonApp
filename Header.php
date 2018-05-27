@@ -28,7 +28,7 @@
 			<form name="inicioSesion" method="post" action="php/inicioSesion.php">
 			<tr class="AlineacionCajasInicioSesion">
 				<td class="AlineacionCajasInicioSesion">
-					<input type="text" id="nombreusuario" class="FormularioInicioSesion" name="nombreU" placeholder="Usuario..."
+					<input type="text" id="nombreusuario" class="FormularioInicioSesion" name="nombreU" placeholder="Usuario...">
 				</td>
 				<td class="AlineacionCajasInicioSesion">
 					<input type="password" id="nombreusuario" class="FormularioInicioSesion" name="contraU" placeholder="Contraseña ...">
@@ -40,7 +40,7 @@
 			</form>
 			<tr class="AlineacionCajasInicioSesion">
 				<td class="AlineacionCajasInicioSesion"></td>
-				<td class="AlineacionCajasInicioSesion">¿Olvidaste tu contraseña?</td>
+				<td class="AlineacionCajasInicioSesion">  <a style="text-decoration: none; color: white; font-family: Verdana, Sans,Sans-serif";" href="Bienvenida.php"> Crear una cuenta </a> </td>
 			</tr>
 		</table>
 	<?php

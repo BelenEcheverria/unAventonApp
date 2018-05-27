@@ -14,6 +14,10 @@
 	width:100%;
 }
 
+.select2-container--default{
+	margin-left:3%;
+}
+
 .AlineacionCajasInicioSesion {
 	margin-top:2%;
 	margin-left:2%;
@@ -38,11 +42,6 @@
 	width:90%;
 	color:white;
 	font-size:20px;
-}
-.ArreglarFondoMenuBarra{
-	background-color:#F16868;
-	width:100%;
-	height:5.5%;
 }
 .Bienvenida {
 	background-image: url(Imagenes/FondoColores.jpg);
@@ -146,14 +145,13 @@
 	margin-right:2%;
 	margin-top:1.8%;
 	float:right;
-	width:12%;
-	font-size:12px;
+	width:9%;
+	font-size:15px;
 	font-weight:800;
 	font-family: Arial;
 	text-shadow:3px 3px 4px #f00,
                3px 3px 3px #aaa,
-               4px 4px 4px #aaa;
-	
+               4px 4px 4px #aaa;	
 }
 .BotonCrearViaje{
 	background-color:#F16868; 
@@ -514,6 +512,11 @@
 .Votos {
 	height:10%;
 	width:10%;
+}
+.menuBarra{
+	background-color:#F16868;
+	width:100%;
+	height:7%;
 }
 .menuBarra ul li {
     background-color:#F16868;

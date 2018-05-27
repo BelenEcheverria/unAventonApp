@@ -1,4 +1,5 @@
-<div class="ArreglarFondoMenuBarra">
+
+
 	<div class="menuBarra">
 		<ul>
 			<li><a href="Inicio.php">Inicio</a></li>
@@ -16,4 +17,3 @@
 			<li><a href="Listado_Usuarios.php"> Ver usuarios </a></li>
 		</ul>
 	</div>
-</div>

@@ -40,7 +40,8 @@ include "MenuBarra.php";
           </select>
       </td>
       <td id="selectorDeDias">
-            <label class="LabelFormularios"> Dias </label>
+            <label for="dias" class="LabelFormularios"> Dias </label>
+            <br/>
             <select class="js-example-basic-multiple" id = "dias" name="dias[]" multiple="multiple">
               <option value='1'>Lunes</option>
               <option value='2'>Martes</option>

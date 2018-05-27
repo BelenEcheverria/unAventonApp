@@ -515,14 +515,14 @@
 }
 .menuBarra{
 	background-color:#F16868;
-	width:100%;
-	height:7%;
 }
 .menuBarra ul li {
     background-color:#F16868;
+	height:7%;
 }
 
 .menuBarra ul {
+	width:100%;
     list-style:none;
     margin:0;
     padding:0;

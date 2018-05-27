@@ -28,7 +28,7 @@
 	<input type="text" id="color" name="color" class="FormularioVehiculos" placeholder="Ingrese el color...">
 	<label class="LabelFormularios"> Asientos </label>
 	<input type="int" id="asientos" name="asientos" class="FormularioVehiculos" placeholder="Ingrese la cantidad de asientos...">
-	<div><input type="submit" class="BotonRegistrar" value="Registrar"></div>
+	<div><input type="submit" class="BotonVehiculos" value="Agregar"></div>
 </form>
 </div>
 </body>

@@ -11,91 +11,183 @@
 <title> NombreUsuario </title>
 <meta charset="utf-8"/>
 </head>
-<body class="FondoInicio">
+<body class="FondoPerfil">
 <?php
 include_once ("php/conection.php");
 include "Header.php";
 include "MenuBarra.php";
 	?>
-<div class="CajaInformacionUsuario">
-	<div class="CajaInformacionPersonal">
-		<table class="FotoYNombre">
-			<tr class="ImagenPerfil">
-				<td class="ImagenPerfil"><img class="LaImagenDePerfil" src="Imagenes/nube.jpg"></td>
-				<td class="ImagenPerfil">					
-					<div class="NombreYApellido">
-						Nombre: Ian
-						<br><br>Apellido: Caballero
-						<br><br>Nacimiento: 06/10/97
-						<br><br>Informacion de contacto (si se hace click aca y se tiene permiso aparece el mail)
-						<br><br>E-mail: caballeroian97@gmail.com
+<div class="CajaInformacionPersonal">
+	<div class="UnConductorPasajero">
+		Conductor
+	</div>
+	<table style="width:100%;text-align:center" class="FotoYNombre">
+		<tr>
+			<td>
+				<div class="CantidadDeVotos">
+					Viajes Realizados: 25
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<div class="CantidadDeVotos">
+					Votos positivos: 20
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<div class="CantidadDeVotos">
+					Votos negativos: 2
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<div class="ComentariosConductor">
+					<div class="UnComentario">
+						<div style="float:left;text-align:left;width:48%">
+							Claudio Fernandez
 						</div>
-				</td>
-			</tr>
-		</table>
-	</div>
-	<div class="CajaInformacionPersonal">
-		<table class="FotoYNombre">
-			<tr class="ImagenPerfil">
-				<td class="ImagenPerfil">
-					<div class="UnConductorPasajero">
-						Conductor
+						<div style="float:right;text-align:right;width:48%">
+							4-10-18
+						</div>
+						<br>
+						El comentario
 					</div>
-					<div class="AlineacionVotosNYP">
-						-Viajes Realizados: 25
+					<div class="UnComentario">
+						<div style="float:left;text-align:left;width:48%">
+							Claudio Fernandez
+						</div>
+						<div style="float:right;text-align:right;width:48%">
+							4-10-18
+						</div>
+						<br>
+						El comentario
 					</div>
-					<div class="AlineacionVotosNYP">
-						-Votos positivos: 20
-					</div>
-					<div class="AlineacionVotosNYP">
-						-Votos negativos: 2
-					</div>
-				</td>
-				<td class="ImagenPerfil">
-					<div class="UnConductorPasajero">
-						Pasajero
-					</div>
-					<div class="AlineacionVotosNYP">
-						-Viajes Realizados: 5
-					</div>
-					<div class="AlineacionVotosNYP">
-						-Votos positivos: 4
-					</div>
-					<div class="AlineacionVotosNYP">
-						-Votos negativos: 0
-					</div>
-				</td>
-			</tr>
-		</table>
-	</div>
+				</div>
+			</td>
+		</tr>
+	</table>
 </div>
-<div class="SeMeTerminoLaOriginalidad">
-	Comentarios como Conductor
+<div class="CajaInformacionPersonal">
+	<div class="ImagenPerfil"><img class="LaImagenDePerfil" src="Imagenes/nube.jpg"></div>
+	<table style="width:100%;text-align:center" class="FotoYNombre">
+		<tr>
+			<td>
+				<div class="CantidadDeVotos">
+				Nombre: Ian
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<div class="CantidadDeVotos">
+				Apellido: Caballero
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<div class="CantidadDeVotos">
+				Nacimiento: 06/10/1997
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<div class="CantidadDeVotos">
+				E-mail: caballeroian97@gmail.com
+				</div>
+			</td>
+		</tr>
+	</table>
 </div>
-<div class="SeMeTerminoLaOriginalidad">
-	Comentarios como Pasajero
-</div>
-
-<div class="ComentariosConductor">
-	<div class="UnComentario">
-		<div>
-			Claudio Fernandez
-			<br>
-			4-10-18
-		</div>
-		El comentario
+<div class="CajaInformacionPersonal">
+	<div class="UnConductorPasajero">
+		Pasajero
 	</div>
-	<div class="UnComentario">
-		El comentario
-	</div>
-</div>
-<div class="ComentariosPasajero">
-	<div class="UnComentario">
-		El comentario
-	</div>
-	<div class="UnComentario">
-		El comentario
-	</div>
+	<table style="width:100%;text-align:center" class="FotoYNombre">
+		<tr>
+			<td>
+				<div class="CantidadDeVotos">
+					Viajes Realizados: 25
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<div class="CantidadDeVotos">
+					Votos Positivos: 20
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<div class="CantidadDeVotos">
+					Votos Negativos : 2
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<div class="ComentariosConductor">
+					<div class="UnComentario">
+						<div style="float:left;text-align:left;width:48%">
+							Claudio Fernandez
+						</div>
+						<div style="float:right;text-align:right;width:48%">
+							4-10-18
+						</div>
+						<br>
+						<br>
+						Maneja muy rapido, no respeta los semaforos
+					</div>
+					<div class="UnComentario">
+						<div style="float:left;text-align:left;width:48%">
+							Claudio Fernandez
+						</div>
+						<div style="float:right;text-align:right;width:48%">
+							4-10-18
+						</div>
+						<br>
+						El comentario
+					</div>
+					<div class="UnComentario">
+						<div style="float:left;text-align:left;width:48%">
+							Claudio Fernandez
+						</div>
+						<div style="float:right;text-align:right;width:48%">
+							4-10-18
+						</div>
+						<br>
+						El comentario
+					</div>
+					<div class="UnComentario">
+						<div style="float:left;text-align:left;width:48%">
+							Claudio Fernandez
+						</div>
+						<div style="float:right;text-align:right;width:48%">
+							4-10-18
+						</div>
+						<br>
+						El comentario
+					</div>
+					<div class="UnComentario">
+						<div style="float:left;text-align:left;width:48%">
+							Claudio Fernandez
+						</div>
+						<div style="float:right;text-align:right;width:48%">
+							4-10-18
+						</div>
+						<br>
+						El comentario
+					</div>
+				</div>
+			</td>
+		</tr>
+	</table>
 </div>
 <div class="LineaPiePagina"></div>
 </div>

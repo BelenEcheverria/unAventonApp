@@ -22,6 +22,7 @@
 	width:90%;
 	color:white;
 	font-size:20px;
+	padding-left:10px;
 }
 .ArreglarFondoMenuBarra{
 	background-color:#F16868;
@@ -54,6 +55,19 @@
 .blanco {
 	height:8%;
 	width:100%;
+}
+.BotonVehiculos {
+	margin-left:30%;
+	margin-top:2%;
+	border:6px solid #ffa500;
+	border-radius:8px;
+	width:40%;
+	height:8%;
+	background-color:#F16868;
+	color:white;
+	font-family:Arial;
+	font-weight:800;
+	font-size:15px;
 }
 .BotonBuscar {
 	background-color:#F16868; 
@@ -191,14 +205,14 @@
 	margin:1% 1% 1% 1%;
 }
 .CajaInformacionPersonal {
-	width:45%;
-	margin-left:3%;
+	width:30%;
 	margin-top:2%;
+	margin-left:2.5%;
 	margin-bottom:2%;
 	float:left;
-	border: 6px solid #ffa500;
-    border-radius: 8px;
-	background-color:#ffa500;
+	background-color:#F16868;
+	border-radius:30px;
+	opacity:0.8;
 }
 .CajaInformacionCalificacion {
 	width:48%;
@@ -232,12 +246,21 @@
 	margin-left:17%;
 	margin-right:17%;
 }
+.CantidadDeVotos {
+	margin-top:8%;
+	margin-bottom:5%;
+	color:white;
+	font-family:Arial;
+	font-size:20px;
+}
 .ComentariosConductor {
-	margin-left:3.5%;
+	margin-left:4%;
+	margin-right:4%;
 	margin-top:2%;
-	margin-bottom:2%;
+	margin-bottom:4%;
 	background-color:#ffa500;
-	width:45%;
+	height:50%;
+	width:92%;
 	float:left;
 }
 .ComentariosPasajero {
@@ -256,6 +279,12 @@
 	margin-left:18%;
 	font-family:Arial;
 	color:white;
+}
+.DescripcionAuto {
+	font-weight:800;
+	color:white;
+	font-size:25px;
+	height:10%;
 }
 .FechaNacimiento {
 	font-size:20px;
@@ -322,14 +351,19 @@
 	background-size:100%;
 	height:100%;
 }
+.FondoPerfil {
+	background-image: url(Imagenes/Calle.jpg);
+	background-size:100%;
+	height:100%;
+}
 .FondoBienvenida {
 	background-image: url(Imagenes/6c6.jpg);
 	background-size:100%;
 	height:100%;
 }
-.FotoYNombre {
+.TablaFotoYNombre {
 	width:100%;
-	height:50%;
+	text-align:center;
 }
 .Header {
 	height:15%;
@@ -349,10 +383,6 @@
 	height:8%;
 	width:50%;
 }
-.ImagenPerfil {
-	height:100%;
-	width:50%;
-}
 .ImagenPerfilListado {
 	width:5%;
 	height:50%;
@@ -369,9 +399,13 @@
 	font-weight:800;
 }
 .LaImagenDePerfil {
-	height:30%;
+	height:35%;
+	width:88%;
 	max-height:31%;
-	width:100%;
+	margin-top:6%;
+	margin-left:6%;
+	margin-right:6%;
+	
 }
 .LineaPiePagina {
 	width: 100%;
@@ -399,6 +433,7 @@
 	color:white;
 	font-size:20px;
 	margin-top:20%;
+	padding-left:20px;
 }
 .NombreApellidoListado {
 	width:18%;
@@ -426,11 +461,11 @@
 }
 
 .registrar {
-	margin:10px 35%;
+	margin-left:35%;
+	margin-top:2.5%;
 	border:6px solid #ffa500;
 	border-radius:8px;
 	width:30%;
-	float:right;
 	opacity:0.9;
 	background-color:#ffa500;
 }
@@ -444,10 +479,8 @@
 	background-color:#ffa500;
 }
 .SeMeTerminoLaOriginalidad {
-	width:50%;
 	color:white;
 	font-size:25px;
-	float:left;
 	text-align:center;	
 	text-shadow:3px 3px 4px #f00,
                5px 5px 3px #aaa,
@@ -458,6 +491,17 @@
 .TablaListadoUsuarios {
 	width:75%;
 	float:left;
+}
+.TablaMisVehiculos {
+    border: 6px solid #C6ABFE;
+    border-radius: 8px;
+    width: 50%;
+	height:10%;
+    margin-left: 25%;
+    margin-top: 2.5%;
+    background-color: #8000FF;
+    opacity: 0.8;
+	text-align:center;
 }
 .UnComentario {
 	height:8%;
@@ -478,7 +522,7 @@
 	font-family:Arial;
 	font-weight:750;
 	font-size:30px;
-	margin-bottom:15%;
+	margin-top:2%;
 }
 .UnAventonInicio {
 	font-family:Arial;

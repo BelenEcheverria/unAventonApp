@@ -11,7 +11,7 @@
 					<li><a href="EliminarVehiculo.php">Eliminar</a></li>
 				</ul>
 			</li>
-			<li><a href="verPerfilUsuario.php">Perfil</a></li>
+			<li><a href="verPerfilUsuario.php?id=<?php echo $usuarioID ?> ">Mi Perfil</a></li>
 			<li><a href="#">Editar Perfil</a></li>
 			<li><a href="Listado_Usuarios.php"> Ver usuarios </a></li>
 		</ul>

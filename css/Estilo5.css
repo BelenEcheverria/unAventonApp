@@ -1,0 +1,13 @@
+/** Perfil Usuario **/
+a{ 
+	text-decoration: none; /* saca el subrayado de los enlaces*/
+	color: white ;
+}
+
+.noIniciada {
+	font-family: Arial, sans-serif;
+	color: white;
+	font-weight: bold;
+	font-size: 200%;
+	text-align: center;
+}

@@ -1,0 +1,6 @@
+INSERT INTO `calificacion` (`id`, `fecha`, `rol`, `puntuacion`, `comentario`, `idUsuarioAutor`, `idUsuarioCalificado`) VALUES (NULL, '2018-05-20', 'conductor', '1', 'Llegamos super rapido', '2', '1');
+INSERT INTO `calificacion` (`id`, `fecha`, `rol`, `puntuacion`, `comentario`, `idUsuarioAutor`, `idUsuarioCalificado`) VALUES (NULL, '2018-05-20', 'conductor', '-1', 'Se paso todos los semaforos en rojo', '3', '1');
+INSERT INTO `estadospostulacion` (`id`, `estado`) VALUES (NULL, 'Viaje realizado');
+INSERT INTO `postulaciones` (`id`, `fecha`, `idViaje`, `idUsuario`, `idEstado`) VALUES (NULL, '2018-05-21', '2', '1', '4');
+INSERT INTO `calificacion` (`id`, `fecha`, `rol`, `puntuacion`, `comentario`, `idUsuarioAutor`, `idUsuarioCalificado`) VALUES (NULL, '2018-05-21', 'pasajero', '-1', 'Llego tarde al viaje', '2', '1');
+INSERT INTO `calificacion` (`id`, `fecha`, `rol`, `puntuacion`, `comentario`, `idUsuarioAutor`, `idUsuarioCalificado`) VALUES (NULL, '2018-05-14', 'pasajero', '-1', 'No queria encender la radio', '3', '1');

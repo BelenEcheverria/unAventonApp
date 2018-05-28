@@ -90,19 +90,10 @@
 									echo ($comentario['fecha'])
 									?>
 								</div>
-								<span>
-									<?php echo ($comentario['comentario']); ?>
-									<span style="font-weight: bolder; color: LimeGreen " >
-									<?php
-										if ($comentario['puntuacion'] == 1) {
-											echo ("+" . $comentario['puntuacion'] . " " );
-										}
-										else { ?>
-									</span>
-									<span style="font-weight: bolder; color: Red" >
-										<?php echo ($comentario['puntuacion'] . " " ); } ?>
-									</span>
-								</span>
+								<br>
+								<?php
+									echo ($comentario['comentario'])
+								?>
 							</div>
 						<?php
 						}
@@ -184,82 +175,78 @@
 		<tr>
 			<td>
 				<div class="CantidadDeVotos">
-					Viajes Realizados:
-					<?php
-						$query= "SELECT COUNT(*) FROM postulaciones WHERE idUsuario= $id AND idEstado= 4";
-						$result= mysqli_query ($link, $query) or die ('Consulta fallida ' .mysqli_error($link));
-						$data = mysqli_fetch_array ($result);
-						echo ($data[0]);
-						?>
+					Viajes Realizados: 25
 				</div>
 			</td>
 		</tr>
 		<tr>
 			<td>
 				<div class="CantidadDeVotos">
-					Votos Positivos:
-					<?php
-						$query10= "SELECT COUNT(*) FROM calificacion WHERE idUsuarioCalificado = $id AND puntuacion= 1 AND rol= 'pasajero' ";
-						$result10= mysqli_query ($link, $query10) or die ('Consulta fallida ' .mysqli_error($link));
-						$data10 = mysqli_fetch_array ($result10);
-						echo ($data10[0]);
-					?>
+					Votos Positivos: 20
 				</div>
 			</td>
 		</tr>
 		<tr>
 			<td>
 				<div class="CantidadDeVotos">
-					Votos Negativos:
-					<?php
-						$query10= "SELECT COUNT(*) FROM calificacion WHERE idUsuarioCalificado = $id AND puntuacion= -1 AND rol= 'pasajero' ";
-						$result10= mysqli_query ($link, $query10) or die ('Consulta fallida ' .mysqli_error($link));
-						$data10 = mysqli_fetch_array ($result10);
-						echo ($data10[0]);
-					?>
+					Votos Negativos : 2
 				</div>
 			</td>
 		</tr>
 		<tr>
 			<td>
 				<div class="ComentariosConductor">
-						<?php
-						$query30= "SELECT * FROM calificacion WHERE idUsuarioCalificado = $id AND rol= 'pasajero' ";
-						$result30= mysqli_query ($link, $query30) or die ('Consulta fallida ' .mysqli_error($link));
-						while ($comentario = mysqli_fetch_array ($result30)) {
-						?>
-							<div class="UnComentario">
-								<div style="float:left;text-align:left;width:48%">
-									<?php
-									$id40= $comentario['idUsuarioAutor'];
-									$query40= "SELECT * FROM usuarios WHERE id = $id40";
-									$result40= mysqli_query ($link, $query40) or die ('Consulta fallida ' .mysqli_error($link));
-									$usuarioAutor= mysqli_fetch_array ($result40);
-									echo ($usuarioAutor['nombre'] . " " . $usuarioAutor['apellido'])
-									?>
-								</div>
-								<div style="float:right;text-align:right;width:48%">
-									<?php
-									echo ($comentario['fecha'])
-									?>
-								</div>
-								<span>
-									<?php echo ($comentario['comentario']); ?>
-									<span style="font-weight: bolder; color: LimeGreen " >
-									<?php
-										if ($comentario['puntuacion'] == 1) {
-											echo ("+" . $comentario['puntuacion'] . " " );
-										}
-										else { ?>
-									</span>
-									<span style="font-weight: bolder; color: Red" >
-										<?php echo ($comentario['puntuacion'] . " " ); } ?>
-									</span>
-								</span>
-							</div>
-						<?php
-						}
-						?>
+					<div class="UnComentario">
+						<div style="float:left;text-align:left;width:48%">
+							Claudio Fernandez
+						</div>
+						<div style="float:right;text-align:right;width:48%">
+							4-10-18
+						</div>
+						<br>
+						<br>
+						Maneja muy rapido, no respeta los semaforos
+					</div>
+					<div class="UnComentario">
+						<div style="float:left;text-align:left;width:48%">
+							Claudio Fernandez
+						</div>
+						<div style="float:right;text-align:right;width:48%">
+							4-10-18
+						</div>
+						<br>
+						El comentario
+					</div>
+					<div class="UnComentario">
+						<div style="float:left;text-align:left;width:48%">
+							Claudio Fernandez
+						</div>
+						<div style="float:right;text-align:right;width:48%">
+							4-10-18
+						</div>
+						<br>
+						El comentario
+					</div>
+					<div class="UnComentario">
+						<div style="float:left;text-align:left;width:48%">
+							Claudio Fernandez
+						</div>
+						<div style="float:right;text-align:right;width:48%">
+							4-10-18
+						</div>
+						<br>
+						El comentario
+					</div>
+					<div class="UnComentario">
+						<div style="float:left;text-align:left;width:48%">
+							Claudio Fernandez
+						</div>
+						<div style="float:right;text-align:right;width:48%">
+							4-10-18
+						</div>
+						<br>
+						El comentario
+					</div>
 				</div>
 			</td>
 		</tr>

@@ -17,14 +17,14 @@
 	while ($patenteTabla = mysqli_fetch_array($result)){
 		if ($patente == $patenteTabla['patente']){
 			$cumple = false;
-			$mensaje = 'El vehiculo ya esta cargado';
+			$mensaje = 'El vehiculo ingresado ya se encuentra cargado en sus vehiculos';
 		}
 	}
 	if ($cumple) {
 		$var = "INSERT INTO vehiculos (idUsuario,patente,tipo,asientos,modelo,color,marca,anio)
 		VALUES ('$usuarioID','$patente', '$tipo', '$asientos','$modelo','$color','$marca','$anio')";
 		mysqli_query($link,$var) or die ('Consulta fallida: ' .mysqli_error($link));
-	} else {
-		echo $mensaje;
+		$mensaje= "El vehiculo se agrego correctamente";
 	}
+	header ("Location: ../AgregarVehiculo.php?&mensajeEditar=$mensaje");
 ?>

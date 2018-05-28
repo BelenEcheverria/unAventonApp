@@ -31,7 +31,7 @@
 		}
 		?>
 		</p>
-		<div class= "registrar" style="font-family:Arial">
+		<div class= "registrar" style="font-family:Arial;">
 			<?php
 			if (isset ($_GET['id'])){
 				$id=  $_GET['id'];
@@ -39,7 +39,7 @@
 				$result10 = mysqli_query ($link, $query10) or die ('Consulta fallida ' .mysqli_error($link));
 				$usuario = mysqli_fetch_array ($result10);
 			}
-		?>
+			?>
 			<h1 style="color: white;text-align:center;font-family:Arial;font-weight:750;text-shadow:5px 5px 5px #aaa;"> Informacion Personal </h1> 
 			<p style="color: white;text-align:center;font-family:Arial;font-weight:750;"> Modifique solo los campos que quiera editar </p><br>
 			<form method="POST" action="php/editar.php" class="input" onsubmit="return validar()" enctype="multipart/form-data" >

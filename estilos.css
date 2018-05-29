@@ -154,18 +154,21 @@
 }
 .BotonReservarAsiento {
 	background-color:#F16868; 
-    color:white; 
     border:2px solid black;
 	margin-right:2%;
 	margin-top:1.8%;
 	float:right;
-	width:9%;
+	/*width:9%;*/
 	font-size:15px;
 	font-weight:800;
 	font-family: Arial;
 	text-shadow:3px 3px 4px #f00,
                3px 3px 3px #aaa,
                4px 4px 4px #aaa;	
+}
+.BotonReservarAsiento a {
+    color:white; 
+	text-decoration: none;
 }
 .BotonCrearViaje{
 	background-color:#F16868; 
@@ -429,7 +432,7 @@
 }
 .ListadoViajes {
 	width:99.6%;
-	height:10%;
+	/*height:0%;*/
 	color:white;
 	border:2px solid #F16868;	
 }
@@ -552,13 +555,17 @@
 	height:5%;
 	width:100%;
 	background-color:orange;
+  	padding-bottom: 10px;  
+  	padding-top: 1zpx;
 }
+
 .Votos {
 	height:10%;
 	width:10%;
 }
 .menuBarra{
 	background-color:#F16868;
+	font-family: Arial;
 }
 .menuBarra ul li {
     background-color:#F16868;
@@ -612,4 +619,23 @@
 
 .menuBarra ul li:hover > ul {
     display:block;
+}
+
+.paginado{
+	color: white;
+  	text-align: center;
+  	padding-bottom: 10px;  
+  	padding-top: 1zpx;
+    width: 100%;
+	background-color:#F16868;
+	display: inline-block;
+}
+
+.paginado a {
+	text-decoration: none;
+	color: white;
+    border-radius: 5px;
+    border: 2px solid #ddd;
+    padding-left:10px;
+    padding-right:10px;
 }

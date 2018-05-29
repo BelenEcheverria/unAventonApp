@@ -16,7 +16,7 @@
 	include "Header.php";
 	include "MenuBarra.php";
 ?>
-<div style="width:100%;height:81%">
+<div style="width:100%;height:81%;font-family: Arial;">
 	<div class="Menu">
 		<div class="CajaMenuBusqueda">
 			<form method="POST" style="margin-top:15px"action="crearcuenta.php" class="input" onsubmit="return validar()">

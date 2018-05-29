@@ -29,7 +29,8 @@ include "MenuBarra.php";
     if (isset($usuarioID)){
     ?>
 <br/>
-<form method="POST" action="CrearViaje.php" class="input" onsubmit="return ValidarViaje()">
+
+<form method="POST" style="width:100%;height:81%;font-family: Arial; action="CrearViaje.php" class="input" onsubmit="return ValidarViaje()">
 <table class="FormularioPublicarViaje">
 	<tr>
 		  <td>

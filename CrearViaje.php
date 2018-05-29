@@ -4,32 +4,30 @@
     include "php/classLogin.php";
     $usuario= new usuario();
     $usuario -> session ($usuarioID, $admin);
-    $ID= $_SESSION['id'];
-    session_start(); 
-    foreach ($_POST['dias'] as $dia) {
-       echo $dia;
-     } //imprime valores
-    $tipo=$_POST['tipo'];
-    $dias=$_POST['dias'];  
-    $origen=$_POST['origen'];
-    $destino=$_POST['destino'];
-    $fecha=$_POST['fecha'];
-    $fechainicial=$_POST['fechainicio'];
-    $fechafinal=$_POST['fechafinal'];
-    $horapartida=$_POST['horapartida'];
-    $minutospartida=$_POST['minutospartida'];
-    $duracionhoras=$_POST['duracionhoras']; 
-    $duracionmin=$_POST['duracionmin'];
-    $vehiculo=$_POST['vehiculo']; 
-    $precio=$_POST['precio'];
-    $texto=$_POST['texto'];
+    $ID= $_SESSION['id']; 
 
     //IMPRIMI TODO ANTES DE EMPEZAR A CARGAR LA BASE.
     //echo $_REQUEST['dias']; //imprime tipo de dato (array)
     //echo $_POST['fechainicio']; 2018-05-31
     //echo $_POST['fechafinal']; //2018-06-21
     //Paso a datetime
-
+     foreach ($_POST['dias'] as $dia) {
+         echo $dia;
+     } //imprime valores
+     $tipo=$_POST['tipo'];
+     $dias=$_POST['dias'];  
+     $origen=$_POST['origen'];
+     $destino=$_POST['destino'];
+     $fecha=$_POST['fecha'];
+     $fechainicial=$_POST['fechainicio'];
+     $fechafinal=$_POST['fechafinal'];
+     $horapartida=$_POST['horapartida'];
+     $minutospartida=$_POST['minutospartida'];
+     $duracionhoras=$_POST['duracionhoras']; 
+     $duracionmin=$_POST['duracionmin'];
+     $vehiculo=$_POST['vehiculo']; 
+     $precio=$_POST['precio'];
+     $texto=$_POST['texto'];
    if((isset($tipo)) && (isset($dias)) && (isset($origen)) && (isset($destino)) && (isset($fecha)) OR (isset($fechainicial)) && (isset($fechafinal)) && (isset($horapartida)) && (isset($minutospartida)) && (isset($duracionhoras)) && (isset($duracionmin)) && (isset($vehiculo)) && (isset($precio)) && (isset($texto))){
 
       if ($tipo=="1"){ //OCASIONAL
@@ -66,8 +64,9 @@
                    //$buscarCalificaciones = "SELECT * FROM calificaciones WHERE idUsuarioAutor='$ID'";
                    if (!empty($rUNO)){
                       $_SESSION["error"]="Verifique sus pagos, califiaciones pendientes y la fecha de viaje";
+                      $mensaje = "No esta vacio, debe pagos, calificaciones o se superpone el viaje";
+                      header("Location: ErrorPublicarViaje.php?mensaje=$mensaje"); 
                       echo"No esta vacio, debe pagos, calificaciones o se superpone el viaje";
-                      header("Location: PublicarViaje.php");
                    }
                    else{  //NO TIENE VIAJES CON DEUDA, NI DEBE COINCIDE CON FECHAS INGRESADAS
                      mysqli_query($link, "INSERT INTO viajes(fecha, hora, minuto, duracionHoras, duracionMinutos, precio, texto, idEstado, idOrigen, idDestino, idVehiculo, idConductor ) VALUES ('$fechaBase', '$_POST[horapartida]', '$_POST[minutospartida]', '$_POST[duracionhoras]', '$_POST[duracionmin]', '$_POST[precio]', '$_POST[texto]', '1', '$_POST[origen]', '$_POST[destino]', '$_POST[vehiculo]', '$ID')");
@@ -78,8 +77,9 @@
         } 
     } 
     else{
+      $mensaje="No ingreso los datos";
       $_SESSION["error"]="No ingresó todos los datos";
       echo "No ingreso todos los datos";
-      header("Location: PublicarViaje.php"); 
+      header("Location: ErrorPublicarViaje.php?mensaje=$mensaje"); 
     } 
 ?>

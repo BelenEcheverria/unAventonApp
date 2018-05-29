@@ -90,9 +90,7 @@
 			} else {
 				$mensaje= "El formato de la imagen no es valido";
 			}
-	} else {
-		$mensaje= "Usuario registrado, sin foto de perfil";
-	}
+	} 
 ?>
 <html>
 <head> 

@@ -99,7 +99,7 @@
 							<td class="AlineacionCajasListaViajesHorizontal"><?php echo utf8_encode($origenViaje);?></td> 
 							<td class="AlineacionCajasListaViajesHorizontal"><?php echo utf8_encode($destinoViaje);?></td> 
 							<td class="AlineacionCajasListaViajesHorizontal"><?php echo utf8_encode($dia);?></td> 
-							<td class="AlineacionCajasListaViajesHorizontal"><?php echo utf8_encode($horaPartida); 
+							<td class="AlineacionCajasListaViajesHorizontal"><?php echo utf8_encode($horaPartida);?>:<?php
 							echo utf8_encode($minutosPartida);?></td>
 							<td class="AlineacionCajasListaViajesHorizontal"><?php echo utf8_encode($precio);?></td>
 							<td class="AlineacionCajasListaViajesHorizontal"><?php echo utf8_encode($vehiculoViaje);?></td> 

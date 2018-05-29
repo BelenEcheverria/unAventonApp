@@ -42,13 +42,12 @@
 		</div>
 			<div class= "registrar">
 			<h1 style="color:white;text-align:center;font-family:Arial;font-weight:750;text-shadow:5px 5px 5px #aaa;"> Modificar Vehiculo </h1>
-			<p style="color: white;text-align:center;font-family:Arial;font-weight:750;"> Modifique solo los campos que quiera editar </p><br>
 			<form style="color:white;font-family:Arial" method="POST" action="php/editarVehiculo.php" class="input" onsubmit="return validar()">
 				<span class="LabelFormularios"> Patente: <?php echo $vehiculo['patente']?>  </span> <br><br>
-				<span class="LabelFormularios"> Modelo </span>
-				<input type="text" name="modelo" class="FormularioRegistrarse" value="<?php echo $vehiculo['modelo']?>" > <br>
+				<label class="LabelFormularios"> Modelo </label>
+				<input type="text" name="modelo" class="FormularioVehiculos" value="<?php echo $vehiculo['modelo']?>" > <br>
 				<span class="LabelFormularios"> Marca </span>
-				<input type="text" name="marca" class="FormularioRegistrarse" value="<?php echo $vehiculo['marca']?>" > <br>
+				<input type="text" name="marca" class="FormularioVehiculos" value="<?php echo $vehiculo['marca']?>" > <br>
 				<label class="LabelFormularios"> Tipo </label>
 				<select class="FormularioVehiculos" name="tipo" value="<?php echo $vehiculo ?>"> 
 					<option value= "auto" <?php if ($vehiculo['tipo']== "auto") {echo "selected";} ?>> Auto  </option>
@@ -56,11 +55,11 @@
 					<option value= "camioneta" <?php if ($vehiculo['tipo']== "camioneta") {echo "selected";} ?>> Camioneta </option>
 				</select>
 				<span class="LabelFormularios"> Año </span>
-				<input type="text" name="anio" class="FormularioRegistrarse" value="<?php echo $vehiculo['anio']?>" > <br>
+				<input type="text" name="anio" class="FormularioVehiculos" value="<?php echo $vehiculo['anio']?>" > <br>
 				<span class="LabelFormularios"> Color </span>
-				<input type="text" name="color" class="FormularioRegistrarse" value="<?php echo $vehiculo['color']?>" > <br>
+				<input type="text" name="color" class="FormularioVehiculos" value="<?php echo $vehiculo['color']?>" > <br>
 				<span class="LabelFormularios"> Asientos </span>
-				<input type="text" name="asientos" class="FormularioRegistrarse" value="<?php echo $vehiculo['asientos']?>" > <br>
+				<input type="text" name="asientos" class="FormularioVehiculos" value="<?php echo $vehiculo['asientos']?>" > <br>
 				<input type="hidden" name="id" value="<?php echo $idVehiculo ?>">
 			<div><input type="submit" class="BotonVehiculos" value="Modificar"></div>
 		</form>

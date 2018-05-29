@@ -51,7 +51,7 @@
 	   	if($result){
 	   		$cantidad_viajes = mysqli_num_rows($result);
 	   	} //Obtener la cantidad todal de viajes
-	   	$tamaño_paginas = 10;
+	   	$tamaño_paginas = 8;
 	   	if(isset($_GET["pagina"])){
 	   		$pagina=$_GET["pagina"];
 	   	}
@@ -66,6 +66,7 @@
 		<div class="ListadoViajes">
 		    <?php
 			while($viajes = mysqli_fetch_array($sql_limite)){ 
+					$id_viaje = $viajes['id'];
 					$id_Destino = $viajes['idDestino'];
 					$id_Origen = $viajes['idOrigen'];
 					$id_Vehiculo = $viajes['idVehiculo'];
@@ -105,25 +106,27 @@
 							<td class="AlineacionCajasListaViajesHorizontal"><?php echo utf8_encode($vehiculoViaje);?></td> 
 							<td class="AlineacionCajasListaViajesHorizontal"><?php echo utf8_encode($asientosDisponibles);?></td> 
 							</tr>
-						<div><input type="submit" action="VerViaje.php" class="BotonReservarAsiento" value="Ver viaje"></div>
+						<div class="BotonReservarAsiento">
+							<?php echo "<a href=/unAventon/VerViaje.php?id_viaje=" . $id_viaje . ">" . "Ver viaje" . "</a>";?>
+						</div>
 					</table>
+				    </div>
 				<?php } ?>
 			</tr>	
 	</div>
+</div>
 	 <footer>
    		<div class="paginado">	
    			<?php
    			mysqli_free_result($result);
    	    	for($i=1; $i<=$total_paginas; $i++){ ?>
-   			 	<?php echo "<a href=?pagina=". $i ."</a>";?>
+   			 	<?php echo "<a href=?pagina=". $i . ">" . $i . "</a>";?>
  			<?php
  		 	}
  		 	?>		
  		</div>
  	</div>
  	</footer>
-</div>
-<div class="LineaPiePagina"></div>
 </body>
 </html>
 <!--

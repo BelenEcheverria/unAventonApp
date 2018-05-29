@@ -30,7 +30,7 @@
 			}
 		?>
 		<br><br>
-		<a href="PublicarViaje.php"> Click aqui para volver a la pagina principal </a>
+		<a href="PublicarViaje.php"> Click aqui para volver a intentar </a>
 </div>
 </body>
 </html>

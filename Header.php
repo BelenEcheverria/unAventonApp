@@ -49,7 +49,7 @@
 		<table class="CajaNombreYCierreSesion">
 			<tr>
 				<td class="BienvenidaUsuarioLogueado">
-					&nbsp; <?php echo ("Bienvenido, " . $_SESSION['nombreUsuario']); ?>
+					¡<?php echo ("Bienvenido, " . $_SESSION['nombreUsuario']); ?>!
 				</td>
 				<td>
 					<a href="php/cerrarSesion.php"> 

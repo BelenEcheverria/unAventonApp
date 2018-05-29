@@ -23,6 +23,7 @@
 			}
 		?>
 		</div>
+		<div class="FondoListaModificarVehiculos">
 		<div style="font-family:Arial; color: white; font-weight: bold; text-align: center; font-size: 125%;">
 			<p style="font-size: 150%;" > Seleccione el vehiculo que desea editar </p>
 			<div>
@@ -37,6 +38,7 @@
 			?>
 			</div>
 			</div>
+		</div>
 		</div>
 	<?php	
 	}

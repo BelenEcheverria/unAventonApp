@@ -135,15 +135,15 @@ include "MenuBarra.php";
         	</tr>
         	<tr>
         		<td>
+				<div><input type="submit" class="BotonRegistrar" value="Agregar"></div>
        </div>
 
-			<div><input type="submit" class="BotonRegistrar" value="Agregar"></div>
+			
 		<td>
 	</tr>
 </table>
 </form>
   <?php } ?>
-<div class="LineaPiePagina"></div>
 </body>
 </html>
 

@@ -12,7 +12,6 @@
 	include "Header.php";
 	include "MenuBarra.php";
 ?>
-<br><br><br>
 	<?php 
 	try {
 		$usuario -> iniciada($usuarioID);

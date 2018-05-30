@@ -13,7 +13,7 @@
 		$usuario -> iniciada($usuarioID);
 		$id= $_GET['id'];
 		?>
-		<br><br><br>
+		<br>
 		<div  style="font-family:Arial">
 			<?php
 			if (isset ($_GET['id'])){

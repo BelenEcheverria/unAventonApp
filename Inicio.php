@@ -51,7 +51,7 @@
 	   	if($result){
 	   		$cantidad_viajes = mysqli_num_rows($result);
 	   	} //Obtener la cantidad todal de viajes
-	   	$tamaño_paginas = 8;
+	   	$tamaño_paginas = 7;
 	   	if(isset($_GET["pagina"])){
 	   		$pagina=$_GET["pagina"];
 	   	}
@@ -107,7 +107,7 @@
 							<td class="AlineacionCajasListaViajesHorizontal"><?php echo utf8_encode($asientosDisponibles);?></td> 
 							</tr>
 						<div class="BotonReservarAsiento">
-							<?php echo "<a href=/unAventon/VerViaje.php?id_viaje=" . $id_viaje . ">" . "Ver viaje" . "</a>";?>
+							<a href="verviaje.php?id_viaje=<?php echo $id_viaje ?>"> Ver viaje </a>
 						</div>
 					</table>
 				    </div>

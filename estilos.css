@@ -417,12 +417,12 @@
 }
 .FondoInicio {
 	background-image: url(Imagenes/FondoColores.jpg);
-	background-size:100%;
+	background-size:cover;
 	height:100%;
 }
 .FondoPerfil {
 	background-image: url(Imagenes/Calle.jpg);
-	background-size:100%;
+	background-size:cover;
 	height:100%;
 }
 .FondoBienvenida {

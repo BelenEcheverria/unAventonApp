@@ -14,32 +14,26 @@
 	try {
 		$usuario -> iniciada($usuarioID);
 		$id= $_SESSION['id'];
-	?>
+		$elSelect = "SELECT * FROM vehiculos WHERE idUsuario = $id AND estaActivo = 1";
+		$sql = mysqli_query($link,$elSelect);
+		While ($vehiculo = mysqli_fetch_array($sql)){ ?> 
+			
+			<table class="TablaMisVehiculos">
+				<tr>
+					<td class="DescripcionMisVehiculos"><?php echo utf8_encode($vehiculo['patente']);?><td>
+					<td class="DescripcionMisVehiculos"><?php echo utf8_encode($vehiculo['marca']);?><td>
+					<td class="DescripcionMisVehiculos"><?php echo utf8_encode($vehiculo['modelo']);?><td>
+					<td class="DescripcionMisVehiculos"><?php echo utf8_encode($vehiculo['anio']);?><td>
+					<td class="DescripcionMisVehiculos"><?php echo utf8_encode($vehiculo['color']);?><td>
+					<td class="DescripcionMisVehiculos"><?php echo utf8_encode($vehiculo['tipo']);?><td>
+					<td class="DescripcionMisVehiculos"><?php echo utf8_encode($vehiculo['asientos']);?><td>
+					<td class="DescripcionMisVehiculos"><a href="ModificarVehiculo.php?id=<?php echo $vehiculo['id']?>"><input type="submit" class="BotonEditarMisVehiculos" value="Editar"></a><td>
+				</tr>
+			</table>	
+		
+		<?php } ?>
 
-<table class="TablaMisVehiculos">
-	<tr>
-		<td class="DescripcionMisVehiculos"><td>
-		<td class="DescripcionMisVehiculos">AA000AA<td>
-		<td class="DescripcionMisVehiculos">Volkswagen<td>
-		<td class="DescripcionMisVehiculos">Gol<td>
-		<td class="DescripcionMisVehiculos">Auto<td>
-		<td class="DescripcionMisVehiculos">Gris<td>
-		<td class="DescripcionMisVehiculos">4<td>
-		<td class="DescripcionMisVehiculos"><input type="submit" class="BotonEditarMisVehiculos" value="Editar"><td>
-	</tr>
-</table>
-<table class="TablaMisVehiculos">
-	<tr>
-		<td class="DescripcionMisVehiculos"><td>
-		<td class="DescripcionMisVehiculos">AA000AA<td>
-		<td class="DescripcionMisVehiculos">Volkswagen<td>
-		<td class="DescripcionMisVehiculos">Gol<td>
-		<td class="DescripcionMisVehiculos">Auto<td>
-		<td class="DescripcionMisVehiculos">Gris<td>
-		<td class="DescripcionMisVehiculos">4<td>
-		<td class="DescripcionMisVehiculos"><input type="submit" class="BotonEditarMisVehiculos" value="Editar"><td>
-	</tr>
-</table>
+
 <?php	
 	}
 	catch (Exception $e) {

@@ -12,6 +12,7 @@
 		$IDDefinitivo = $idVehiculo[0];
 		$consulta = "UPDATE vehiculos set estaActivo=0 WHERE id = $IDDefinitivo"; 
 		$result3 = mysqli_query($link,$consulta);
-		echo ($consulta);
 	}
+	$mensaje = "Su vehiculos se ha dado de baja";
+	header ("Location: ../EliminarVehiculo.php?id=$id&mensajeEditar=$mensaje");
 ?>

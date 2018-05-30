@@ -48,7 +48,8 @@
 include "Header.php";
 include "MenuBarra.php";
 ?>
-<div style="width:100%;height:81%">
+<br><br>
+<div style="width:100%;height:80%;margin-left:10%;">
 	<div class="ParteViajes">
 	<div class="ListadoViajes">
 			<table style="width:80%; margin-left:2%;font-family: Arial;">
@@ -64,7 +65,7 @@ include "MenuBarra.php";
 					<td class="AlineacionCajasListaViajesHorizontal"><?php echo "texto: " . utf8_encode($texto)?></td>
 					<td class="AlineacionCajasListaViajesHorizontal"><?php echo "Vehiculo: " . utf8_encode($vehiculoViaje)?></td>	
 				</tr>
-				<div><input type="submit" class="BotonReservarAsiento" value="Reservar"></div>
+				<div><input  style="width:15%;margin-top:3.5%;color:white;height:8%;border-color:white;" type="submit" class="BotonReservarAsiento" value="Reservar"></div>
 			</table>
 	</div>
 </div>

@@ -101,7 +101,7 @@
 	<div class="body_registro"> <br> <br>
 		<?php if ((isset($exito)) and (($exito==true))){ ?>
 			Usuario regitrado exitosamente <br><br>
-			<a href="../Inicio_Sesion.php"> Click aqui para iniciar sesion &nbsp;&nbsp;&nbsp; </a>
+			<a href="../Inicio.php"> Click aqui para iniciar sesion &nbsp;&nbsp;&nbsp; </a>
 		<?php } else { ?>
 			Error al completar el formulario. <br><br>
 			<?php echo ($mensaje); ?> <br><br>

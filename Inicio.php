@@ -51,7 +51,7 @@
 	   	if($result){
 	   		$cantidad_viajes = mysqli_num_rows($result);
 	   	} //Obtener la cantidad todal de viajes
-	   	$tamaño_paginas = 8;
+	   	$tamaño_paginas = 7;
 	   	if(isset($_GET["pagina"])){
 	   		$pagina=$_GET["pagina"];
 	   	}
@@ -100,14 +100,14 @@
 							<td class="AlineacionCajasListaViajesHorizontal"><?php echo utf8_encode($origenViaje);?></td> 
 							<td class="AlineacionCajasListaViajesHorizontal"><?php echo utf8_encode($destinoViaje);?></td> 
 							<td class="AlineacionCajasListaViajesHorizontal"><?php echo utf8_encode($dia);?></td> 
-							<td class="AlineacionCajasListaViajesHorizontal"><?php echo utf8_encode($horaPartida); 
+							<td class="AlineacionCajasListaViajesHorizontal"><?php echo utf8_encode($horaPartida);?>:<?php
 							echo utf8_encode($minutosPartida);?></td>
 							<td class="AlineacionCajasListaViajesHorizontal"><?php echo utf8_encode($precio);?></td>
 							<td class="AlineacionCajasListaViajesHorizontal"><?php echo utf8_encode($vehiculoViaje);?></td> 
 							<td class="AlineacionCajasListaViajesHorizontal"><?php echo utf8_encode($asientosDisponibles);?></td> 
 							</tr>
 						<div class="BotonReservarAsiento">
-							<?php echo "<a href=/VerViaje.php?id_viaje=" . $id_viaje . ">" . "Ver viaje" . "</a>";?>
+							<a href="verviaje.php?id_viaje=<?php echo $id_viaje ?>"> Ver viaje </a>
 						</div>
 					</table>
 				    </div>

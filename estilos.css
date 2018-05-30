@@ -51,8 +51,9 @@
 }
 .BienvenidaUsuarioLogueado {
 	color:white;
-	font-size:25px;
+	font-size:20px;
 	font-weight:800;
+	font-family:Arial;
 }
 
 .BienvenidaMensaje {
@@ -132,25 +133,59 @@
       float: left;
       position: relative;
       left: 50%;
-    }
+}
 .fixer-container {
     float: left;
     position: relative;
     left: -50%;
 }
 .BotonRegistrar {
-	opacity:1;
-	background-color:#F16868; 
-    color:white; 
-    border:2px solid #BC3D3D;
-	height:10%;
-	width:30%;
-	font-size:25px;
-	margin-left:35%;
-	margin-top:15%;
-	font-weight:800;
-	font-family: Arial;	
-	float:left;
+    background-color: #F16868;
+    color: white;
+    border: 2px solid #BC3D3D;
+    height: 10%;
+    width: 35%;
+    font-size: 25px;
+    margin-left: 30%;
+    margin-top: 15%;
+    margin-bottom: 2%;
+    font-weight: 800;
+    font-family: Arial;
+    float: left;
+}
+.BotonMasTarde {
+    background-color: #F16868;
+    color: white;
+    border: 2px solid #BC3D3D;
+    height: 10%;
+    font-size: 25px;
+    margin-top: 15%;
+    margin-bottom: 2%;
+    font-weight: 800;
+    font-family: Arial;
+}
+.BotonEditarMisVehiculos {
+    background-color: #F16868;
+    color: white;
+    border: 2px solid #BC3D3D;
+    font-size: 15px;
+    font-weight: 800;
+    font-family: Arial;
+	margin-left:15%;
+}
+.BotonPublicar {
+    background-color: #F16868;
+    color: white;
+    border: 2px solid #BC3D3D;
+    height: 10%;
+    width: 35%;
+    font-size: 25px;
+    margin-left: 68%;
+    margin-top: 5%;
+    margin-bottom: 2%;
+    font-weight: 800;
+    font-family: Arial;
+    float: left;
 }
 .BotonReservarAsiento {
 	background-color:#F16868; 
@@ -158,9 +193,10 @@
 	margin-right:2%;
 	margin-top:1.8%;
 	float:right;
-	/*width:9%;*/
+	width:8%;
 	font-size:15px;
 	font-weight:800;
+	text-align:center;
 	font-family: Arial;
 	text-shadow:3px 3px 4px #f00,
                3px 3px 3px #aaa,
@@ -303,11 +339,28 @@
 	font-size:25px;
 	height:10%;
 }
+
+.DescripcionMisVehiculos{
+	margin-left: 2%;
+	margin-top:10%;
+	margin-right:2%;
+	font-size: 22px;
+	color: white;
+	text-align: center;
+	float:left;
+}
 .FechaNacimiento {
 	font-size:20px;
 	font-family:Arial;
 	color:white;
 	margin-top:5%;
+}
+.FondoListaModificarVehiculos {
+	width:40%;
+	margin-left:30%;
+	background-color:#ffa500;
+	border: 6px solid #ffa500;
+    border-radius: 8px;
 }
 .FormularioInicioSesion {
     background-color:white;
@@ -336,7 +389,6 @@
 .FormularioPublicarViaje {
 	margin-left:25%;
 	margin-right:25%;
-	margin-top:2.5%;
 	margin-bottom:2.5%;
 	border:6px solid #ffa500;
 	border-radius:8px;
@@ -365,12 +417,12 @@
 }
 .FondoInicio {
 	background-image: url(Imagenes/FondoColores.jpg);
-	background-size:100%;
+	background-size:cover;
 	height:100%;
 }
 .FondoPerfil {
 	background-image: url(Imagenes/Calle.jpg);
-	background-size:100%;
+	background-size:cover;
 	height:100%;
 }
 .FondoBienvenida {
@@ -432,7 +484,6 @@
 }
 .ListadoViajes {
 	width:99.6%;
-	/*height:0%;*/
 	color:white;
 	border:2px solid #F16868;	
 }
@@ -479,7 +530,6 @@
 
 .registrar {
 	margin-left:35%;
-	margin-top:2.5%;
 	border:6px solid #ffa500;
 	border-radius:8px;
 	width:30%;
@@ -509,17 +559,19 @@
 	width:75%;
 	float:left;
 }
-.TablaMisVehiculos {
-    border: 6px solid #C6ABFE;
-    border-radius: 8px;
-    width: 50%;
+
+.TablaMisVehiculos{
+	margin-top: 2%;
+	border-radius:12px;
+	width:50%;
 	height:10%;
-    margin-left: 25%;
-    margin-top: 2.5%;
-    background-color: #8000FF;
-    opacity: 0.8;
-	text-align:center;
+	margin-left:25%;
+	float:left;
+	background-color:#ffa500;
+	opacity:0.9;
+	font-family:Arial;
 }
+
 .UnComentario {
 	height:8%;
 	width:90%;
@@ -552,7 +604,7 @@
 	margin-left:5%;
 }
 .ViajesInfoHorizontal {
-	height:5%;
+	height:3%;
 	width:100%;
 	background-color:orange;
   	padding-bottom: 10px;  
@@ -566,6 +618,7 @@
 .menuBarra{
 	background-color:#F16868;
 	font-family: Arial;
+	height:6%;
 }
 .menuBarra ul li {
     background-color:#F16868;
@@ -585,8 +638,8 @@
     display:block;
     color:#fff;
     text-decoration:none;
-    font-weight:400;
-    font-size:15px;
+    font-weight:700;
+    font-size:17px;
     padding:10px;
 	letter-spacing:1px;
 }

@@ -29,7 +29,6 @@ include "MenuBarra.php";
     if (isset($usuarioID)){
     ?>
 <br/>
-
 <form method="POST" style="width:100%;height:81%;font-family:Arial;" action="CrearViaje.php" class="input" onsubmit="return ValidarViaje()">
 <table class="FormularioPublicarViaje">
 	<tr>
@@ -42,7 +41,7 @@ include "MenuBarra.php";
       </td>
       <td id="selectorDeDias">
             <label for="dias" class="LabelFormularios"> Dias </label>
-             
+             <br><br/>
             <select class="js-example-basic-multiple" id = "dias" name="dias[]" multiple="multiple">
               <option value='1'>Lunes</option>
               <option value='2'>Martes</option>

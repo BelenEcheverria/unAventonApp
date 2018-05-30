@@ -28,7 +28,7 @@
 			<form name="inicioSesion" method="post" action="php/inicioSesion.php">
 			<tr class="AlineacionCajasInicioSesion">
 				<td class="AlineacionCajasInicioSesion">
-					<input type="text" id="nombreusuario" class="FormularioInicioSesion" name="nombreU" placeholder="Usuario...">
+					<input type="text" id="nombreusuario" class="FormularioInicioSesion" name="nombreU" placeholder="E-mail">
 				</td>
 				<td class="AlineacionCajasInicioSesion">
 					<input type="password" id="nombreusuario" class="FormularioInicioSesion" name="contraU" placeholder="Contraseña ...">
@@ -49,7 +49,7 @@
 		<table class="CajaNombreYCierreSesion">
 			<tr>
 				<td class="BienvenidaUsuarioLogueado">
-					&nbsp; <?php echo ("Bienvenido, " . $_SESSION['nombreUsuario']); ?>
+					¡<?php echo ("Bienvenido, " . $_SESSION['nombreUsuario']); ?>!
 				</td>
 				<td>
 					<a href="php/cerrarSesion.php"> 

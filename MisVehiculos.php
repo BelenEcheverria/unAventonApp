@@ -14,7 +14,7 @@
 	try {
 		$usuario -> iniciada($usuarioID);
 		$id= $_SESSION['id'];
-		$elSelect = "SELECT * FROM vehiculos WHERE idUsuario = $id AND estaActivo = 1";
+		$elSelect = "SELECT * FROM vehiculos WHERE idUsuario = $id AND estaActivo = '1'";
 		$sql = mysqli_query($link,$elSelect);
 		While ($vehiculo = mysqli_fetch_array($sql)){ ?> 
 			

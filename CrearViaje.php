@@ -33,7 +33,7 @@
 
       if ($tipo=="1"){ //OCASIONAL
 
-             $buscarViajes = "SELECT * FROM viajes WHERE idConductor=$ID AND (idEstado = '3' OR fecha = '$fecha' OR ($ID IN (SELECT idUsuarioAutor FROM calificacionespendientes)))";
+             $buscarViajes = "SELECT * FROM viajes INNER JOIN calificacionespendientes WHERE idConductor=$ID AND (idEstado = '3' OR fecha = '$fecha' OR idUsuarioAutor = $ID)";
              $resultviajes = mysqli_query($link,$buscarViajes);
              $rUNO = mysqli_fetch_array($resultviajes);
              //$buscarCalificaciones = "SELECT * FROM calificaciones WHERE idUsuarioAutor='$ID'";
@@ -59,7 +59,7 @@
                 if (in_array($diaDeSemana, $dias)) {
                    echo $dt->format("N Y-m-d\n");
                    $fechaBase = ($dt->format("Y-m-d\n"));
-                   $buscarViajes = "SELECT * FROM viajes WHERE idConductor=$ID AND (idEstado = '3' OR fecha = '$fechaBase' OR ($ID IN (SELECT idUsuarioAutor FROM calificacionespendientes)))";
+                   $buscarViajes = "SELECT * FROM viajes INNER JOIN calificacionespendientes WHERE idConductor=$ID AND (idEstado = '3' OR fecha = '$fechaBase' OR idUsuarioAutor = $ID)";
                    $resultviajes = mysqli_query($link,$buscarViajes);
                    $rUNO = mysqli_fetch_array($resultviajes);
                    //$buscarCalificaciones = "SELECT * FROM calificaciones WHERE idUsuarioAutor='$ID'";

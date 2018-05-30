@@ -117,7 +117,7 @@ include "MenuBarra.php";
         			<label class="LabelFormularios"> Vehiculo </label>
         			<select class="FormularioVehiculos" id = "vehiculo" name = "vehiculo" value="<?php echo $vehiculo ?>"> 
                         <?php
-                          $consulta_vehiculos = "SELECT * FROM vehiculos WHERE idUsuario=$ID"; 
+                          $consulta_vehiculos = "SELECT * FROM vehiculos WHERE idUsuario=$ID AND estaActivo = '1'"; 
                           $result_vehiculos = mysqli_query($link,$consulta_vehiculos); ?>
                           <option value= ""> Elige un auto </option> <?php              
                           while($fila = mysqli_fetch_array($result_vehiculos)){

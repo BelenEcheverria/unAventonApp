@@ -121,8 +121,8 @@ include "MenuBarra.php";
                           $result_vehiculos = mysqli_query($link,$consulta_vehiculos); ?>
                           <option value= ""> Elige un auto </option> <?php              
                           while($fila = mysqli_fetch_array($result_vehiculos)){
-                            echo "<option value='". $fila['id'] . "'>" . $fila['modelo'] . " </option>";
-                            echo "<a href='?modelo=" . $fila['id'] . "'>" . $id . " </a> ";
+                            echo "<option value='". $fila['id'] . "'>" . $fila['patente'] . " </option>";
+                            echo "<a href='?patente=" . $fila['id'] . "'>" . $id . " </a> ";
                           }
                         ?>
         			</select>

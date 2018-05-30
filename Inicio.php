@@ -107,7 +107,7 @@
 							<td class="AlineacionCajasListaViajesHorizontal"><?php echo utf8_encode($asientosDisponibles);?></td> 
 							</tr>
 						<div class="BotonReservarAsiento">
-							<?php echo "<a href=/unAventon/VerViaje.php?id_viaje=" . $id_viaje . ">" . "Ver viaje" . "</a>";?>
+							<?php echo "<a href=/VerViaje.php?id_viaje=" . $id_viaje . ">" . "Ver viaje" . "</a>";?>
 						</div>
 					</table>
 				    </div>

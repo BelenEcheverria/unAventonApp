@@ -39,10 +39,10 @@
              //$buscarCalificaciones = "SELECT * FROM calificaciones WHERE idUsuarioAutor='$ID'";
              if (!empty($rUNO)){
                 $_SESSION["error"]="Verifique sus pagos, califiaciones pendientes y la fecha de viaje";
-                echo"No esta vacio, debe pagos, calificaciones o se superpone el viaje";
-                header("Location: PublicarViaje.php");
+                $mensaje = "Verifique su estado de cuenta, pagos, calificaciones pendientes o fechas de viajes ya publicadas.";
+                header("Location: ErrorPublicarViaje.php?mensaje=$mensaje"); 
              }
-             else{  //NO TIENE VIAJES CON DEUDA, NI DEBE COINCIDE CON FECHAS INGRESADAS
+             else{  //NO TIENE VIAJES CON DEUDA, NI DEBE CALIFICACIONES, NI COINCIDE CON FECHAS INGRESADAS
                mysqli_query($link, "INSERT INTO viajes(fecha, hora, minuto, duracionHoras, duracionMinutos, precio, texto, idEstado, idOrigen, idDestino, idVehiculo, idConductor ) VALUES ('$fecha', '$_POST[horapartida]', '$_POST[minutospartida]', '$_POST[duracionhoras]', '$_POST[duracionmin]', '$_POST[precio]', '$_POST[texto]', '1', '$_POST[origen]', '$_POST[destino]', '$_POST[vehiculo]', '$ID')");
                header("Location: Inicio.php"); 
              }
@@ -65,11 +65,10 @@
                    //$buscarCalificaciones = "SELECT * FROM calificaciones WHERE idUsuarioAutor='$ID'";
                    if (!empty($rUNO)){
                       $_SESSION["error"]="Verifique sus pagos, califiaciones pendientes y la fecha de viaje";
-                      $mensaje = "No esta vacio, debe pagos, calificaciones o se superpone el viaje";
+                      $mensaje = "Verifique su estado de cuenta, pagos, calificaciones pendientes o fechas de viajes ya publicadas.";
                       header("Location: ErrorPublicarViaje.php?mensaje=$mensaje"); 
-                      echo"No esta vacio, debe pagos, calificaciones o se superpone el viaje";
                    }
-                   else{  //NO TIENE VIAJES CON DEUDA, NI DEBE COINCIDE CON FECHAS INGRESADAS
+                   else{  //NO TIENE VIAJES CON DEUDA, NI DEBE CALIFICACIONES, NI COINCIDE CON FECHAS INGRESADAS
                      mysqli_query($link, "INSERT INTO viajes(fecha, hora, minuto, duracionHoras, duracionMinutos, precio, texto, idEstado, idOrigen, idDestino, idVehiculo, idConductor ) VALUES ('$fechaBase', '$_POST[horapartida]', '$_POST[minutospartida]', '$_POST[duracionhoras]', '$_POST[duracionmin]', '$_POST[precio]', '$_POST[texto]', '1', '$_POST[origen]', '$_POST[destino]', '$_POST[vehiculo]', '$ID')");
                      header("Location: Inicio.php"); 
                    }

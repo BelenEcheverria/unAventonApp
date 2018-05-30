@@ -17,7 +17,6 @@
 	include "Header.php";
 	include "MenuBarra.php";
 	?>
-	<br><br><br>
 	<?php 
 	try {
 		$usuario -> iniciada($usuarioID);
@@ -40,23 +39,20 @@
 				$usuario = mysqli_fetch_array ($result10);
 			}
 			?>
-			<h1 style="color: white;text-align:center;font-family:Arial;font-weight:750;text-shadow:5px 5px 5px #aaa;"> Informacion Personal </h1> 
-			<p style="color: white;text-align:center;font-family:Arial;font-weight:750;"> Modifique solo los campos que quiera editar </p><br>
+			<h1 style="color: white;text-align:center;font-family:Arial;font-weight:750;text-shadow:5px 5px 5px #aaa;"> Informacion Personal </h1>
 			<form method="POST" action="php/editar.php" class="input" onsubmit="return validar()" enctype="multipart/form-data" >
-				<span class="LabelFormularios"> Mail: <?php echo $usuario['mail']?>  </span> <br><br>
-				<span class="LabelFormularios"> Fecha de nacimiento: <?php echo $usuario['nacimiento']?>  </span> <br>
-				<span class="LabelFormularios"> Nombre </span>
-				<input type="text" name="nombre" class="FormularioRegistrarse" placeholder="Nombre..." value="<?php echo $usuario['nombre']?>" >
-				<br>
-				<span class="LabelFormularios"> Apellido </span>
-				<input type="text" id="apellido" name="apellido" class="FormularioRegistrarse" placeholder="Apellido..." value="<?php echo $usuario['apellido']?>">
-				<br>
-				<span class="LabelFormularios"> Contraseña </span>
-				<input type="password" id="clave1" name="password1" class="FormularioRegistrarse" placeholder="Contraseña..." value= "<?php echo $usuario['password']?>">
-				<span class="LabelFormularios"> Repita contraseña </span>
-				<input type="password" id="clave2" name="password2" class="FormularioRegistrarse" placeholder="Repetir Contraseña..." value= "<?php echo $usuario['password']?>">
+				<label class="LabelFormularios"> Mail: <?php echo $usuario['mail']?>  </label><br><br>
+				<label class="LabelFormularios"> Fecha de nacimiento: <?php echo $usuario['nacimiento']?>  </label><br><br>
+				<label class="LabelFormularios"> Nombre </label>
+				<input type="text" name="nombre" class="FormularioVehiculos" placeholder="Nombre..." value="<?php echo $usuario['nombre']?>" >
+				<label class="LabelFormularios"> Apellido </span>
+				<input type="text" id="apellido" name="apellido" class="FormularioVehiculos" placeholder="Apellido..." value="<?php echo $usuario['apellido']?>">
+				<label class="LabelFormularios"> Contraseña </label>
+				<input type="password" id="clave1" name="password1" class="FormularioVehiculos" placeholder="Contraseña..." value= "<?php echo $usuario['password']?>">
+				<label class="LabelFormularios"> Repita contraseña </label>
+				<input type="password" id="clave2" name="password2" class="FormularioVehiculos" placeholder="Repetir Contraseña..." value= "<?php echo $usuario['password']?>">
 				<input type="hidden" name="id" value="<?php echo $id ?>">
-				<span class="LabelFormularios"> Foto de perfil </span> <br>
+				<label class="LabelFormularios"> Foto de perfil </label>
 				<div class="ImagenPerfil">
 					<?php
 					$imagenUsuario= $usuario['contenidoimagen'];

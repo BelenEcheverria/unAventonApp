@@ -16,43 +16,35 @@
 			<table class="CajaRegistro">
 				<tr>
 					<td>
-						<input type="text" id="nombreusuario" class="FormularioRegistrarse" style="width:90%" name="nombre" maxlength="45" placeholder="Nombre...">
+						<input type="text" id="nombreusuario" class="FormularioRegistrarse" style="width:90%" name="nombre" maxlength="45" placeholder="Nombre..." required/>
 					</td>
 					<td>
-						<input type="text" id="nombreusuario" class="FormularioRegistrarse" style="width:90%" name="apellido" maxlength="45" placeholder="Apellido...">
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<input type="text" id="nombreusuario" class="FormularioRegistrarse" style="width:192%" name="nombreUsuario" maxlength="45" placeholder="Correo electronico...">
+						<input type="text" id="nombreusuario" class="FormularioRegistrarse" style="width:90%" name="apellido" maxlength="45" placeholder="Apellido..." required/>
 					</td>
 				</tr>
 				<tr>
 					<td>
-						<div class="FechaNacimiento"> Fecha Nacimiento</div>
+						<input type="E-mail" id="nombreusuario" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" class="FormularioRegistrarse" style="width:192%" name="nombreUsuario" maxlength="45" placeholder="mail@ejemplo.com" required/>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<div class="FechaNacimiento"> Fecha Nacimiento</div >
 					</td>
 				</tr>
 				<tr>
 					<td >
-						<input type="date" value="2013-01-08" id="nombreusuario" class="FormularioRegistrarse" name="nacimiento">
+						<input type="date" value="2013-01-08" id="nombreusuario" class="FormularioRegistrarse" name="nacimiento" required/>
 					</td>
 				</tr>
 				<tr>
 					<td>
-						<input type="password" id="nombreusuario" class="FormularioRegistrarse" style="width:192%" name="contrasenia1" maxlength="32" placeholder="Contraseña...">
+						<input type="password" id="nombreusuario" class="FormularioRegistrarse" style="width:192%" name="contrasenia1" maxlength="32" placeholder="Contraseña..." required/>
 					</td>
 				</tr>
 				<tr>
 					<td>
-						<input type="password" id="nombreusuario" class="FormularioRegistrarse" style="width:192%"name="contrasenia2" placeholder="Repetri contraseña...">
-					</td>
-				</tr>
-			</table>
-			<table class="CajaRegistro">
-				<tr>
-					<td>
-						<div class="FechaNacimiento"> Foto de perfil </div>
-						<input class="FormularioRegistrarse" name="foto" type="file"/>
+						<input type="password" id="nombreusuario" class="FormularioRegistrarse" style="width:192%"name="contrasenia2" placeholder="Repetri contraseña..." required/>
 					</td>
 				</tr>
 			</table>

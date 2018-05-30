@@ -28,7 +28,7 @@
 			<form name="inicioSesion" method="post" action="php/inicioSesion.php">
 			<tr class="AlineacionCajasInicioSesion">
 				<td class="AlineacionCajasInicioSesion">
-					<input type="text" id="nombreusuario" class="FormularioInicioSesion" name="nombreU" placeholder="Usuario...">
+					<input type="text" id="nombreusuario" class="FormularioInicioSesion" name="nombreU" placeholder="E-mail">
 				</td>
 				<td class="AlineacionCajasInicioSesion">
 					<input type="password" id="nombreusuario" class="FormularioInicioSesion" name="contraU" placeholder="Contraseña ...">

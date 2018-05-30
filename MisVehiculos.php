@@ -1,6 +1,7 @@
 <html>
 <head>
 <link rel="stylesheet" href="estilos.css">
+<link rel="stylesheet" href="css/Estilo5.css">
 <title> Mis Vehiculos </title>
 <meta charset="utf-8"/>
 </head>
@@ -10,35 +11,50 @@
 	$link = conectar();
 	include "Header.php";
 	include "MenuBarra.php";
-?>
-<div class= "registrar">
-<form method="POST" action="crearcuenta.php" class="input" onsubmit="return validar()">
-	<label class="LabelFormularios"> Vehiculo </label>
-	<select id="nombre" name="nombre" class="FormularioVehiculos">
-		<?php
-        $consulta_vehiculos = "SELECT * FROM vehiculos WHERE idUsuario=$ID"; 
-        $result_vehiculos = mysqli_query($link,$consulta_vehiculos); ?>
-        <option value= ""> Elige un auto </option> <?php              
-			while($fila = mysqli_fetch_array($result_vehiculos)){?>
-				<option value="<?php echo $fila['patente']?>"><?php echo $fila['patente']?></option>;
-			<?php	 
-            }
-            ?>
-	</select>
-	<label class="LabelFormularios"> Marca </label>
-	<input type="text" id="nombre" name="nombre" class="FormularioVehiculos">
-	<label class="LabelFormularios"> Modelo </label>
-	<input type="text" id="apellido" name="apellido" class="FormularioVehiculos">
-	<label class="LabelFormularios"> Año </label>
-	<input type="text" id="nombreusuario" name="nombreusuario" class="FormularioVehiculos">
-	<label class="LabelFormularios"> Patente </label>
-	<input type="text" id="email" name="email" class="FormularioVehiculos">
-	<label class="LabelFormularios"> Color </label>
-	<input type="text" id="clave1" name="password" class="FormularioVehiculos">
-	<label class="LabelFormularios"> Asientos </label>
-	<input type="text" id="clave2" name="password2" class="FormularioVehiculos">
-	<div><input type="submit" class="BotonVehiculos" value="Modificar"></div>
-</form>
-</div>
+	try {
+		$usuario -> iniciada($usuarioID);
+		$id= $_SESSION['id'];
+	?>
+
+<table class="TablaMisVehiculos">
+	<tr>
+		<td class="DescripcionMisVehiculos"><td>
+		<td class="DescripcionMisVehiculos">AA000AA<td>
+		<td class="DescripcionMisVehiculos">Volkswagen<td>
+		<td class="DescripcionMisVehiculos">Gol<td>
+		<td class="DescripcionMisVehiculos">Auto<td>
+		<td class="DescripcionMisVehiculos">Gris<td>
+		<td class="DescripcionMisVehiculos">4<td>
+		<td class="DescripcionMisVehiculos"><input type="submit" class="BotonEditarMisVehiculos" value="Editar"><td>
+	</tr>
+</table>
+<table class="TablaMisVehiculos">
+	<tr>
+		<td class="DescripcionMisVehiculos"><td>
+		<td class="DescripcionMisVehiculos">AA000AA<td>
+		<td class="DescripcionMisVehiculos">Volkswagen<td>
+		<td class="DescripcionMisVehiculos">Gol<td>
+		<td class="DescripcionMisVehiculos">Auto<td>
+		<td class="DescripcionMisVehiculos">Gris<td>
+		<td class="DescripcionMisVehiculos">4<td>
+		<td class="DescripcionMisVehiculos"><input type="submit" class="BotonEditarMisVehiculos" value="Editar"><td>
+	</tr>
+</table>
+<?php	
+	}
+	catch (Exception $e) {
+	?>
+		<div class="noIniciada">
+			<br><br>
+			<p> Usted no ha iniciado sesion </p>
+			<p> Por favor 
+			<a href="Inicio_Sesion.php"> inicie sesion </a>
+			o
+			<a href="Bienvenida.php"> registrese </a>
+			para ver este contenido
+		</div>
+	<?php
+	}
+	?>
 </body>
 </html>

@@ -30,7 +30,7 @@ include "MenuBarra.php";
     ?>
 <br/>
 
-<form method="POST" style="width:100%;height:81%;font-family: Arial; action="CrearViaje.php" class="input" onsubmit="return ValidarViaje()">
+<form method="POST" style="width:100%;height:81%;font-family: Arial"; action="CrearViaje.php" class="input" onsubmit="return ValidarViaje()">
 <table class="FormularioPublicarViaje">
 	<tr>
 		  <td>
@@ -96,21 +96,21 @@ include "MenuBarra.php";
         <tr>
           <td>
               <label class="LabelFormularios"> Duracion estimada </label>
-              <input type="int" id="duracionhoras" name="duracionhoras" class="FormularioVehiculos" placeholder="Horas...">
+              <input type="number" id="duracionhoras" name="duracionhoras" class="FormularioVehiculos" placeholder="Horas..." required/>
               <br>
-              <input type="int" id="duracionmin" name="duracionmin" class="FormularioVehiculos" placeholder="Minutos..."> 
+              <input type="number" id="duracionmin" name="duracionmin" class="FormularioVehiculos" placeholder="Minutos..." required/> 
           </td>
            <td>
               <label class="LabelFormularios"> Hora de partida </label>
-              <input type="text" id="horapartida" name="horapartida" class="FormularioVehiculos" placeholder="Horas...">
+              <input type="number" id="horapartida" name="horapartida" class="FormularioVehiculos" placeholder="Horas..." required/>
               <br>
-              <input type="int" id="minutospartida" name="minutospartida" class="FormularioVehiculos" placeholder="Minutos...">
+              <input type="number" id="minutospartida" name="minutospartida" class="FormularioVehiculos" placeholder="Minutos..." required/>
             </td>
           </tr>
           <tr>
         		<td>
         			<label class="LabelFormularios"> Precio </label>
-        			<input type="number" id="precio" name="precio" class="FormularioVehiculos" placeholder="Ingrese precio total del viaje...">
+        			<input type="number" id="precio" name="precio" class="FormularioVehiculos" placeholder="Ingrese precio total del viaje..." required/>
         		</td>
         	</tr>
         	<tr>

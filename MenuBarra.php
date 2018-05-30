@@ -13,6 +13,5 @@
 			</li>
 			<li><a href="verPerfilUsuario.php?id=<?php echo $usuarioID ?> "> Mi Perfil</a></li>
 			<li><a href="EditarMisDatos.php?id=<?php echo $usuarioID ?> "> Editar Perfil</a></li>
-			<li><a href="Listado_Usuarios.php"> Ver usuarios </a></li>
 		</ul>
 	</div>

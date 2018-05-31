@@ -29,7 +29,7 @@
      $precio=$_POST['precio'];
      $texto=$_POST['texto'];
      
-   if((isset($tipo)) && (isset($dias)) && (isset($origen)) && (isset($destino)) && (isset($fecha)) OR (isset($fechainicial)) && (isset($fechafinal)) && (isset($horapartida)) && (isset($minutospartida)) && (isset($duracionhoras)) && (isset($duracionmin)) && (isset($vehiculo)) && (isset($precio)) && (isset($texto))){
+   if((isset($tipo)) && (isset($dias)) && (isset($origen)) && (isset($destino)) && (isset($fecha)) OR (isset($fechainicial)) && (isset($fechafinal)) && ($horapartida != 0) && ($minutospartida != 0) && (isset($duracionhoras)) && (isset($duracionmin)) && (isset($vehiculo)) && (isset($precio)) && (isset($texto))){
 
       if ($tipo=="1"){ //OCASIONAL
 

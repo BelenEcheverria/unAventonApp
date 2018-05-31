@@ -58,7 +58,14 @@ include "MenuBarra.php";
 					<td class="AlineacionCajasListaViajesHorizontal"><?php echo "Destino: " .utf8_encode($destinoViaje)?></td>
 					<td class="AlineacionCajasListaViajesHorizontal"><?php echo "Fecha: " . utf8_encode($fecha)?></td>
 					<td class="AlineacionCajasListaViajesHorizontal"><?php echo "Horario: " . utf8_encode($horaPartida)?><?php echo ":" . utf8_encode($minutosPartida)?></td>
-					<td class="AlineacionCajasListaViajesHorizontal"><?php echo "Duracion: " . utf8_encode($duracion)?><?php echo ":" . utf8_encode($duracionMinutos)?></td>
+					<?php 
+					if ($duracionMinutos != 0){?>
+						<td class="AlineacionCajasListaViajesHorizontal"><?php echo "Duracion: " . utf8_encode($duracion)?><?php echo ":" . utf8_encode($duracionMinutos)?>Hs</td>
+					<?php }
+
+					else{?>
+						<td class="AlineacionCajasListaViajesHorizontal"><?php echo "Duracion: " . utf8_encode($duracion)?>Hs</td>
+					<?php } ?>
 				</tr>
 				<tr>
 					<td class="AlineacionCajasListaViajesHorizontal"><?php echo "Precio: " . utf8_encode($precio)?></td>

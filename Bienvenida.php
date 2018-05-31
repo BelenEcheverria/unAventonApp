@@ -39,12 +39,12 @@
 				</tr>
 				<tr>
 					<td>
-						<input type="password" id="nombreusuario" class="FormularioRegistrarse" style="width:192%" name="contrasenia1" maxlength="32" placeholder="Contraseña..." required/>
+						<input type="password" id="nombreusuario" class="FormularioRegistrarse" style="width:192%" name="contrasenia1" maxlength="32" placeholder="Contraseña..." />
 					</td>
 				</tr>
 				<tr>
 					<td>
-						<input type="password" id="nombreusuario" class="FormularioRegistrarse" style="width:192%"name="contrasenia2" placeholder="Repetri contraseña..." required/>
+						<input type="password" id="nombreusuario" class="FormularioRegistrarse" style="width:192%"name="contrasenia2" placeholder="Repetri contraseña..." />
 					</td>
 				</tr>
 			</table>

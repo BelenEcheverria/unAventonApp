@@ -46,7 +46,7 @@
 						</table>	
 				<div>
 		<?php 
-		$sql= "SELECT * FROM viajes where idEstado=1";
+		$sql= "SELECT * FROM viajes where idEstado=1 ORDER BY fecha ASC";
 		$result = mysqli_query($link, $sql); //traer los viajes vector de vectores
 	   	if($result){
 	   		$cantidad_viajes = mysqli_num_rows($result);

@@ -29,17 +29,16 @@
      $precio=$_POST['precio'];
      $texto=$_POST['texto'];
      
-   if((isset($tipo)) && (isset($dias)) && (isset($origen)) && (isset($destino)) && (isset($fecha)) OR (isset($fechainicial)) && (isset($fechafinal)) && ($horapartida != 0) && ($minutospartida != 0) && (isset($duracionhoras)) && (isset($duracionmin)) && (isset($vehiculo)) && (isset($precio)) && (isset($texto))){
+   if((isset($tipo)) && (isset($dias)) && (isset($origen)) && (isset($destino)) && (isset($fecha)) OR (isset($fechainicial)) && (isset($fechafinal)) && ($horapartida != 0) && ($minutospartida !== null) && ($duracionhoras != 0) && ($duracionmin !== null) && (isset($vehiculo)) && ($precio != 0) && (isset($texto))){
 
       if ($tipo=="1"){ //OCASIONAL
 
-             $buscarViajes = "SELECT * FROM viajes INNER JOIN calificacionespendientes WHERE idConductor=$ID AND (idEstado = '3' OR fecha = '$fecha' OR idUsuarioAutor = $ID)";
+             $buscarViajes = "SELECT * FROM viajes WHERE idConductor=$ID AND (hora = $horapartida AND fecha = '$fecha')";
              $resultviajes = mysqli_query($link,$buscarViajes);
              $rUNO = mysqli_fetch_array($resultviajes);
              //$buscarCalificaciones = "SELECT * FROM calificaciones WHERE idUsuarioAutor='$ID'";
              if (!empty($rUNO)){
-                $_SESSION["error"]="Verifique sus pagos, califiaciones pendientes y la fecha de viaje";
-                $mensaje = "Verifique su estado de cuenta, pagos, calificaciones pendientes o fechas de viajes ya publicadas.";
+                $mensaje = "Su viaje se superpone con otro ya ingresado, ingrese otro horario u elija otro día.";
                 header("Location: ErrorPublicarViaje.php?mensaje=$mensaje"); 
              }
              else{  //NO TIENE VIAJES CON DEUDA, NI DEBE CALIFICACIONES, NI COINCIDE CON FECHAS INGRESADAS
@@ -59,7 +58,7 @@
                 if (in_array($diaDeSemana, $dias)) {
                    echo $dt->format("N Y-m-d\n");
                    $fechaBase = ($dt->format("Y-m-d\n"));
-                   $buscarViajes = "SELECT * FROM viajes INNER JOIN calificacionespendientes WHERE idConductor=$ID AND (idEstado = '3' OR fecha = '$fechaBase' OR idUsuarioAutor = $ID)";
+                   $buscarViajes = "SELECT * FROM viajes WHERE idConductor=$ID AND (hora = $horapartida AND fecha = '$fechaBase')";
                    $resultviajes = mysqli_query($link,$buscarViajes);
                    $rUNO = mysqli_fetch_array($resultviajes);
                    //$buscarCalificaciones = "SELECT * FROM calificaciones WHERE idUsuarioAutor='$ID'";

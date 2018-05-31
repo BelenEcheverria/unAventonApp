@@ -153,6 +153,20 @@
     font-family: Arial;
     float: left;
 }
+.BotonPublicar{
+	background-color: #F16868;
+    color: white;
+    border: 2px solid #BC3D3D;
+    height: 10%;
+    width: 41%;
+    font-size: 21px;
+    margin-left: 31%;
+    margin-top: 5%;
+    margin-bottom: 2%;
+    font-weight: 600;
+    font-family: Arial;
+    float: left;	
+}
 .BotonMasTarde {
     background-color: #F16868;
     color: white;
@@ -172,20 +186,6 @@
     font-weight: 800;
     font-family: Arial;
 	margin-left:15%;
-}
-.BotonPublicar {
-    background-color: #F16868;
-    color: white;
-    border: 2px solid #BC3D3D;
-    height: 10%;
-    width: 35%;
-    font-size: 25px;
-    margin-left: 68%;
-    margin-top: 5%;
-    margin-bottom: 2%;
-    font-weight: 800;
-    font-family: Arial;
-    float: left;
 }
 .BotonReservarAsiento {
 	background-color:#F16868; 

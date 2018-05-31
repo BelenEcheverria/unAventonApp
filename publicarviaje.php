@@ -22,7 +22,7 @@
 <meta charset="utf-8"/>
 
 </head>
-<body class="FondoInicio">
+<body class="FondoPerfil">
 <?php
 include "Header.php";
 include "MenuBarra.php";
@@ -147,12 +147,13 @@ if(isset($ID)){ //SI INICIO SESION
                       <td>
                         <label class="LabelFormularios"> Informacion adicional </label>
                         <textarea class="FormularioVehiculos" id = "texto" name = "texto" size=200 placeholder="Informacion que quiera agregar..."></textarea>
+                        <br></br>
+                        <div><input type="submit" class="BotonPublicar" value="Agregar"></div>
                       </td>
                     </tr>
                     <tr>
                       <td>
                  </div>
-                <div><input type="submit" class="BotonRegistrar" value="Agregar"></div>
               <td>
             </tr>
           </table>

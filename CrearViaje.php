@@ -14,6 +14,7 @@
      foreach ($_POST['dias'] as $dia) {
          echo $dia;
      } //imprime valores
+     
      $tipo=$_POST['tipo'];
      $dias=$_POST['dias'];  
      $origen=$_POST['origen'];
@@ -26,7 +27,12 @@
      $duracionhoras=$_POST['duracionhoras']; 
      $duracionmin=$_POST['duracionmin'];
      $vehiculo=$_POST['vehiculo']; 
-     $precio=$_POST['precio'];
+     $consultaVehiculo = "SELECT * FROM vehiculos where id=$vehiculo";
+     $resultadoConsultaVehiculo = mysqli_query($link,$consultaVehiculo);
+     $rowVehiculo = mysqli_fetch_array($resultadoConsultaVehiculo);
+     $asientosDisponibles = $rowVehiculo['asientos'];
+     $precioTOTAL=$_POST['precio'];
+     $precio = ceil($precioTOTAL/$asientosDisponibles);
      $texto=$_POST['texto'];
      
    if((isset($tipo)) && (isset($dias)) && (isset($origen)) && (isset($destino)) && (isset($fecha)) OR (isset($fechainicial)) && (isset($fechafinal)) && ($horapartida != 0) && ($minutospartida !== null) && ($duracionhoras != 0) && ($duracionmin !== null) && (isset($vehiculo)) && ($precio != 0) && (isset($texto))){
@@ -42,7 +48,7 @@
                 header("Location: ErrorPublicarViaje.php?mensaje=$mensaje"); 
              }
              else{  //NO TIENE VIAJES CON DEUDA, NI DEBE CALIFICACIONES, NI COINCIDE CON FECHAS INGRESADAS
-               mysqli_query($link, "INSERT INTO viajes(fecha, hora, minuto, duracionHoras, duracionMinutos, precio, texto, idEstado, idOrigen, idDestino, idVehiculo, idConductor ) VALUES ('$fecha', '$_POST[horapartida]', '$_POST[minutospartida]', '$_POST[duracionhoras]', '$_POST[duracionmin]', '$_POST[precio]', '$_POST[texto]', '1', '$_POST[origen]', '$_POST[destino]', '$_POST[vehiculo]', '$ID')");
+               mysqli_query($link, "INSERT INTO viajes(fecha, hora, minuto, duracionHoras, duracionMinutos, precio, texto, idEstado, idOrigen, idDestino, idVehiculo, idConductor ) VALUES ('$fecha', '$_POST[horapartida]', '$_POST[minutospartida]', '$_POST[duracionhoras]', '$_POST[duracionmin]', '$precio', '$_POST[texto]', '1', '$_POST[origen]', '$_POST[destino]', '$_POST[vehiculo]', '$ID')");
                header("Location: Inicio.php"); 
              }
       }

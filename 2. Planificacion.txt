@@ -1,0 +1,21 @@
+Luciana Total: 8
+Modificar un viaje 5 --> Hacer el formulario de modificar viaje, con la modificacion 
+Eliminar un viaje 3 --> Hacer el formualario de eliminar viaje, con la eliminacion 
+
+Ian Total: 9
+Ver datos de usuario 2 --> De la lista de usuarios (*), el usuario selecciona uno, y si tiene viajes con el puede ver sus datos de contacto (mail, y telefono). Se puede hacer con un if (chequeas en la base si tiene viajes) entonces lo mostras. (Tengo que agregar el telefono a la base.
+
+Ver mis solicitudes de viaje 2 --> En el perfil de usuario, o el la barra, poner un href, que te lleve a una pagina donde traes de la base las solicitudes de viaje que hizo el usuario, y el estado de c/u, y se muestran, con al lado un boton que diga cancelar solicitud (HU de abajo)
+
+Cancelar solicitud de viaje 3 --> Si el usuario pone cancelar solicitud (en la lista de la HU de arriba), cambiar el estado de la solicitud a cancelada, si estaba aceptada descontar un punto a la calificacion como conductor (y agregar comentario), fijarse como queda lo de los lugares en el viaje
+
+Ver listado de mis viajes pendientes como conductor (2)--> serian traer de la base (los viajes los pendientes del usuario donde sea conductor), y mostrarlos con un boton para modificar y otro para eliminar, otro para ver detalles (esta hecho en la demo1, seria pasarle un href con el id)
+
+Belen Total: 11
+Ver postulantes para un viaje (2) --> en la pagina de la demo1 de ver detalles de viaje (se puede agregar un href, y hacerlo aparte), traer de la base los postulantes a ese viaje. (si el id del usuario que lo ve es el conductor) {(si el estado de la solicitud es pendiente --> se muestran los botones aceptar, rechazar. (si el estado de la solicitud es aceptada -->se muestra un boton dar de baja)}
+Postularse para un viaje 3
+Aceptar solicitud de viaje 2
+Rechazar solicitud de viaje 1
+Dar de baja postulante aceptado 3
+
+* Lista de usuarios -->(Quedo hehco lo de la demo1, una lista que traia todos los usuarios de la base con un formulario buscar que funcionaba, y en el nombre tenia un href al ver perfil de usuario, que le pasaba el id de usuario por GET. Eso ya estaria hecho, queda ponerle el formato a los nombres que trae, se puede usar asi, o agregarle formato).

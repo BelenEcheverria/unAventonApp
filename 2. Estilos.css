@@ -1,0 +1,32 @@
+a{ 
+	text-decoration: none;
+	color: white;
+}
+
+
+hr {
+  height: 15px;
+  background-color: HotPink;
+  border: none;
+ }
+
+/* MiViaje */
+
+.div_body {
+	color: white;
+	font-family: Arial, sans-serif;
+	font-weight: bold;
+}
+
+.p_titulo {
+	text-align: center;
+	font-size: 150%;
+}
+
+.body_detalle {
+	text-align: center;
+}
+
+.span_detalle {
+	padding-left: 75;
+}

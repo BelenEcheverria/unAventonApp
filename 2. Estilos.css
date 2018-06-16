@@ -6,12 +6,17 @@ a{
 
 hr {
   height: 15px;
+<<<<<<< HEAD
   background-color: #F16868;
+=======
+  background-color: HotPink;
+>>>>>>> 20ad4d30af8ef0e2bd29701a4736cb9937d12b7a
   border: none;
  }
 
 /* MiViaje */
 
+<<<<<<< HEAD
 #div_left_corner {
 	border-top-left-radius: 15px;
 	border-bottom-left-radius: 15px;
@@ -22,6 +27,8 @@ hr {
 	border-bottom-right-radius: 15px;
 }
 
+=======
+>>>>>>> 20ad4d30af8ef0e2bd29701a4736cb9937d12b7a
 .div_body {
 	color: white;
 	font-family: Arial, sans-serif;
@@ -35,6 +42,7 @@ hr {
 
 .body_detalle {
 	text-align: center;
+<<<<<<< HEAD
 	margin-left: 100;
 }
 
@@ -54,3 +62,16 @@ hr {
 
 
 
+=======
+	border: 6px solid #ffa500;
+	height:15%;
+	width:70:;
+	margin-left:15%;
+	margin-right:15%;
+}
+
+.span_detalle {
+	padding-left: 75;
+	margin-top:2%;
+}
+>>>>>>> 20ad4d30af8ef0e2bd29701a4736cb9937d12b7a

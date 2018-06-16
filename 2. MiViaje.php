@@ -54,12 +54,17 @@
 		$consultaVehiculo = "SELECT * FROM vehiculos where id=$id_Vehiculo";
 		$resultadoConsultaVehiculo = mysqli_query($link,$consultaVehiculo);
 		$rowVehiculo = mysqli_fetch_array($resultadoConsultaVehiculo);
+<<<<<<< HEAD
 		$vehiculoViaje = $rowVehiculo['modelo'] . ' ' .$rowVehiculo['patente'];
+=======
+		$vehiculoViaje = $rowVehiculo['modelo'];
+>>>>>>> 20ad4d30af8ef0e2bd29701a4736cb9937d12b7a
 		$asientosDisponibles = $rowVehiculo['asientos'];
 		?>
 		<div>
 			<p class="p_titulo"> Detalles del viaje </p>
 			<div class="body_detalle">
+<<<<<<< HEAD
 				<div class="div_vertical" id="div_left_corner" >
 					<span> <?php echo "Origen: " . utf8_encode($origenViaje)?> </span>
 					<br><br>
@@ -91,16 +96,48 @@
 					<span class="span_detalle"> <?php echo "Vehiculo: " . utf8_encode($vehiculoViaje)?> </span>
 				</div>
 				<br><br><br><br>
+=======
+				<span> <?php echo "Origen: " . utf8_encode($origenViaje)?> </span>
+				<span class="span_detalle"> <?php echo "Destino: " .utf8_encode($destinoViaje)?> </span>
+				<span class="span_detalle"> <?php echo "Fecha: " . utf8_encode($fecha)?> </span>
+				<span class="span_detalle"> <?php echo "Horario de salida: " . utf8_encode($horaPartida)?><?php echo ":" . utf8_encode($minutosPartida)?> </span>
+				<span class="span_detalle"> <?php echo "Vehiculo: " . utf8_encode($vehiculoViaje)?> </span>
+				<br><br>
+				<?php 
+				if ($duracionMinutos != 0){
+				?>
+					<span> <?php echo "Duracion aproximada: " . utf8_encode($duracion)?><?php echo ":" . utf8_encode($duracionMinutos)?> Hs </span>
+				<?php
+				} else {
+				?>
+					<span> <?php echo "Duracion aproximada: " . utf8_encode($duracion)?> Hs </span>
+				<?php
+				}
+				?>
+				<span class="span_detalle"> <?php echo "Precio total: " . utf8_encode($precio)?> </span>
+				<span class="span_detalle"> <?php echo "Precio por persona: " . utf8_encode($precio)?> </span>
+				<?php 
+				if (!empty($texto)){
+				?>
+					<br><br>
+					<span> <?php echo "Aclaraciones: " . utf8_encode($texto)?> </span>
+				<?php
+				}
+				?>							
+>>>>>>> 20ad4d30af8ef0e2bd29701a4736cb9937d12b7a
 			</div>
 			<div>
 				<br> <hr>
 				<p class="p_titulo"> Postulaciones </p>
+<<<<<<< HEAD
 				<?php
 				$query= "SELECT * FROM viajes WHERE idViaje = $viaje_id" ;
 				$result= $result = mysqli_query ($link, $query) ;
 				$ = mysqli_fetch_array($result);
 				
 				?>
+=======
+>>>>>>> 20ad4d30af8ef0e2bd29701a4736cb9937d12b7a
 			</div>
 		</div>		
 	<?php	

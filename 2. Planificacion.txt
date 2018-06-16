@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 Lu Total: 8
+=======
+LuTotal: 8
+>>>>>>> 20ad4d30af8ef0e2bd29701a4736cb9937d12b7a
 Modificar un viaje 5 --> Hacer el formulario de modificar viaje, con la modificacion 
 Eliminar un viaje 3 --> Hacer el formualario de eliminar viaje, con la eliminacion 
 
@@ -13,7 +17,11 @@ Ver listado de mis viajes pendientes como conductor (2): en el archivo 2. MisVia
 	* "SELECT * FROM viajes WHERE idEstado=1 AND idConductor= $id ORDER BY fecha ASC"; hecho
 	* Imprimir los datos de los viajes 
 	* Agregarle formato al listado de viajes, y a la parte del catch
+<<<<<<< HEAD
 	* Agregarle un boton modificar, otro eliminar, y otro ver postulaciones (despues le ponemos los href) a los viajes que ya trae
+=======
+	* Agregarle un boton modificar, otro eliminar, y otro ver postulaciones (despues le ponemos los href)
+>>>>>>> 20ad4d30af8ef0e2bd29701a4736cb9937d12b7a
 
 Belen Total: 11
 Ver postulantes para un viaje (2)

@@ -1,4 +1,4 @@
-Luciana Total: 8
+Lu Total: 8
 Modificar un viaje 5 --> Hacer el formulario de modificar viaje, con la modificacion 
 Eliminar un viaje 3 --> Hacer el formualario de eliminar viaje, con la eliminacion 
 
@@ -9,13 +9,25 @@ Ver mis solicitudes de viaje 2 --> En el perfil de usuario, o el la barra, poner
 
 Cancelar solicitud de viaje 3 --> Si el usuario pone cancelar solicitud (en la lista de la HU de arriba), cambiar el estado de la solicitud a cancelada, si estaba aceptada descontar un punto a la calificacion como conductor (y agregar comentario), fijarse como queda lo de los lugares en el viaje
 
-Ver listado de mis viajes pendientes como conductor (2)--> serian traer de la base (los viajes los pendientes del usuario donde sea conductor), y mostrarlos con un boton para modificar y otro para eliminar, otro para ver detalles (esta hecho en la demo1, seria pasarle un href con el id)
+Ver listado de mis viajes pendientes como conductor (2): en el archivo 2. MisViajes.php
+	* "SELECT * FROM viajes WHERE idEstado=1 AND idConductor= $id ORDER BY fecha ASC"; hecho
+	* Imprimir los datos de los viajes 
+	* Agregarle formato al listado de viajes, y a la parte del catch
+	* Agregarle un boton modificar, otro eliminar, y otro ver postulaciones (despues le ponemos los href) a los viajes que ya trae
 
 Belen Total: 11
-Ver postulantes para un viaje (2) --> en la pagina de la demo1 de ver detalles de viaje (se puede agregar un href, y hacerlo aparte), traer de la base los postulantes a ese viaje. (si el id del usuario que lo ve es el conductor) {(si el estado de la solicitud es pendiente --> se muestran los botones aceptar, rechazar. (si el estado de la solicitud es aceptada -->se muestra un boton dar de baja)}
+Ver postulantes para un viaje (2)
+	Una vez seleccionado el viaje, se muestran los detalles, con una lista de las postulaciones:
+	* Si el estado de la solicitud es pendiente --> se muestran los botones aceptar, rechazar
+	* Si el estado de la solicitud es aceptada --> se muestra un boton dar de baja postulacion
+	* Si el estado de la solicitud es rechazada --> se muestra un msj diciendo que la solicitud ya ha sido rechazada
+
 Postularse para un viaje 3
 Aceptar solicitud de viaje 2
 Rechazar solicitud de viaje 1
 Dar de baja postulante aceptado 3
 
 * Lista de usuarios -->(Quedo hehco lo de la demo1, una lista que traia todos los usuarios de la base con un formulario buscar que funcionaba, y en el nombre tenia un href al ver perfil de usuario, que le pasaba el id de usuario por GET. Eso ya estaria hecho, queda ponerle el formato a los nombres que trae, se puede usar asi, o agregarle formato).
+
+CORREGIR PRECIO POR PERSONA DEL VIAJE EN TODOS LOS LUGARES DONDE APARECE
+CORREGIR LOS MINUTOS EN LA HORA QUE MUESTRE 00 EN EL INICIO

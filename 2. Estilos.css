@@ -1,0 +1,56 @@
+a{ 
+	text-decoration: none;
+	color: white;
+}
+
+
+hr {
+  height: 15px;
+  background-color: #F16868;
+  border: none;
+ }
+
+/* MiViaje */
+
+#div_left_corner {
+	border-top-left-radius: 15px;
+	border-bottom-left-radius: 15px;
+}
+
+#div_right_corner {
+	border-top-right-radius: 15px;
+	border-bottom-right-radius: 15px;
+}
+
+.div_body {
+	color: white;
+	font-family: Arial, sans-serif;
+	font-weight: bold;
+}
+
+.p_titulo {
+	text-align: center;
+	font-size: 150%;
+}
+
+.body_detalle {
+	text-align: center;
+	margin-left: 100;
+}
+
+.div_vertical{
+	float: left;
+	background-color: MediumVioletRed    ;
+	padding: 10;
+}
+
+.span_detalle {
+	padding-left: 50;
+	padding-right: 50;
+}
+
+
+
+
+
+

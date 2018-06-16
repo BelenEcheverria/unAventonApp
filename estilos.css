@@ -72,6 +72,17 @@
 	height:8%;
 	width:100%;
 }
+.BotonCancelarModificar {
+    background-color: #F16868;
+    color: white;
+    border: 2px solid #BC3D3D;
+    font-size: 12px;
+    font-weight: 800;
+    font-family: Arial;
+	margin-right:5%;
+	float:right;
+	width:28%;
+}
 .BotonVehiculos {
 	margin-left:30%;
 	margin-top:2%;
@@ -462,6 +473,18 @@
     border-top-left-radius: 8px;
 	border-style:groove;
 }
+.InformacionViajeLineaSuperior {
+	width:15%;
+	float:left;
+	margin-left:4%;
+	margin-top:1%;
+}
+.InformacionViajeLineaInferior {
+	width:25%;
+	float:left;
+	margin-left:7%;
+	margin-top:1%;
+}
 .LabelFormularios {
 	margin-left:7%;
 	color:white;
@@ -475,6 +498,17 @@
 	margin-left:6%;
 	margin-right:6%;
 	
+}
+.ListadoViajesConductor {
+	border:6px solid #ffa500;
+	width:70%;
+	height:10%;
+	margin-left:2%;
+}
+.ListadoBotonesDelViajeComoConductor {
+	width:25%;
+	float:right;
+	margin-top:2%;
 }
 .LineaPiePagina {
 	width: 100%;

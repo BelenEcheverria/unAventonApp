@@ -25,8 +25,14 @@ hr {
 
 .body_detalle {
 	text-align: center;
+	border: 6px solid #ffa500;
+	height:15%;
+	width:70:;
+	margin-left:15%;
+	margin-right:15%;
 }
 
 .span_detalle {
 	padding-left: 75;
+	margin-top:2%;
 }

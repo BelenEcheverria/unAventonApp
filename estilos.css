@@ -360,6 +360,15 @@
 	text-align: center;
 	float:left;
 }
+.estadoPostulacion {
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    font-family: Arial;
+	margin-right:5%;
+	float:right;
+}
+}
 .FechaNacimiento {
 	font-size:20px;
 	font-family:Arial;
@@ -500,10 +509,12 @@
 	
 }
 .ListadoViajesConductor {
-	border:6px solid #ffa500;
+	border:6px solid #F16868;
 	width:70%;
 	height:10%;
 	margin-left:2%;
+	margin-bottom:1%;
+	background-color:#F16868;
 }
 .ListadoBotonesDelViajeComoConductor {
 	width:25%;
@@ -588,6 +599,14 @@
                7px 7px 3px #00f;
 	font-weight:800;
 	font-family:Arial;
+}
+.tituloMisViajes {
+	color:white;
+	text-align:center;
+	font-size:25px;
+	font-weight:bold;
+	margin-bottom:2%;
+	margin-top:2%;
 }
 .TablaListadoUsuarios {
 	width:75%;

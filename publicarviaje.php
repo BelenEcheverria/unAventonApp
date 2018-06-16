@@ -163,7 +163,6 @@ if(isset($ID)){ //SI INICIO SESION
     }//END DEL IF EMPTY
 }//END DEL IF SI ES QUE ESTA INICIADO SESION
 ?>
-<div class="LineaPiePagina"></div>
 </body>
 </html>
 

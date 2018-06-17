@@ -1,35 +1,18 @@
-<<<<<<< HEAD
 Lu Total: 8
-=======
-LuTotal: 8
->>>>>>> 20ad4d30af8ef0e2bd29701a4736cb9937d12b7a
 Modificar un viaje 5 --> Hacer el formulario de modificar viaje, con la modificacion 
 Eliminar un viaje 3 --> Hacer el formualario de eliminar viaje, con la eliminacion 
 
 Ian Total: 9
 Ver datos de usuario 2 --> De la lista de usuarios (*), el usuario selecciona uno, y si tiene viajes con el puede ver sus datos de contacto (mail, y telefono). Se puede hacer con un if (chequeas en la base si tiene viajes) entonces lo mostras. (Tengo que agregar el telefono a la base.
-
 Ver mis solicitudes de viaje 2 --> En el perfil de usuario, o el la barra, poner un href, que te lleve a una pagina donde traes de la base las solicitudes de viaje que hizo el usuario, y el estado de c/u, y se muestran, con al lado un boton que diga cancelar solicitud (HU de abajo)
-
 Cancelar solicitud de viaje 3 --> Si el usuario pone cancelar solicitud (en la lista de la HU de arriba), cambiar el estado de la solicitud a cancelada, si estaba aceptada descontar un punto a la calificacion como conductor (y agregar comentario), fijarse como queda lo de los lugares en el viaje
-
 Ver listado de mis viajes pendientes como conductor (2): en el archivo 2. MisViajes.php
 	* "SELECT * FROM viajes WHERE idEstado=1 AND idConductor= $id ORDER BY fecha ASC"; hecho
 	* Imprimir los datos de los viajes 
 	* Agregarle formato al listado de viajes, y a la parte del catch
-<<<<<<< HEAD
 	* Agregarle un boton modificar, otro eliminar, y otro ver postulaciones (despues le ponemos los href) a los viajes que ya trae
-=======
-	* Agregarle un boton modificar, otro eliminar, y otro ver postulaciones (despues le ponemos los href)
->>>>>>> 20ad4d30af8ef0e2bd29701a4736cb9937d12b7a
-
 Belen Total: 11
-Ver postulantes para un viaje (2)
-	Una vez seleccionado el viaje, se muestran los detalles, con una lista de las postulaciones:
-	* Si el estado de la solicitud es pendiente --> se muestran los botones aceptar, rechazar
-	* Si el estado de la solicitud es aceptada --> se muestra un boton dar de baja postulacion
-	* Si el estado de la solicitud es rechazada --> se muestra un msj diciendo que la solicitud ya ha sido rechazada
-
+Ver postulantes para un viaje
 Postularse para un viaje 3
 Aceptar solicitud de viaje 2
 Rechazar solicitud de viaje 1

@@ -1,0 +1,3 @@
+* Agregar a la base en estados postulacion el estado 5 que diga Pendiente
+
+* En MiViaje, el while solo imprime el primer resultado

@@ -44,10 +44,6 @@ hr {
 	padding: 10;
 }
 
-.span_detalle {
-	padding-left: 50;
-	padding-right: 50;
-}
 
 .div_lista_postulaciones {
 	
@@ -60,9 +56,30 @@ hr {
 
 .div_both_corners{
 	border-radius: 15px;
-	background-color: MediumVioletRed    ;
+	background-color: MediumVioletRed;
 	padding: 10;
-	margin-right: 100;
-	margin-left: 100;
-	margin-bottom: 50;
+	margin-right: 150;
+	margin-left: 150;
+	margin: 30;
+}
+
+.span_detalle {
+	padding-left: 50;
+	padding-right: 50;
+}
+
+.span_detalle_button {
+	float: right;
+	
+}
+
+.boton_postulacion {
+	background-color: #F16868;
+    color: white;
+    border: none;
+    font-family: Arial, sans-serif;
+	font-weight: bold;
+	font-size: 90%;
+	border-radius: 15px;
+	height: 3%;
 }

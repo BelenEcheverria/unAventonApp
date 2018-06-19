@@ -11,10 +11,15 @@ Ver listado de mis viajes pendientes como conductor (2): en el archivo 2. MisVia
 	* Imprimir los datos de los viajes 
 	* Agregarle formato al listado de viajes, y a la parte del catch
 	* Agregarle un boton modificar, otro eliminar, y otro ver postulaciones (despues le ponemos los href) a los viajes que ya trae
+
 Belen Total: 11
-Ver postulantes para un viaje
-Postularse para un viaje 3
+* Ver postulantes para un viaje
 Aceptar solicitud de viaje 2
+	* Chequear que halla lugares disponibles
+	* Cambiar el estado de la postulacion
+	* Restar un lugar disponible
+
+Postularse para un viaje 3
 Rechazar solicitud de viaje 1
 Dar de baja postulante aceptado 3
 

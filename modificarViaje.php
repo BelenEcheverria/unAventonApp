@@ -9,8 +9,9 @@
 <?php
 include_once "php/conection.php"; // conectar y seleccionar la base de datos
 $link = conectar();
-$viaje_id = $_GET['id_viaje'];
+//$viaje_id = $_GET['id_viaje'];
 //Trae de base de datos la informacion de los viajes
+  $viaje_id = 36;
   $q = "SELECT * FROM viajes where id=36 "; //$viaje_id
   $result = mysqli_query($link,$q);
   $row = mysqli_fetch_array($result);
@@ -46,7 +47,6 @@ $viaje_id = $_GET['id_viaje'];
   $asientosDisponibles = $rowVehiculo['asientos'];
 //PREGUNTAR POR PRECIO 
   ?>
-?>
 <html>
 
 <head>
@@ -69,11 +69,12 @@ include "MenuBarra.php";
 ?>
 <br/><?php
 if(isset($ID)){ //SI INICIO SESION?>
-          <form method="POST" style="width:100%;height:81%;font-family:Arial;" action="CrearViaje.php" class="input" onsubmit="return ValidarViaje()">
+          <form method="POST" style="width:100%;height:81%;font-family:Arial;" action="CrearViajeModificado.php?viaje_id=<?php echo 
+          $viaje_id ?>" class="input" onsubmit="return ValidarViaje()">
           <table class="FormularioPublicarViaje">
           <td id="viajeOcasional">
           <label class="LabelFormularios"> Dia </label>
-          <input type="text" id="fecha" name="fecha" class="FormularioVehiculos" placeholder= <?php echo $fecha ?> >
+          <input type="text" id="fecha" name="fecha" class="FormularioVehiculos" value= <?php echo $fecha ?> >
           </td>
           </tr>
           <tr>
@@ -92,7 +93,7 @@ if(isset($ID)){ //SI INICIO SESION?>
           ?>
           </select>
           <label class="LabelFormularios"> Destino </label>
-          <select class="FormularioVehiculos" id = "destino" name = "destino" value="<?php echo $destino ?>">          
+          <select class="FormularioVehiculos" id = "destino" name = "destino" value="<?php echo $destinoViaje ?>">          
           <?php
           $consulta_ciudades = "SELECT * FROM ciudades ORDER BY ciudad ASC";
           $result_Destino = mysqli_query($link,$consulta_ciudades); ?>
@@ -108,27 +109,27 @@ if(isset($ID)){ //SI INICIO SESION?>
           <tr>
           <td>
           <label class="LabelFormularios"> Duracion estimada </label>
-          <input type="int" id="duracionhoras" name="duracionhoras" class="FormularioVehiculos" placeholder=<?php echo $duracion ?>>
+          <input type="int" id="duracionhoras" name="duracionhoras" class="FormularioVehiculos" value=<?php echo $duracion ?>>
           <br>
-          <input type="int" id="duracionmin" name="duracionmin" class="FormularioVehiculos" placeholder=<?php echo $duracionMinutos ?>> 
+          <input type="int" id="duracionmin" name="duracionmin" class="FormularioVehiculos" value=<?php echo $duracionMinutos ?>> 
           </td>
           <td>
           <label class="LabelFormularios"> Hora de partida </label>
-          <input type="text" id="horapartida" name="horapartida" class="FormularioVehiculos" placeholder=<?php echo $horaPartida ?>:>
+          <input type="text" id="horapartida" name="horapartida" class="FormularioVehiculos" value=<?php echo $horaPartida ?>:>
           <br>
-          <input type="int" id="minutospartida" name="minutospartida" class="FormularioVehiculos" placeholder=<?php echo $minutosPartida ?>>
+          <input type="int" id="minutospartida" name="minutospartida" class="FormularioVehiculos" value=<?php echo $minutosPartida ?>>
           </td>
           </tr>
           <tr>
           <td>
           <label class="LabelFormularios"> Precio </label>
-          <input type="number" id="precio" name="precio" class="FormularioVehiculos" placeholder=<?php echo $precio ?>>
+          <input type="number" id="precio" name="precio" class="FormularioVehiculos" value=<?php echo $precio ?>>
           </td>
           </tr>
           <tr>
           <td>
           <label class="LabelFormularios"> Vehiculo </label>
-          <select class="FormularioVehiculos" id = "vehiculo" name = "vehiculo" value="<?php echo $vehiculo ?>"> 
+          <select class="FormularioVehiculos" id = "vehiculo" name = "vehiculo" value="<?php echo $vehiculoViaje ?>"> 
           <?php
            $consulta_vehiculos = "SELECT * FROM vehiculos WHERE idUsuario=$ID AND estaActivo = '1'"; 
            $result_vehiculos = mysqli_query($link,$consulta_vehiculos); ?>
@@ -142,7 +143,7 @@ if(isset($ID)){ //SI INICIO SESION?>
          </td>
          <td>
          <label class="LabelFormularios"> Informacion adicional </label>
-         <textarea class="FormularioVehiculos" id = "texto" name = "texto" size=200 placeholder=<?php echo $texto ?>></textarea>
+         <textarea class="FormularioVehiculos" id = "texto" name = "texto" size=200 ><?php echo $texto ?></textarea>
          <br></br>
          <div><input type="submit" class="BotonPublicar" value="Agregar"></div>
          </td>

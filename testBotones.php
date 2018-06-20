@@ -13,7 +13,7 @@
 	<title> Mis Viajes </title>
 	<meta charset="utf-8"/>
 </head>
-<body background="Imagenes/FondoColores.jpg">
+<body class="FondoInicio">
 <div class= "div_body">
 	<?php
 	include "Header.php";
@@ -37,6 +37,8 @@
 				$horaPartida = $viajes['hora'];
 				$minutosPartida = $viajes['minuto'];
 				$precio= $viajes['precio'];	
+				$duracionHoras = $viajes['duracionHoras'];
+				$duracionMinutos = $viajes['duracionMinutos'];
 				/*---------------AGREGO QUE MUESTRE El Destino---------------*/
 					$consultaDestino = "SELECT * FROM ciudades where id=$id_Destino";
 					$resultadoConsultaDest = mysqli_query($link,$consultaDestino);
@@ -69,7 +71,7 @@
 							echo utf8_encode($minutosPartida);?></div>
 		<div class="InformacionViajeLineaSuperior">Vehiculo: <?php echo utf8_encode($vehiculoViaje);?></div>
 		
-		<div class="InformacionViajeLineaInferior">Duracion aproximada: </div>
+		<div class="InformacionViajeLineaInferior">Duracion aproximada: <?php echo $duracionHoras; ?>:<?php echo $duracionMinutos;?></div>
 		<div class="InformacionViajeLineaInferior">Precio total: <?php echo utf8_encode($precio);?></div>
 		<div class="InformacionViajeLineaInferior">Precio por persona: </div>
 	</div>
@@ -92,20 +94,58 @@
 		?>
 	<br><hr>
 	<div class="tituloMisViajes"> Viajes como pasajero </div>
-	<div class="ListadoConBotonesConductor">
-	<div class="ListadoBotonesDelViajeComoConductor"><input type="submit" class="BotonCancelarModificar" value="cancelar"><div class="estadoPostulacion">Postulacion: Aceptado/a</div>
+	<?php
+		$consulta = "SELECT *,p.idEstado AS estadoPostulacion FROM postulaciones p INNER JOIN viajes v ON p.idViaje=v.id WHERE (v.idEstado=1 OR v.idEstado=5) AND p.idUsuario=$id";
+		$result2 = mysqli_query($link, $consulta);
+		while($viajes = mysqli_fetch_array($result2)){
+			$id_viaje = $viajes['id'];
+			$id_Destino = $viajes['idDestino'];
+			$id_Origen = $viajes['idOrigen'];
+			$id_Vehiculo = $viajes['idVehiculo'];
+			$dia = $viajes['fecha'];
+			$horaPartida = $viajes['hora'];
+			$minutosPartida = $viajes['minuto'];
+			$precio= $viajes['precio'];	
+			$idEstadoViaje = $viajes['idEstado'];
+			$idEstadoPostulacion = $viajes['estadoPostulacion'];
+				/*---------------AGREGO QUE MUESTRE El Destino---------------*/
+				$consultaDestino = "SELECT * FROM ciudades where id=$id_Destino";
+				$resultadoConsultaDest = mysqli_query($link,$consultaDestino);
+				$rowCiudadDest = mysqli_fetch_array($resultadoConsultaDest);
+				$destinoViaje = $rowCiudadDest['ciudad'];
+				//---------------AGREGO QUE MUESTRE El Origen---------------
+				$consultaOrigen = "SELECT * FROM ciudades where id=$id_Origen";
+				$resultadoConsulta = mysqli_query($link,$consultaOrigen);
+				$rowCiudad = mysqli_fetch_array($resultadoConsulta);
+				$origenViaje = $rowCiudad['ciudad'];
+				//---------------AGREGO QUE MUESTRE Los asientos del vehiculo---------------
+				$consultaVehiculo = "SELECT * FROM vehiculos where id=$id_Vehiculo";
+				$resultadoConsultaVehiculo = mysqli_query($link,$consultaVehiculo);
+				$rowVehiculo = mysqli_fetch_array($resultadoConsultaVehiculo);
+				$vehiculoViaje = $rowVehiculo['modelo'];
+				$asientosDisponibles = $rowVehiculo['asientos'];
+			$consultaEstadoPostulacion = "SELECT estado FROM estadospostulacion WHERE id=$idEstadoPostulacion";
+			$result3 = mysqli_query($link,$consultaEstadoPostulacion);
+			$estadoPostulacion = mysqli_fetch_array($result3);
+	?>	
+<div class="ListadoConBotonesConductor">
+	<div class="ListadoBotonesDelViajeComoConductor">
+		<input type="submit" class="BotonCancelarModificar" value="cancelar">
+			<div class="estadoPostulacion">Postulacion: <?php echo $estadoPostulacion['estado']; ?> 
+	</div>
 	</div>
 	<div class="ListadoViajesConductor">
-		<div class="InformacionViajeLineaSuperior">Origen: </div>
-		<div class="InformacionViajeLineaSuperior">Destino: </div>
-		<div class="InformacionViajeLineaSuperior">Fecha: </div>
-		<div class="InformacionViajeLineaSuperior">Salida: </div>
-		<div class="InformacionViajeLineaSuperior">Vehiculo: </div>
+		<div class="InformacionViajeLineaSuperior">Origen: <?php echo $origenViaje; ?></div>
+		<div class="InformacionViajeLineaSuperior">Destino: <?php echo $destinoViaje; ?> </div>
+		<div class="InformacionViajeLineaSuperior">Fecha: <?php echo $dia; ?></div>
+		<div class="InformacionViajeLineaSuperior">Salida: <?php echo $horaPartida; ?>:<?php echo $minutosPartida;?></div>
+		<div class="InformacionViajeLineaSuperior">Vehiculo: <?php echo $vehiculoViaje; ?></div>
 		
-		<div class="InformacionViajeLineaInferior">Duracion aproximada: </div>
-		<div class="InformacionViajeLineaInferior">Precio total: </div>
+		<div class="InformacionViajeLineaInferior">Duracion aproximada: <?php echo $duracionHoras; ?>:<?php echo $duracionMinutos;?></div>
+		<div class="InformacionViajeLineaInferior">Precio total: <?php echo $precio; ?></div>
 		<div class="InformacionViajeLineaInferior">Precio por persona: </div>
 	</div>
 </div>
+		<?php } ?>
 </body>
 </html>

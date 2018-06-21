@@ -31,19 +31,19 @@
 </p>		
 <div class= "registrar">
 <h1 style="color:white;text-align:center;font-family:Arial;font-weight:750;text-shadow:5px 5px 5px #aaa;"> Buscar Usuario </h1> 
-<form method="POST" action="php/eliminarVehiculoDeLaBase.php" class="input" onsubmit="return validar()">
-	<select class="FormularioVehiculos" name="idUsuario" value="<?php echo $fila['id'] ?>"> 
+<form method="POST" class="input" onsubmit="return validar()">
+	<select class="FormularioVehiculos" name="idUsuario" value="<?php echo $fila['id'] ?>">
                 <?php
                   $consulta = "SELECT * FROM usuarios WHERE estaActivo = 1"; 
                   $result = mysqli_query($link,$consulta); ?>
                   <option value= ""> Elige un Usuario </option> <?php              
                   while($fila = mysqli_fetch_array($result)){?>
-					 <option value="<?php echo $fila['nombre']?>"><?php echo $fila['nombre']; echo ' '; echo $fila['apellido'];?></option>;
+					 <option value="<?php echo $fila['id']?>"> <?php echo $fila['nombre']; echo ' '; echo $fila['apellido'];?> </option>;
 				<?php	 
                   }
                 ?>
           </select>
-	<div><input type="submit" class="BotonVehiculos" value="Buscar"></div>
+	<div><input type="submit"  formaction="verPerfilUsuario.php?id=<?php echo $id ?>" class="BotonVehiculos" value="Buscar"></div>
 </form>
 </div>
 <?php	

@@ -127,12 +127,12 @@
 			$consultaEstadoPostulacion = "SELECT estado FROM estadospostulacion WHERE id=$idEstadoPostulacion";
 			$result3 = mysqli_query($link,$consultaEstadoPostulacion);
 			$estadoPostulacion = mysqli_fetch_array($result3);
-			echo $idEstadoPostulacion;
 	?>	
 <div class="ListadoConBotonesConductor">
 	<div class="ListadoBotonesDelViajeComoConductor">
 		<a href="php/cancelarSolicitudViaje.php?estadoPostulacion=<?php echo $idEstadoPostulacion; ?>&idViaje=<?php echo $id_viaje ?>">
-			<div class="BotonCancelarModificar">Cancelar</div></a>
+			<div class="BotonCancelarModificar">Cancelar</div>
+		</a>
 			<div class="estadoPostulacion">Postulacion: <?php echo $estadoPostulacion['estado']; ?> </div>
 	</div>
 	<div class="ListadoViajesConductor">

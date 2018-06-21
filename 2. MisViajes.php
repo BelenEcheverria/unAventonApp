@@ -60,9 +60,9 @@
 			?>
 <div class="ListadoConBotonesConductor">
 	<div class="ListadoBotonesDelViajeComoConductor">
-													 <a href="modificarViaje.php?id_viaje=<?php echo $id_viaje ?>"> <div class="BotonCancelarModificar"> Editar </div> </a>
-													 <a href="EliminarViaje.php?id_viaje=<?php echo $id_viaje ?>"> <div class="BotonCancelarModificar"> Cancelar </div></a>
-													 <a href="2. MiViaje.php?id=<?php echo $id_viaje ?>"> <div class="BotonCancelarModificar"> Postulantes </div></a>
+													 <a href="modificarViaje.php?id_viaje=<?php echo $id_viaje ?>"><div class="BotonCancelarModificar">Editar</div></a>
+													 <a href="EliminarViaje.php?id_viaje=<?php echo $id_viaje ?>"><div class="BotonCancelarModificar">Cancelar</div></a>
+													 <a href="2. MiViaje.php?id=<?php echo $id_viaje; ?>"><div class="BotonCancelarModificar">Postulantes</div></a>
 	</div>
 	<div class="ListadoViajesConductor">
 		<div class="InformacionViajeLineaSuperior">Origen: <?php echo utf8_encode($origenViaje);?></div>

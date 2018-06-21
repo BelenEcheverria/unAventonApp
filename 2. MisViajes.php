@@ -39,7 +39,7 @@
 				$precio= $viajes['precio'];	
 				$duracionHoras = $viajes['duracionHoras'];
 				$duracionMinutos = $viajes['duracionMinutos'];
-				/*---------------AGREGO QUE MUESTRE El Destino---------------*/
+				    /*---------------AGREGO QUE MUESTRE El Destino---------------*/
 					$consultaDestino = "SELECT * FROM ciudades where id=$id_Destino";
 					$resultadoConsultaDest = mysqli_query($link,$consultaDestino);
 					$rowCiudadDest = mysqli_fetch_array($resultadoConsultaDest);
@@ -74,6 +74,10 @@
 		<div class="InformacionViajeLineaInferior">Duracion aproximada: <?php echo $duracionHoras; ?>:<?php echo $duracionMinutos;?></div>
 		<div class="InformacionViajeLineaInferior">Precio total: <?php echo utf8_encode($precio);?></div>
 		<div class="InformacionViajeLineaInferior">Precio por persona: </div>
+	</div>
+	<div class="BotonReservarAsiento">
+		<a href="modificarViaje.php?id_viaje=<?php echo $id_viaje ?>"> Editar </a>
+		<a href="EliminarViaje.php?id_viaje=<?php echo $id_viaje ?>"> Cancelar </a>
 	</div>
 	<?php	
 			}

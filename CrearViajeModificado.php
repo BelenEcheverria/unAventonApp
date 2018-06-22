@@ -27,11 +27,11 @@
         $buscarViajes = "SELECT * FROM viajes WHERE idConductor=$ID AND (hora = $horapartida AND fecha = '$fecha' AND id!=$viaje_id)";
         $resultviajes = mysqli_query($link,$buscarViajes);
         $rUNO = mysqli_fetch_array($resultviajes);
-        if (!empty($rUNO)){
+        if (!empty($rUNO)){ //COINCIDE CON FECHA INGRESADA DE OTRO VIAJE DISTINTO 
           $mensaje = "Su viaje se superpone con otro ya ingresado, ingrese otro horario u elija otro día.";
           header("Location: ErrorModificarViaje.php?mensaje=$mensaje"); 
         }
-        else{  //NO COINCIDE CON FECHAS INGRESADAS
+        else{  //NO COINCIDE CON FECHAS INGRESADAS DE OTROS VIAJES
           $queryMOD= ("UPDATE viajes SET fecha='$fecha', hora='$horapartida', minuto='$minutospartida', duracionHoras='$duracionhoras', duracionMinutos='$duracionmin', precio='$precio', texto='$texto', idEstado='1', idOrigen='$origen', idDestino='$destino', idVehiculo='$vehiculo', idConductor='$ID' WHERE id = '$viaje_id'");
           $resultMOD= (mysqli_query ($link, $queryMOD) or die ('Consulta queryMOD fallida: ' .mysqli_error($link)));    
           header("Location: Inicio.php"); 

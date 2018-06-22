@@ -34,6 +34,7 @@
      $precioTOTAL=$_POST['precio'];
      $precio = ceil($precioTOTAL/$asientosDisponibles);
      $texto=$_POST['texto'];
+     $horarioconduracion=$
      
    if((isset($tipo)) && (isset($dias)) && (isset($origen)) && (isset($destino)) && (isset($fecha)) OR (isset($fechainicial)) && (isset($fechafinal)) && ($horapartida != 0) && ($minutospartida !== null) && ($duracionhoras != 0) && ($duracionmin !== null) && (isset($vehiculo)) && ($precio != 0) && (isset($texto))){
 

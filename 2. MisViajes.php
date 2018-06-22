@@ -59,9 +59,10 @@
 					$asientosDisponibles = $rowVehiculo['asientos'];
 			?>
 <div class="ListadoConBotonesConductor">
-	<div class="ListadoBotonesDelViajeComoConductor"><input type="submit" class="BotonCancelarModificar" value="Editar">
-													 <input type="submit" class="BotonCancelarModificar" value="Cancelar">
-													 <input type="submit" class="BotonCancelarModificar" value="Postulantes">
+	<div class="ListadoBotonesDelViajeComoConductor">
+													 <a href="modificarViaje.php?id_viaje=<?php echo $id_viaje ?>"> <div class="BotonCancelarModificar"> Editar </div> </a>
+													 <a href="EliminarViaje.php?id_viaje=<?php echo $id_viaje ?>"> <div class="BotonCancelarModificar"> Cancelar </div></a>
+													 <a href="2. MiViaje.php?id=<?php echo $id_viaje ?>"> <div class="BotonCancelarModificar"> Postulantes </div></a>
 	</div>
 	<div class="ListadoViajesConductor">
 		<div class="InformacionViajeLineaSuperior">Origen: <?php echo utf8_encode($origenViaje);?></div>
@@ -75,11 +76,11 @@
 		<div class="InformacionViajeLineaInferior">Precio total: <?php echo utf8_encode($precio);?></div>
 		<div class="InformacionViajeLineaInferior">Precio por persona: </div>
 	</div>
-	<div class="BotonReservarAsiento">
+	<?php	
+	/*<div class="BotonReservarAsiento">
 		<a href="modificarViaje.php?id_viaje=<?php echo $id_viaje ?>"> Editar </a>
 		<a href="EliminarViaje.php?id_viaje=<?php echo $id_viaje ?>"> Cancelar </a>
-	</div>
-	<?php	
+	</div>*/
 			}
 		}
 		catch (Exception $e) {

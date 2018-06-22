@@ -19,4 +19,8 @@
     }
     mysqli_query($link, "UPDATE viajes SET idEstado='5' WHERE id = $viaje_id");
 	header ("Location: Inicio.php")
+
+//Bajar puntuacion si tenia pasajeros aceptados, a los pasajeros aceptados 
+
 ?>
+

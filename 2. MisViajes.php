@@ -36,7 +36,7 @@
 				$dia = $viajes['fecha'];
 				$horaPartida = $viajes['hora'];
 				$minutosPartida = $viajes['minuto'];
-				$precio= $viajes['precio'];	
+				$precioTotal = $viajes['precio'];	
 				$duracionHoras = $viajes['duracionHoras'];
 				$duracionMinutos = $viajes['duracionMinutos'];
 				    /*---------------AGREGO QUE MUESTRE El Destino---------------*/
@@ -72,9 +72,9 @@
 							echo utf8_encode($minutosPartida);?></div>
 		<div class="InformacionViajeLineaSuperior">Vehiculo: <?php echo utf8_encode($vehiculoViaje);?></div>
 		
-		<div class="InformacionViajeLineaInferior">Duracion aproximada: <?php echo $duracionHoras; ?>:<?php echo $duracionMinutos;?></div>
-		<div class="InformacionViajeLineaInferior">Precio total: <?php echo utf8_encode($precio);?></div>
-		<div class="InformacionViajeLineaInferior">Precio por persona: </div>
+		<div class="InformacionViajeLineaInferior">Duracion aprox: <?php echo $duracionHoras; echo 'h'; ?> <?php echo $duracionMinutos; echo 'min';?></div>
+		<div class="InformacionViajeLineaInferior">Precio total: <?php echo '$'; echo $precioTotal; ?></div>
+		<div class="InformacionViajeLineaInferior">Precio por persona: <?php echo '$'; echo $precioTotal/($asientosDisponibles+1);?></div>
 	</div>
 	<?php	
 	/*<div class="BotonReservarAsiento">
@@ -112,6 +112,7 @@
 			$minutosPartida = $viajes['minuto'];
 			$precio= $viajes['precio'];	
 			$idEstadoViaje = $viajes['idEstado'];
+			$idConductor = $viajes['idConductor'];
 			$idEstadoPostulacion = $viajes['estadoPostulacion'];
 				/*---------------AGREGO QUE MUESTRE El Destino---------------*/
 				$consultaDestino = "SELECT * FROM ciudades where id=$id_Destino";
@@ -129,15 +130,28 @@
 				$rowVehiculo = mysqli_fetch_array($resultadoConsultaVehiculo);
 				$vehiculoViaje = $rowVehiculo['modelo'];
 				$asientosDisponibles = $rowVehiculo['asientos'];
-			$consultaEstadoPostulacion = "SELECT estado FROM estadospostulacion WHERE id=$idEstadoPostulacion";
-			$result3 = mysqli_query($link,$consultaEstadoPostulacion);
-			$estadoPostulacion = mysqli_fetch_array($result3);
+				//---------------AGREGO EL ESTADO DE LA POSTULACION----------------------
+				$consultaEstadoPostulacion = "SELECT estado FROM estadospostulacion WHERE id=$idEstadoPostulacion";
+				$result3 = mysqli_query($link,$consultaEstadoPostulacion);
+				$estadoPostulacion = mysqli_fetch_array($result3);
+				//--------------AGREGO EL NOMBRE DE CONDUCTOR-------------------------
+				$consultaNombreConductor = "SELECT * FROM usuarios WHERE id=$idConductor";
+				$result4 = mysqli_query($link,$consultaNombreConductor);
+				$nombreConductor = mysqli_fetch_array($result4);
+				//--------------AGREGO EL ESTADO DEL VIAJE---------------------------------
+				$consultaEstadoViaje = "SELECT * FROM estadosviaje WHERE id=$idEstadoViaje";
+				$result5 = mysqli_query($link,$consultaEstadoViaje);
+				$estadoViaje = mysqli_fetch_array($result5);
 	?>	
 <div class="ListadoConBotonesConductor">
 	<div class="ListadoBotonesDelViajeComoConductor">
+		<?php
+		if ($idEstadoPostulacion != 3) { ?>
 		<a href="php/cancelarSolicitudViaje.php?estadoPostulacion=<?php echo $idEstadoPostulacion; ?>&idViaje=<?php echo $id_viaje ?>">
 			<div class="BotonCancelarModificar">Cancelar</div>
 		</a>
+		<?php } ?>
+		
 			<div class="estadoPostulacion">Postulacion: <?php echo $estadoPostulacion['estado']; ?> </div>
 	</div>
 	<div class="ListadoViajesConductor">
@@ -146,10 +160,14 @@
 		<div class="InformacionViajeLineaSuperior">Fecha: <?php echo $dia; ?></div>
 		<div class="InformacionViajeLineaSuperior">Salida: <?php echo $horaPartida; ?>:<?php echo $minutosPartida;?></div>
 		<div class="InformacionViajeLineaSuperior">Vehiculo: <?php echo $vehiculoViaje; ?></div>
-		
-		<div class="InformacionViajeLineaInferior">Duracion aproximada: <?php echo $duracionHoras; ?>:<?php echo $duracionMinutos;?></div>
-		<div class="InformacionViajeLineaInferior">Precio total: <?php echo $precio; ?></div>
-		<div class="InformacionViajeLineaInferior">Precio por persona: </div>
+		<div class="InformacionViajeLineaSuperior" style="margin-bottom:1%;width:21%;">Duracion aprox: <?php echo $duracionHoras; echo 'h'; ?>:<?php echo $duracionMinutos; echo 'min';?></div>
+		<div class="InformacionViajeLineaSuperior" style="margin-bottom:1%;width:21%;">Precio/persona: <?php echo '$'; echo $precio/($asientosDisponibles+1); ?></div>
+		<div class="InformacionViajeLineaSuperior" style="margin-bottom:1%;width:21%;">Conductor: <a href= "verPerfilUsuario.php?id=<?php echo $idConductor?>"><?php echo $nombreConductor['apellido']; echo ' '; echo $nombreConductor['nombre']; ?> </a></div>
+		<div class="InformacionViajeLineaSuperior" style="margin-bottom:1%;width:21%;">Estado: <?php if ($idEstadoViaje == 1) {
+																									?><div style="color:green;font-weight:bold;"><?php echo $estadoViaje['estado'] ?></div>
+																								<?php } else {?>
+																										<div style="color:red;font-weight:bold;"><?php echo $estadoViaje['estado'] ?></div>
+																								<?php } ?> </div>
 	</div>
 </div>
 		<?php } ?>

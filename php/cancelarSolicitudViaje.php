@@ -15,7 +15,7 @@
 		$literalConductor = 'conductor';
 		$fecha = date("y/m/d");
 		$consulta = "INSERT INTO calificacion (fecha,rol,puntuacion,comentario,idUsuarioAutor,idUsuarioCalificado)
-		VALUES ('$fecha','$literalConductor','$puntuacion','$comentario','$ID','$ID')"; 
+		VALUES ('$fecha','$literalConductor','$puntuacion','$comentario','125','$ID')"; 
 		mysqli_query($link,$consulta) or die ('Consulta fallida: ' .mysqli_error($link));
 	}
 	echo 'Postulacion cancelada';

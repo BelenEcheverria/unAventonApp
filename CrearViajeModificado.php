@@ -24,18 +24,18 @@
      $texto=$_POST['texto'];
      $mensaje='$texto';
    if((!empty($origen)) && (!empty($destino)) && (!empty($fecha)) && ($horapartida != 0) && ($minutospartida !== null) && ($duracionhoras != 0) && ($duracionmin !== null) && (!empty($vehiculo)) && ($precio != 0) && (!empty($texto))){
-        /*$buscarViajes = "SELECT * FROM viajes WHERE idConductor=$ID AND (hora = $horapartida AND fecha = '$fecha')";
+        $buscarViajes = "SELECT * FROM viajes WHERE idConductor=$ID AND (hora = $horapartida AND fecha = '$fecha' AND id!=$viaje_id)";
         $resultviajes = mysqli_query($link,$buscarViajes);
         $rUNO = mysqli_fetch_array($resultviajes);
         if (!empty($rUNO)){
           $mensaje = "Su viaje se superpone con otro ya ingresado, ingrese otro horario u elija otro día.";
           header("Location: ErrorModificarViaje.php?mensaje=$mensaje"); 
         }
-        else{  //NO COINCIDE CON FECHAS INGRESADAS*/
+        else{  //NO COINCIDE CON FECHAS INGRESADAS
           $queryMOD= ("UPDATE viajes SET fecha='$fecha', hora='$horapartida', minuto='$minutospartida', duracionHoras='$duracionhoras', duracionMinutos='$duracionmin', precio='$precio', texto='$texto', idEstado='1', idOrigen='$origen', idDestino='$destino', idVehiculo='$vehiculo', idConductor='$ID' WHERE id = '$viaje_id'");
           $resultMOD= (mysqli_query ($link, $queryMOD) or die ('Consulta queryMOD fallida: ' .mysqli_error($link)));    
           header("Location: Inicio.php"); 
-       // }
+        }
       }   
     else{
       $mensaje=$_POST['origen'];

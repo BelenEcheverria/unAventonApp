@@ -171,7 +171,7 @@
 					ON v.id=p.idViaje WHERE (v.idEstado=1 AND v.idConductor=$id AND p.idUsuario=$usuarioID AND p.idEstado=1) 
 					OR (v.idEstado=1 AND v.idConductor=$usuarioID AND p.idUsuario=$id and p.idEstado=1)";
 					$resultadoInfoPersonal = mysqli_query($link,$consultaInformacionPersonal);
-					if (mysqli_num_rows($resultadoInfoPersonal) != 0){ ?>
+					if (mysqli_num_rows($resultadoInfoPersonal) != 0 ){ ?>
 						<div class="CantidadDeVotos">
 							E-mail: 
 							<?php	echo ($usuario['mail']);

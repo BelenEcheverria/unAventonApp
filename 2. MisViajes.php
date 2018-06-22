@@ -23,7 +23,7 @@
 	<?php
 		try {
 		$usuario -> iniciada($usuarioID);
-		$id= $_GET['id'];
+		$id = $_GET['id'];
 		?>
 			<?php	
 			$query= "SELECT * FROM viajes WHERE idEstado=1 AND idConductor= $id ORDER BY fecha ASC";
@@ -147,7 +147,7 @@
 	<div class="ListadoBotonesDelViajeComoConductor">
 		<?php
 		if ($idEstadoPostulacion != 3) { ?>
-		<a href="php/cancelarSolicitudViaje.php?estadoPostulacion=<?php echo $idEstadoPostulacion; ?>&idViaje=<?php echo $id_viaje ?>">
+		<a href="confirmacionCancelarPostulacion.php?estadoPostulacion=<?php echo $idEstadoPostulacion; ?>&idViaje=<?php echo $id_viaje ?>">
 			<div class="BotonCancelarModificar">Cancelar</div>
 		</a>
 		<?php } ?>

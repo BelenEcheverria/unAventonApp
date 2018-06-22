@@ -1,7 +1,7 @@
 <?php
     include_once "php/conection.php"; // conectar y seleccionar la base de datos
     $link = conectar();
-    $viaje_id = $_GET['viaje_id'];
+    $viaje_id = $_GET['id_viaje'];
 //Trae de base de datos la informacion de los viajes
 	$q = "SELECT * FROM viajes where id=$viaje_id ";
    	$result = mysqli_query($link,$q);

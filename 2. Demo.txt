@@ -1,0 +1,41 @@
+* TO-DO REVISAR LA CANTIDAD DE ASIENTOS DISPONIBLES Y LOS PRECIOS
+	en inicio
+	en mis viajes
+	en ver viaje
+_______________________________________________________________________________________________________________
+
+* Ver listado de viajes --> TO-DO AGREGAR QUE MUESTRE SOLO LO DE LOS PROXIMOS 30 DIAS
+			    TO-DO QUE MUESTRE EL NOMBRE DEL CONDUCTOR ???
+
+* Pubilicar viaje --> TO-DO TERMINAR Y PROBAR
+* Modificar viaje --> TO-DO TERMINAR Y PROBAER
+* Eliminar viaje --> TO-DO TERMINAR Y PROBAR
+	* TO-DO QUE CAMBIE EL ESTADO DE LAS POSTULACIONES A 7
+
+---------------------------------------------------------------------------------------------------------------
+
+* Ver viaje
+    A. Si soy pasajero
+        1. Link al perfil del conductor
+	2. Boton postularme
+	    * Postularme a un viaje
+                1. Si no tengo postulaciones pendientes, ni aceptadas me postulo
+		2. Si tengo postulaciones pendientes o aceptadas Boton dar de baja postulacion
+		    * Dar de baja postulacion
+			1. Si estaba aceptada hay penalizacion
+    B. Si soy conductor
+	1. Administrar postulaciones
+	    * Aceptar postulacion
+	    * Rechazar postulacion
+	    * Dar de baja postulacion aceptada, y penalizacion al conductor
+	2. Boton Modificar viaje --> TO-DO FALTA EL LINK
+	3. Boton Eliminar viaje --> TO-DO FALTA EL LINK
+
+* Mis viajes --> T0-DO VERIFICAR QUE FUNCIONEN BIEN LOS BOTONES
+    1. Mis viajes como pasajero
+	* Dar de baja postulacion
+    2. Mis viajes como conductor
+	* Administrar postulaciones
+	* Modificar
+	* Eliminar
+

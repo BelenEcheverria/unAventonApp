@@ -14,6 +14,9 @@
 	<title>Iniciar Sesion</title>
 </head>
 <body class="div_body">
+<?php
+	if ($idEstadoPostulacion == 1) {
+?>
 <div class="div_body">
 <div class= "div_superior">
 		<div class="div_titulo">
@@ -33,5 +36,10 @@
 		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 		<a href="<?=$_SERVER['HTTP_REFERER'] ?>">No</a>
 </div>
+<?php
+	} else {
+		header ("Location: php/cancelarSolicitudViaje.php?estadoPostulacion= $idEstadoPostulacion&idViaje=$id_viaje");
+	}
+?>
 </body>
 </html>

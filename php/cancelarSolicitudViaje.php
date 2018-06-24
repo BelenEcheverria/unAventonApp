@@ -18,5 +18,6 @@
 		VALUES ('$fecha','$literalConductor','$puntuacion','$comentario','125','$ID')"; 
 		mysqli_query($link,$consulta) or die ('Consulta fallida: ' .mysqli_error($link));
 	}
+	echo $consulta;
 	header ("Location: ../2. MisViajes.php?id=$ID");
 ?>

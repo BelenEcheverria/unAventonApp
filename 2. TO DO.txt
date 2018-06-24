@@ -1,7 +1,0 @@
-* Agregar a la base en estados postulacion el estado 5 que diga Pendiente
-
-
-* En MiViaje, el while solo imprime el primer resultado
-
-* Definir como es el criterio de los lugares disponibles (todos - 1)
-	

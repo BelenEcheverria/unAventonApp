@@ -42,5 +42,6 @@
       $_SESSION["error"]="No ingresó todos los datos";
       echo "No ingreso todos los datos";
       header("Location: ErrorModificarViaje.php?mensaje=$mensaje"); 
-    } 
+    }
+    //SI TENGO 2 AUTOS NO PUEDEN ESTAR EN LA MISMA HORA Y FECHA 
 ?>

@@ -17,6 +17,14 @@
 	$origen = $row['idOrigen'];
 	$destino = $row['idDestino'];
 	$id_Vehiculo = $row['idVehiculo'];
+	$idConductor = $row['idConductor'];
+/*---------------AGREGO QUE MUESTRE El CONDUCTOR---------------*/
+	$consultaCOND = "SELECT * FROM usuarios where id=$idConductor";
+	$resultadoConsultaCOND = mysqli_query($link,$consultaCOND);
+	$rowCOND = mysqli_fetch_array($resultadoConsultaCOND);
+	$conductorNom = $rowCOND['nombre'];
+	$conductorAp = $rowCOND['apellido'];
+
 
 /*---------------AGREGO QUE MUESTRE El Destino---------------*/
 	$consultaDestino = "SELECT * FROM ciudades where id=$destino";
@@ -68,9 +76,10 @@ include "MenuBarra.php";
 					<?php } ?>
 				</tr>
 				<tr>
-					<td class="AlineacionCajasListaViajesHorizontal"><?php echo "Precio: " . utf8_encode($precio)?></td>
+					<td class="AlineacionCajasListaViajesHorizontal"><?php echo "Precio: $" . utf8_encode($precio)?></td>
 					<td class="AlineacionCajasListaViajesHorizontal"><?php echo "texto: " . utf8_encode($texto)?></td>
-					<td class="AlineacionCajasListaViajesHorizontal"><?php echo "Vehiculo: " . utf8_encode($vehiculoViaje)?></td>	
+					<td class="AlineacionCajasListaViajesHorizontal"><?php echo "Vehiculo: " . utf8_encode($vehiculoViaje)?></td>
+					<td class="AlineacionCajasListaViajesHorizontal"><?php echo "Conductor: " . utf8_encode($conductorNom) . utf8_encode($conductorAp)?></td>	
 				</tr>
 				<div><input  style="width:15%;margin-top:3.5%;color:white;height:8%;border-color:white;" type="submit" class="BotonReservarAsiento" value="Reservar"></div>
 			</table>

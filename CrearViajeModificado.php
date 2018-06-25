@@ -24,7 +24,7 @@
      $texto=$_POST['texto'];
      $mensaje='$texto';
    if((!empty($origen)) && (!empty($destino)) && (!empty($fecha)) && ($horapartida != 0) && ($minutospartida !== null) && ($duracionhoras != 0) && ($duracionmin !== null) && (!empty($vehiculo)) && ($precio != 0) && (!empty($texto))){
-        $buscarViajes = "SELECT * FROM viajes WHERE idConductor=$ID AND (hora = $horapartida AND fecha = '$fecha' AND id!=$viaje_id)";
+        $buscarViajes = "SELECT * FROM viajes WHERE idConductor=$ID AND (hora >= $horapartida AND hora <= $horarioconduracion AND fecha = '$fecha' AND idVehiculo = $vehiculo AND id!=$viaje_id)";
         $resultviajes = mysqli_query($link,$buscarViajes);
         $rUNO = mysqli_fetch_array($resultviajes);
         if (!empty($rUNO)){ //COINCIDE CON FECHA INGRESADA DE OTRO VIAJE DISTINTO 

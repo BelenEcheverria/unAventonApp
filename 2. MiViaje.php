@@ -22,6 +22,7 @@
 	<?php 
 	try {
 		$usuario -> iniciada($usuarioID);
+		$id_usuario= $usuarioID;
 	?>
 		<?php
 		$viaje_id = $_GET['id'];
@@ -111,7 +112,16 @@
 					<span class="span_detalle"> <?php echo "Vehiculo: " . utf8_encode($vehiculoViaje)?> </span>
 				</div>
 				<br><br><br><br>
-			</div>	
+			</div>
+			<div class="div_submit">
+			<form name="formulario" method="post" >
+				<input type="hidden" name="idVehiculo" value="<?php echo $id_Vehiculo ?>">
+				<input type="hidden" name="idViaje" value="<?php echo $viaje_id ?>">
+				<input type="hidden" name="idPostulacion" value="<?php echo $idPostulacion ?>">
+				<input type="submit" value="Modificar viaje" class= "boton_postulacion_viaje" formaction="php/2. aceptarPostulacion.php" >
+				<input type="submit" value="Eliminar viaje" class= "boton_postulacion_viaje" formaction="php/2. rechazarPostulacion.php">
+			</form>
+			</div>
 			<div>
 				<br> <hr>
 				<p class="p_titulo"> Postulaciones Aceptadas </p>
@@ -123,6 +133,7 @@
 					<?php
 					$hayPostulaciones= false;
 					while ($postulacion = mysqli_fetch_array ($result1)) {
+						$idPostulacion= $postulacion ['id'];
 						$hayPostulaciones= true;
 					?>
 						<div class="div_both_corners" >
@@ -151,7 +162,13 @@
 								$estadoPostulacion= $postulacion ['idEstado'];
 								if ($estadoPostulacion == 1){ //Aceptada
 								?>
-								<input type="submit" value="Dar de baja postulación" class= "boton_postulacion">
+									<form name="formulario" method="post" action="php/2. bajaPostulacion.php">
+										<input type="hidden" name="idVehiculo" value="<?php echo $id_Vehiculo ?>">
+										<input type="hidden" name="idViaje" value="<?php echo $viaje_id ?>">
+										<input type="hidden" name="idPostulacion" value="<?php echo $idPostulacion ?>">
+										<input type="hidden" name="usuario_id" value="<?php echo $id_usuario ?>">
+										<input type="submit" value="Dar de baja postulación" class= "boton_postulacion">
+									</form>
 								<?php
 								} elseif ($estadoPostulacion == 2) { //Rechazada
 									echo 'Usted ha rechazado esta postulacion';
@@ -243,9 +260,9 @@
 					}
 					?>
 				<br>
-				<p class="p_titulo"> Postulaciones Canceladas </p>
+				<p class="p_titulo"> Postulaciones Canceladas y Rechazadas </p>
 				<?php
-				$query1= "SELECT * FROM postulaciones WHERE idViaje = $viaje_id AND (idEstado = 3 OR idEstado = 2)  ORDER BY fecha DESC";
+				$query1= "SELECT * FROM postulaciones WHERE idViaje = $viaje_id AND (idEstado = 3 OR idEstado = 2 OR idEstado = 6)  ORDER BY fecha DESC";
 				$result1= mysqli_query ($link, $query1) or die ('Consuluta query1 fallida: ' .mysqli_error($link));
 				?>
 				<div class="div_lista_postulaciones">
@@ -286,6 +303,8 @@
 									echo 'Usted ha rechazado esta postulacion';
 								} elseif ($estadoPostulacion == 3) { //Cancelada
 									echo 'El usuario ha cancelado esta postulacion';
+								} elseif ($estadoPostulacion == 6) { //Dada de baja
+									echo 'Usted ha dado de baja esta postulacion';
 								}
 								?>
 							</span>

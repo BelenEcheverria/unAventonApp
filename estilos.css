@@ -75,7 +75,7 @@
 .BotonCancelarModificar {
     background-color: #F16868;
     color: white;
-    border: 2px solid #BC3D3D;
+    border: 2px solid Crimson;
     font-size: 12px;
     font-weight: 800;
     font-family: Arial;
@@ -201,7 +201,7 @@
 }
 .BotonReservarAsiento {
 	background-color:#F16868; 
-    border:2px solid black;
+    border:2px solid orange;
 	margin-right:2%;
 	margin-top:1.8%;
 	float:right;
@@ -521,6 +521,7 @@
 	width:25%;
 	float:right;
 	margin-top:2%;
+
 }
 .LineaPiePagina {
 	width: 100%;
@@ -663,6 +664,7 @@
 	background-color:orange;
   	padding-bottom: 10px;  
   	padding-top: 1zpx;
+	
 }
 
 .Votos {

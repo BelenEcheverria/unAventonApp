@@ -46,8 +46,7 @@
    if((isset($tipo)) && (isset($dias)) && (isset($origen)) && (isset($destino)) && (isset($fecha)) OR (isset($fechainicial)) && (isset($fechafinal)) && ($horapartida != 0) && ($minutospartida !== null) && ($duracionhoras != 0) && ($duracionmin !== null) && (isset($vehiculo)) && ($precio != 0) && (isset($texto))){
 
       if ($tipo=="1"){ //OCASIONAL
-             $buscarViajes = "SELECT * FROM viajes WHERE idConductor = $ID AND (hora >= $horapartida AND hora <= $horarioconduracion AND fecha = '$fecha' AND idVehiculo = $vehiculo)";
-             echo $buscarViajes;
+             $buscarViajes = "SELECT * FROM viajes WHERE idConductor=$ID AND (hora>=$horapartida AND hora<=$horarioconduracion AND fecha=$fecha AND idVehiculo=$vehiculo)";
              $resultviajes = mysqli_query($link,$buscarViajes);
              $rUNO = mysqli_fetch_array($resultviajes);
              if (!empty($rUNO)){
@@ -71,7 +70,7 @@
                 if (in_array($diaDeSemana, $dias)) {
                    echo $dt->format("N Y-m-d\n");
                    $fechaBase = ($dt->format("Y-m-d\n"));
-                   $buscarViajes = "SELECT * FROM viajes WHERE idConductor = $ID AND (hora >= $horapartida AND hora <= $horarioconduracion AND fecha = '$fechaBase' AND idVehiculo = $vehiculo)";
+                   $buscarViajes = "SELECT * FROM viajes WHERE idConductor=$ID AND (hora>=$horapartida AND hora<=$horarioconduracion AND fecha='$fechaBase' AND idVehiculo=$vehiculo)";
                    $resultviajes = mysqli_query($link,$buscarViajes);
                    $rUNO = mysqli_fetch_array($resultviajes);
                    //$buscarCalificaciones = "SELECT * FROM calificaciones WHERE idUsuarioAutor='$ID'";

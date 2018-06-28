@@ -23,25 +23,35 @@
      $precio = ceil($precioTOTAL/$asientosDisponibles);
      $texto=$_POST['texto'];
      $mensaje='$texto';
-   if((!empty($origen)) && (!empty($destino)) && (!empty($fecha)) && ($horapartida != 0) && ($minutospartida !== null) && ($duracionhoras != 0) && ($duracionmin !== null) && (!empty($vehiculo)) && ($precio != 0) && (!empty($texto))){
-        $buscarViajes = "SELECT * FROM viajes WHERE idConductor=$ID AND (hora >= $horapartida AND hora <= $horarioconduracion AND fecha = '$fecha' AND idVehiculo = $vehiculo AND id!=$viaje_id)";
-        $resultviajes = mysqli_query($link,$buscarViajes);
-        $rUNO = mysqli_fetch_array($resultviajes);
-        if (!empty($rUNO)){ //COINCIDE CON FECHA INGRESADA DE OTRO VIAJE DISTINTO 
-          $mensaje = "Su viaje se superpone con otro ya ingresado, ingrese otro horario u elija otro día.";
-          header("Location: ErrorModificarViaje.php?mensaje=$mensaje"); 
-        }
-        else{  //NO COINCIDE CON FECHAS INGRESADAS DE OTROS VIAJES
+	if((!empty($origen)) && (!empty($destino)) && (!empty($fecha)) && ($horapartida != 0) && ($minutospartida !== null) && ($duracionhoras != 0) && ($duracionmin !== null) && (!empty($vehiculo)) && ($precio != 0) && (!empty($texto))){
+	   
+   	$puedePublicar = true; 
+    $buscarVehichulo = "SELECT * FROM viajes WHERE idVehiculo = $vehiculo";
+    $resultVehiculo = mysqli_query($link,$buscarVehichulo);
+	echo "<br> <br>";
+	echo $buscarVehichulo;
+    while ($rVehiculo = mysqli_fetch_array($resultVehiculo)){
+		if ($rVehiculo['fecha'] == $fecha) {
+			$horaEnViaje= $rVehiculo['hora'] + $rVehiculo['duracionHoras'];
+			if ($horapartida < $horaEnViaje) {
+				$puedePublicar = false;
+			}
+		}
+	}			 
+    if ($puedePublicar == false){
+        $mensaje = "Su viaje se superpone con otro ya ingresado, ingrese otro horario, elija otro día o cambie de vehículo.";
+		header("Location: ErrorModificarViaje.php?mensaje=$mensaje"); 
+	} else {	//NO COINCIDE CON FECHAS INGRESADAS DE OTROS VIAJES
           $queryMOD= ("UPDATE viajes SET fecha='$fecha', hora='$horapartida', minuto='$minutospartida', duracionHoras='$duracionhoras', duracionMinutos='$duracionmin', precio='$precio', texto='$texto', idEstado='1', idOrigen='$origen', idDestino='$destino', idVehiculo='$vehiculo', idConductor='$ID' WHERE id = '$viaje_id'");
           $resultMOD= (mysqli_query ($link, $queryMOD) or die ('Consulta queryMOD fallida: ' .mysqli_error($link)));    
-          header("Location: Inicio.php"); 
+          header("Location: 2. MisViajes.php?id=$ID"); 
         }
-      }   
-    else{
-      $mensaje=$_POST['origen'];
-      $_SESSION["error"]="No ingresó todos los datos";
-      echo "No ingreso todos los datos";
-      header("Location: ErrorModificarViaje.php?mensaje=$mensaje"); 
-    }
-    //SI TENGO 2 AUTOS NO PUEDEN ESTAR EN LA MISMA HORA Y FECHA 
+}   
+else{
+	$mensaje=$_POST['origen'];
+    $_SESSION["error"]="No ingresó todos los datos";
+    echo "No ingreso todos los datos";
+    header("Location: ErrorModificarViaje.php?mensaje=$mensaje"); 
+}
+
 ?>

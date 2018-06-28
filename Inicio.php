@@ -17,8 +17,8 @@
 	include "MenuBarra.php";
 ?>
 <div style="width:100%;height:81%;font-family: Arial;">
-	<div class="Menu">
-		<div class="CajaMenuBusqueda">
+	<div class="Menu" style="width:12%;">
+		<!-- <div class="CajaMenuBusqueda">
 			<form method="POST" style="margin-top:15px"action="crearcuenta.php" class="input" onsubmit="return validar()">
 				<label class="LabelFormularios"> Origen </label>
 				<input type="password" id="clave1" name="password" class="FormularioMenuBusqueda" placeholder="Ingresa desde dónde viajas">
@@ -28,25 +28,40 @@
 				<input type="date" class="FormularioMenuBusqueda" name="fecha">
 				<div><input type="submit" class="BotonBuscar" value="Buscar"></div>
 			</form>
-		</div>
+		</div> -->
 	</div>
-
+	<br>
 	<div class="ParteViajes">
 				<div class="ViajesInfoHorizontal">
-						<table style="width:85%; margin-left:2%;">
-							<tr>
+						<table style=" height:60%;width:85%; margin-left:2%;font-weight: bold; color: white;">
+							<tr >
 							<td class="AlineacionViajesInfoHorizontal">Origen</td> 
 							<td class="AlineacionViajesInfoHorizontal">Destino</td> 
 							<td class="AlineacionViajesInfoHorizontal">Fecha</td> 
 							<td class="AlineacionViajesInfoHorizontal">Hora</td>
-							<td class="AlineacionViajesInfoHorizontal">Precio</td>
+							<td class="AlineacionViajesInfoHorizontal">Precio asiento</td>
 							<td class="AlineacionViajesInfoHorizontal">Vehiculo</td> 
 							<td class="AlineacionViajesInfoHorizontal">A.disponibles</td>
 							</tr>
 						</table>	
 				<div>
+				
 		<?php 
-		$sql= "SELECT * FROM viajes where idEstado=1 ORDER BY fecha ASC";
+		$fecha_actual = (date("Y-m-d"));
+		$query= "SELECT * FROM viajes";
+		$result = mysqli_query($link, $query);
+		while ($viajes = mysqli_fetch_array($result)){ 
+			$fecha_viaje = $viajes['fecha'];
+			if ($fecha_viaje < $fecha_actual){
+				$id_viaje_update= $viajes['id'];
+				$queryUpdate = "UPDATE viajes SET idEstado=4 WHERE id= $id_viaje_update";
+				$resultUpdate = mysqli_query($link, $queryUpdate);
+			}
+		}	
+		$fecha = date('Y-m-d');
+		$nuevafecha = strtotime ( '+30 day' , strtotime ( $fecha ) ) ;
+		$nuevafecha = date ( 'Y-m-d' , $nuevafecha );
+		$sql= "SELECT * FROM viajes WHERE idEstado=1 ORDER BY fecha, hora ASC";
 		$result = mysqli_query($link, $sql); //traer los viajes vector de vectores
 	   	if($result){
 	   		$cantidad_viajes = mysqli_num_rows($result);
@@ -65,7 +80,8 @@
 		<tr>
 		<div class="ListadoViajes">
 		    <?php
-			while($viajes = mysqli_fetch_array($sql_limite)){ 
+			while ($viajes = mysqli_fetch_array($sql_limite)){
+				if ( $viajes['fecha']<= $nuevafecha) {
 					$id_viaje = $viajes['id'];
 					$id_Destino = $viajes['idDestino'];
 					$id_Origen = $viajes['idOrigen'];
@@ -74,6 +90,7 @@
 					$horaPartida = $viajes['hora'];
 					$minutosPartida = $viajes['minuto'];
 					$precio= $viajes['precio'];
+					$conductor_id = $viajes['idConductor'];
 
 					/*---------------AGREGO QUE MUESTRE El Destino---------------*/
 					$consultaDestino = "SELECT * FROM ciudades where id=$id_Destino";
@@ -100,18 +117,25 @@
 							<td class="AlineacionCajasListaViajesHorizontal"><?php echo utf8_encode($origenViaje);?></td> 
 							<td class="AlineacionCajasListaViajesHorizontal"><?php echo utf8_encode($destinoViaje);?></td> 
 							<td class="AlineacionCajasListaViajesHorizontal"><?php echo utf8_encode($dia);?></td> 
-							<td class="AlineacionCajasListaViajesHorizontal"><?php echo utf8_encode($horaPartida);?>:<?php
-							echo utf8_encode($minutosPartida);?></td>
-							<td class="AlineacionCajasListaViajesHorizontal"><?php echo utf8_encode($precio);?></td>
+							<td class="AlineacionCajasListaViajesHorizontal"><?php echo utf8_encode($horaPartida);?>:<?php echo utf8_encode($minutosPartida); if ($minutosPartida == 0) { echo 0;}
+							?></td>
+							<td class="AlineacionCajasListaViajesHorizontal">$<?php echo utf8_encode((round($precio/$asientosDisponibles)));?></td>
 							<td class="AlineacionCajasListaViajesHorizontal"><?php echo utf8_encode($vehiculoViaje);?></td> 
-							<td class="AlineacionCajasListaViajesHorizontal"><?php echo utf8_encode($asientosDisponibles);?></td> 
+							<td class="AlineacionCajasListaViajesHorizontal"><?php echo utf8_encode($asientosDisponibles-1);?></td> 
 							</tr>
+							
 						<div class="BotonReservarAsiento">
+							<?php
+							if ( $conductor_id == $usuarioID )
+							{ ?>
+							<a href="2. MiViaje.php?id=<?php echo $id_viaje; ?>"> Ver viaje </a>
+						<?php } else { ?>
 							<a href="verviaje.php?id_viaje=<?php echo $id_viaje ?>"> Ver viaje </a>
+						<?php } ?>
 						</div>
 					</table>
 				    </div>
-				<?php } ?>
+				<?php } }?>
 			</tr>	
 	</div>
 </div>
@@ -136,3 +160,4 @@ Cuando creamos o accedemos al contenido de variables de sesión debemos llamar a
 	$usuario -> session ($usuarioID, $admin);
 Tengamos en cuenta que en cualquier otra página del sitio tenemos acceso a las variables de sesión sólo con llamar inicialmente a la función session_start().
 -->
+

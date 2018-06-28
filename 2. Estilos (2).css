@@ -98,6 +98,19 @@ hr {
 	font-size: 110%;
 }
 
+.boton_postulacion_viaje_get {
+	background-color: #F16868;
+    color: white;
+    border: solid orange;
+    font-family: Arial, sans-serif;
+	font-weight: bold;
+	border-radius: 15px;
+	margin: 3%;
+	height: 5%;
+	width: 10%;
+	font-size: 110%;
+}
+
 .boton_cancelar_viaje {
 	background-color: #F16868;
     color: white;

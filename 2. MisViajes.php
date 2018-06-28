@@ -77,7 +77,19 @@ $usuario -> session ($usuarioID, $admin);
 						</div>
 						<div class="div_vertical_detalle">
 							<span class="InformacionViajeLineaSuperior_detalle">Precio total: <?php echo '$'; echo $precioTotal; ?></span> <br><br>
-							<span class="InformacionViajeLineaSuperior_detalle">Precio por persona: <?php echo '$'; echo $precioTotal/($asientosDisponibles+1);?></span>
+							<span class="InformacionViajeLineaSuperior_detalle"> Lugares disponibles:
+							<?php
+							$viaje_id= $id_viaje;
+							$query3= "SELECT * FROM postulaciones WHERE idViaje = $viaje_id AND idEstado = 1";
+							$result3= mysqli_query ($link, $query3) or die ('Consuluta query1 fallida: ' .mysqli_error($link));
+							$asientosOcupados= 0;
+							while ($postulacion = mysqli_fetch_array ($result3)){
+								$asientosOcupados ++;
+							}
+							echo($asientosDisponibles - $asientosOcupados - 1);
+							$lugaresDisponibles = ($asientosDisponibles - $asientosOcupados)
+							?>
+							</span>
 						</div>
 					</div>
 				</div>
@@ -158,13 +170,15 @@ $usuario -> session ($usuarioID, $admin);
 		<div>
 			<div class="ListadoBotonesDelViajeComoConductor">
 				<?php
-				if (($idEstadoPostulacion != 3) and ($idEstadoPostulacion != 6) and ($idEstadoPostulacion != 7)) { ?>
+				if (($idEstadoPostulacion != 3) and ($idEstadoPostulacion != 6) and ($idEstadoPostulacion != 7) and ($idEstadoPostulacion != 2) and ($idEstadoPostulacion != 7)) { ?>
 					<a href="confirmacionCancelarPostulacion.php?estadoPostulacion=<?php echo $idEstadoPostulacion; ?>&idViaje=<?php echo $id_viaje ?>"> <div class="BotonCancelarModificar">Cancelar</div> </a>
 				<?php
 				} ?>
 				<div class="estadoPostulacion">Postulacion: <?php echo $estadoPostulacion['estado'];
 				if ($idEstadoPostulacion == 6) { echo " por el condutor"; }
-				if ($idEstadoPostulacion == 3) { echo " por el usuario"; } ?> </div>
+				if ($idEstadoPostulacion == 2) { echo " por el condutor"; }
+				if ($idEstadoPostulacion == 3) { echo " por el usuario"; }
+				if ($idEstadoPostulacion == 7) { echo " por el condutor"; }	?> </div>
 			</div>
 			<div class="ListadoViajesPasajero_detalle">
 				<div class= "div_vertical_detalle" >
@@ -175,14 +189,14 @@ $usuario -> session ($usuarioID, $admin);
 				<div class= "div_vertical_detalle">
 					<span class="InformacionViajeLineaSuperior_detalle">Fecha: <?php echo $dia; ?></span> <br><br>
 					<span class="InformacionViajeLineaSuperior_detalle">Salida: <?php echo $horaPartida; ?>:<?php echo $minutosPartida; if ($minutosPartida == 0) { echo "0";} ?></span> <br><br>
-					<span class="InformacionViajeLineaSuperior_detalle">Duracion aprox: <?php echo $duracionHoras; echo 'h'; ?>:<?php echo $duracionMinutos; echo 'min';?></span>
+					<span class="InformacionViajeLineaSuperior_detalle">Duracion aprox: <?php echo $duracionHoras; echo 'h'; ?><?php if ($duracionMinutos != 0 ) {echo $duracionMinutos; echo 'min';}?></span>
 				</div>
 				<div class= "div_vertical_detalle">
 					<span class="InformacionViajeLineaSuperior_detalle">Vehiculo: <?php echo $vehiculoViaje; ?></span> <br><br>
 					<span class="InformacionViajeLineaSuperior_detalle">Conductor: <a href= "verPerfilUsuario.php?id=<?php echo $idConductor?>"><?php echo $nombreConductor['apellido']; echo ' '; echo $nombreConductor['nombre']; ?> </a></span>
 				</div>
 				<div class= "div_vertical_detalle">
-					<span class="InformacionViajeLineaSuperior_detalle">Precio por persona: <?php echo '$'; echo $precio/($asientosDisponibles+1); ?></span> <br><br>
+					<span class="InformacionViajeLineaSuperior_detalle">Precio por persona: <?php echo '$'; echo $precio/($asientosDisponibles); ?></span> <br><br>
 					<span class="InformacionViajeLineaSuperior_detalle"> Lugares disponibles:
 					<?php
 					$viaje_id= $id_viaje;
@@ -192,7 +206,7 @@ $usuario -> session ($usuarioID, $admin);
 					while ($postulacion = mysqli_fetch_array ($result3)){
 						$asientosOcupados ++;
 					}
-					echo($asientosDisponibles - $asientosOcupados);
+					echo($asientosDisponibles - $asientosOcupados - 1);
 					$lugaresDisponibles = ($asientosDisponibles - $asientosOcupados)
 					?>
 					</span>
@@ -217,4 +231,5 @@ $usuario -> session ($usuarioID, $admin);
 	?>
 </div>	
 </body>
+</html>
 </html>

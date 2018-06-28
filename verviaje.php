@@ -94,7 +94,7 @@ include "MenuBarra.php";
 					</span>
 				</div>
 				<div class="div_vertical">
-					<span class="span_detalle"> Lugares totales: <?php echo($asientosDisponibles-1) ?> </span>
+					<span class="span_detalle"> Lugares totales: <?php echo($asientosDisponibles) ?> </span>
 					<br><br>
 					<span class="span_detalle"> Lugares disponibles:
 					<?php

@@ -16,15 +16,20 @@
 			<table class="CajaRegistro">
 				<tr>
 					<td>
-						<input type="text" id="nombreusuario" class="FormularioRegistrarse" style="width:90%" name="nombre" maxlength="45" placeholder="Nombre..." required/>
+						<input type="text" class="FormularioRegistrarse" style="width:90%" name="nombre" maxlength="45" placeholder="Nombre..." required/>
 					</td>
 					<td>
-						<input type="text" id="nombreusuario" class="FormularioRegistrarse" style="width:90%" name="apellido" maxlength="45" placeholder="Apellido..." required/>
+						<input type="text" class="FormularioRegistrarse" style="width:90%" name="apellido" maxlength="45" placeholder="Apellido..." required/>
 					</td>
 				</tr>
 				<tr>
 					<td>
-						<input type="E-mail" id="nombreusuario" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" class="FormularioRegistrarse" style="width:192%" name="nombreUsuario" maxlength="45" placeholder="mail@ejemplo.com" required/>
+						<input type="E-mail" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" class="FormularioRegistrarse" style="width:192%" name="nombreUsuario" maxlength="45" placeholder="mail@ejemplo.com" required/>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<input type="E-mail" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" class="FormularioRegistrarse" style="width:192%" name="mailAlternativo" maxlength="45" placeholder="Correo alternativo">
 					</td>
 				</tr>
 				<tr>
@@ -34,17 +39,17 @@
 				</tr>
 				<tr>
 					<td >
-						<input type="date" value="2013-01-08" id="nombreusuario" class="FormularioRegistrarse" name="nacimiento" required/>
+						<input type="date" value="2013-01-08" class="FormularioRegistrarse" name="nacimiento" required/>
 					</td>
 				</tr>
 				<tr>
 					<td>
-						<input type="password" id="nombreusuario" class="FormularioRegistrarse" style="width:192%" name="contrasenia1" maxlength="32" placeholder="Contraseña..." />
+						<input type="password" class="FormularioRegistrarse" style="width:192%" name="contrasenia1" maxlength="32" placeholder="Contraseña..." />
 					</td>
 				</tr>
 				<tr>
 					<td>
-						<input type="password" id="nombreusuario" class="FormularioRegistrarse" style="width:192%"name="contrasenia2" placeholder="Repetri contraseña..." />
+						<input type="password" class="FormularioRegistrarse" style="width:192%"name="contrasenia2" placeholder="Repetri contraseña..." />
 					</td>
 				</tr>
 			</table>

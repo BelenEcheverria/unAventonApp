@@ -11,6 +11,7 @@ $usuario -> session ($usuarioID, $admin);
 	<link rel="stylesheet" href="2. Estilos (2).css">
 	<link rel="stylesheet" href="estilos.css">
 	<title> Mis Viajes </title>
+	<script src="ValidarViaje.js"></script>
 	<meta charset="utf-8"/>
 </head>
 <body class="FondoInicio">
@@ -59,7 +60,7 @@ $usuario -> session ($usuarioID, $admin);
 				<div>
 					<div class="ListadoBotonesDelViajeComoConductor">
 						<a href="modificarViaje.php?id_viaje=<?php echo $id_viaje ?>"><div class="BotonCancelarModificar">Editar</div></a>
-						<a href="EliminarViaje.php?id_viaje=<?php echo $id_viaje ?>"><div class="BotonCancelarModificar">Cancelar</div></a>
+						<a href="EliminarViaje.php?id_viaje=<?php echo $id_viaje ?>"><button class="BotonCancelarModificar" onclick="return Eliminar()">Cancelar</button></a>
 						<a href="2. MiViaje.php?id=<?php echo $id_viaje; ?>"><div class="BotonCancelarModificar">Postulantes</div></a>
 					</div>
 					<div class="ListadoViajesConductor_detalle">

@@ -10,6 +10,7 @@
 	<link rel="stylesheet" href="estilos.css">
 	<link rel="stylesheet" href="2. Estilos.css">
 	<title> Mis Viajes </title>
+	<script src="ValidarViaje.js"></script>
 	<meta charset="utf-8"/>
 </head>
 <body background="Imagenes/FondoColores.jpg">
@@ -162,7 +163,7 @@
 								$estadoPostulacion= $postulacion ['idEstado'];
 								if ($estadoPostulacion == 1){ //Aceptada
 								?>
-									<form name="formulario" method="post" action="php/2. bajaPostulacion.php">
+									<form name="formulario" method="post" action="php/2. bajaPostulacion.php" onclick="return DarDeBajaPostulacion()">
 										<input type="hidden" name="idVehiculo" value="<?php echo $id_Vehiculo ?>">
 										<input type="hidden" name="idViaje" value="<?php echo $viaje_id ?>">
 										<input type="hidden" name="idPostulacion" value="<?php echo $idPostulacion ?>">

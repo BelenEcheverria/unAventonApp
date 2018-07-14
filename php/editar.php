@@ -8,41 +8,47 @@
 	}
 	if ((isset ($_POST['id'])) and (isset($_POST['nombre'])) and (isset($_POST['apellido'])) and (isset($_POST['password1'])) and (isset ($_POST['password2']))){
 		$id= $_POST['id'];
+		$mailOriginal= $_POST['nombreUsuario'];
 		$nombre= $_POST['nombre'];
 		$apellido= $_POST['apellido'];
 		$contra1= $_POST['password1'];
 		$contra2= $_POST['password2'];
-		if ((!empty($nombre)) and (!empty($apellido)) and (!empty($contra1)) and (!empty($contra2))){
-			if ($contra1 == $contra2){
-				if ((strlen($contra1)) >= 6){
-					$mayus= 0;
-					$simbolo= 0;
-					$nro= 0;
-					for ($i=0; $i<strlen($contra1);$i++){
-						$caracter= $contra1[$i];
-						if (ctype_upper($caracter)){
-							$mayus ++;
-						} elseif (!ctype_alnum ($caracter)) {
-							$simbolo ++;
-						} elseif (ctype_digit($caracter)){
-							$nro ++;
+		$correoAlternativo = $_POST['correoAlternativo'];
+		if ((!empty($nombre)) and (!empty($apellido)) and (!empty($contra1)) and (!empty($contra2)) and (!empty($correoAlternativo))){
+			if (($correoAlternativo) != ($mailOriginal)){
+				if ($contra1 == $contra2){
+					if ((strlen($contra1)) >= 6){
+						$mayus= 0;
+						$simbolo= 0;
+						$nro= 0;
+						for ($i=0; $i<strlen($contra1);$i++){
+							$caracter= $contra1[$i];
+							if (ctype_upper($caracter)){
+								$mayus ++;
+							} elseif (!ctype_alnum ($caracter)) {
+								$simbolo ++;
+							} elseif (ctype_digit($caracter)){
+								$nro ++;
+							}
 						}
-					}
-					if (($mayus <> 0) and ($nro <> 0)) {
-						$cumple1= true;							
+						if (($mayus <> 0) and ($nro <> 0)) {
+							$cumple1= true;							
+						} else {
+							$mensaje1="La contraseña debe tener al menos una mayuscula y un numero";
+						}
 					} else {
-						$mensaje1="La contraseña debe tener al menos una mayuscula y un numero";
-					}
+						$mensaje1= "La contraseña debe tener 6 caracteres como minimo";
+					} 
 				} else {
-					$mensaje1= "La contraseña debe tener 6 caracteres como minimo";
-				} 
-			} else {
-				$mensaje1="Las contraseñas no coinciden";
-			}		
+					$mensaje1="Las contraseñas no coinciden";
+				}		
 			if ($cumple1 == true) {
-				$query72= ("UPDATE usuarios SET nombre='$nombre', apellido='$apellido', password='$contra1' WHERE id='$id'");
+				$query72= ("UPDATE usuarios SET nombre='$nombre', apellido='$apellido', password='$contra1', mailRecuperacion='$correoAlternativo' WHERE id='$id'");
 				$result72= (mysqli_query ($link, $query72) or die ('Consuluta query72 fallida: ' .mysqli_error($link)));		
 				$mensaje1= "Sus datos se han actualizado correctamente";
+			}
+			} else {
+				$mensaje1="El mail principal y alternativo deben ser diferentes";
 			}
 		} else{
 			$mensaje1="Por favor, no deje ningun campo en blanco (excepto la imagen, que es opcional)";

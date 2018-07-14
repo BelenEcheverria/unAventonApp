@@ -9,37 +9,45 @@
 		$apellido= $_POST['apellido'];
 		if (isset ($_POST['nombreUsuario'])){
 			$usuario= $_POST['nombreUsuario'];
-			if ((isset ($_POST['contrasenia1'])) and (isset ($_POST['contrasenia2'])) and ($_POST['contrasenia2']==$_POST['contrasenia1'])){
-				$contra= $_POST['contrasenia1'];
-				if ((strlen($contra)) >= 8){
-					$mayus= 0;
-					$nro= 0;
-					for ($i=0; $i<strlen($contra);$i++){
-						$caracter= $contra[$i];
-						if (ctype_upper($caracter)){
-							$mayus ++;
-						} elseif (ctype_digit($caracter)){
-							$nro ++;
-						}
-					}
-					if (($mayus <> 0) and ($nro <> 0)) {
-						$cumple1= true;							
+			if (!empty($_POST['mailAlternativo'])){
+				$mailAlternativo = $_POST['mailAlternativo'];
+				if (($usuario)!=($mailAlternativo)){
+					if ((isset ($_POST['contrasenia1'])) and (isset ($_POST['contrasenia2'])) and ($_POST['contrasenia2']==$_POST['contrasenia1'])){
+						$contra= $_POST['contrasenia1'];
+						if ((strlen($contra)) >= 8){
+							$mayus= 0;
+							$nro= 0;
+							for ($i=0; $i<strlen($contra);$i++){
+								$caracter= $contra[$i];
+								if (ctype_upper($caracter)){
+									$mayus ++;
+								} elseif (ctype_digit($caracter)){
+									$nro ++;
+								}
+							}
+							if (($mayus <> 0) and ($nro <> 0)) {
+								$cumple1= true;							
+							} else {
+								$mensaje="La contraseña debe tener al menos una mayuscula y un numero";
+							}
+						} else {
+							$mensaje= "La contraseña debe tener 8 caracteres como minimo";
+						} 
 					} else {
-						$mensaje="La contraseña debe tener al menos una mayuscula y un numero";
+						$mensaje="Las contraseñas no fueron introducidas, o no coinciden";
 					}
 				} else {
-						$mensaje= "La contraseña debe tener 8 caracteres como minimo";
-				} 
+					$mensaje= "El mail principal y alternativo deben ser distintos";
+				}
 			} else {
-				$mensaje="Las contraseñas no fueron introducidas, o no coinciden";
-			}					
+				$mensaje= "No se ingreso correo alternativo";
+			}	
 		} else {
 				$mensaje= "No se ingreso el e-mail";
 		}
 	} else {
 			$mensaje= "No se ingreso el nombre y/o apellido";
 	}
-	
 	$cumple2=true;
 		if ($cumple1 == true){
 		$query25= ("SELECT mail FROM usuarios");
@@ -71,9 +79,8 @@
 	if ($cumple3== false){
 		$mensaje= "Debe ser mayor de 18 años, para poder registrarse";
 	}	
-	
 	if (($cumple1== true) and ($cumple2== true) and ($cumple3== true)){
-		$query31= "INSERT INTO usuarios (mail, password, nombre, apellido, nacimiento) values ('$_POST[nombreUsuario]', '$_POST[contrasenia1]', '$_POST[nombre]', '$_POST[apellido]', '$_POST[nacimiento]')";
+		$query31= "INSERT INTO usuarios (mail, password, nombre, apellido, nacimiento, mailRecuperacion) values ('$_POST[nombreUsuario]', '$_POST[contrasenia1]', '$_POST[nombre]', '$_POST[apellido]', '$_POST[nacimiento]', '$_POST[mailAlternativo]')";
 		$result31= mysqli_query ($link, $query31) or die ('Consuluta query1 fallida: ' .mysqli_error($link));
 		$exito= true;
 	}
@@ -90,7 +97,7 @@
 			} else {
 				$mensaje= "El formato de la imagen no es valido";
 			}
-	} 
+	}
 ?>
 <html>
 <head> 

@@ -29,7 +29,24 @@ function cambioTipoDeViaje(){
     $('.js-example-basic-multiple').select2();
 }
 //La funcion, crea una variable que obtiene el valor del tipo de viaje deseado  e-->hace referencia al evento que se ejecutó
-
+function Eliminar(){
+	var ok = confirm('Si tiene pasajeros aceptados usted sera penalizado con una calificacion negativa, desea continuar?');
+	if (ok){
+		return true;
+	}
+	else{
+		return false;
+	}
+}
+function DarDeBajaPostulacion(){
+	var ok = confirm('Usted sera penalizado con una calificacion negativa, desea continuar?');
+	if (ok){
+		return true;
+	}
+	else{
+		return false;
+	}
+}
 function validarviaje(){
 	var origen, destino, fecha, horapartida, minutospartida, duracionhoras, duracionmin, vehiculo, precio, texto;
 

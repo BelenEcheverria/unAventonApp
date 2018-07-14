@@ -28,10 +28,10 @@
 			<form name="inicioSesion" method="post" action="php/inicioSesion.php">
 			<tr class="AlineacionCajasInicioSesion">
 				<td class="AlineacionCajasInicioSesion">
-					<input type="text" id="nombreusuario" class="FormularioInicioSesion" name="nombreU" placeholder="E-mail">
+					<input type="text" class="FormularioInicioSesion" name="nombreU" placeholder="E-mail">
 				</td>
 				<td class="AlineacionCajasInicioSesion">
-					<input type="password" id="nombreusuario" class="FormularioInicioSesion" name="contraU" placeholder="Contraseña ...">
+					<input type="password" class="FormularioInicioSesion" name="contraU" placeholder="Contraseña ...">
 				</td>
 				<td class="AlineacionCajasInicioSesion">
 					<input type="button" class="BotonEntrar" value="Entrar" onclick="validarInicioSesion()" >
@@ -39,8 +39,8 @@
 			</tr>
 			</form>
 			<tr class="AlineacionCajasInicioSesion">
-				<td class="AlineacionCajasInicioSesion"></td>
-				<td class="AlineacionCajasInicioSesion">  <a style="text-decoration: none; color: white; font-family: Verdana, Sans,Sans-serif";" href="Bienvenida.php"> Crear una cuenta </a> </td>
+				<td class="AlineacionCajasInicioSesion"><a style="text-decoration: none; color: white; font-family: Verdana, Sans,Sans-serif" href="RecuperarContra.php"> Recuperar contraseña </a></td>
+				<td class="AlineacionCajasInicioSesion"><a style="text-decoration: none; color: white; font-family: Verdana, Sans,Sans-serif" href="Bienvenida.php"> Crear una cuenta </a> </td>
 			</tr>
 		</table>
 	<?php

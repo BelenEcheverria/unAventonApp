@@ -42,11 +42,14 @@
 			<h1 style="color: white;text-align:center;font-family:Arial;font-weight:750;text-shadow:5px 5px 5px #aaa;"> Informacion Personal </h1>
 			<form method="POST" action="php/editar.php" class="input" onsubmit="return validar()" enctype="multipart/form-data" >
 				<label class="LabelFormularios"> Mail: <?php echo $usuario['mail']?>  </label><br><br>
+				<input type="hidden" name="nombreUsuario" class="FormularioVehiculos" value="<?php echo $usuario['mail']?>" >
 				<label class="LabelFormularios"> Fecha de nacimiento: <?php echo $usuario['nacimiento']?>  </label><br><br>
 				<label class="LabelFormularios"> Nombre </label>
 				<input type="text" name="nombre" class="FormularioVehiculos" placeholder="Nombre..." value="<?php echo $usuario['nombre']?>" >
 				<label class="LabelFormularios"> Apellido </span>
 				<input type="text" id="apellido" name="apellido" class="FormularioVehiculos" placeholder="Apellido..." value="<?php echo $usuario['apellido']?>">
+				<label class="LabelFormularios"> Correo alternativo </span>
+				<input type="E-mail" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" class="FormularioVehiculos" name="correoAlternativo" maxlength="45" value="<?php echo $usuario['mailRecuperacion']?>" required/>
 				<label class="LabelFormularios"> Contraseña </label>
 				<input type="password" id="clave1" name="password1" class="FormularioVehiculos" placeholder="Contraseña..." value= "<?php echo $usuario['password']?>">
 				<label class="LabelFormularios"> Repita contraseña </label>

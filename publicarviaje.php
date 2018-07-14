@@ -71,7 +71,7 @@ if(isset($ID)){ //SI INICIO SESION
                 </td>
                 <td id="viajeOcasional">
                   <label class="LabelFormularios"> Dia </label>
-                  <input type="text" id="fecha" name="fecha" class="FormularioVehiculos" placeholder="Ingrese fecha AAAA-MM-DD..">
+                  <input type="date" id="fecha" name="fecha" class="FormularioVehiculos" placeholder="Ingrese fecha AAAA-MM-DD..">
                 </td>
             </tr>
             <tr>

@@ -69,12 +69,21 @@ include "MenuBarra.php";
 ?>
 <br/><?php
 if(isset($ID)){ //SI INICIO SESION?>
+	
+		<?php
+		$queryPostulaciones = "SELECT * FROM postulaciones WHERE idViaje = $viaje_id AND (idEstado = 1 OR idEstado = 5)";
+		$resultPostulaciones =  mysqli_query($link,$queryPostulaciones); 
+		$rowPostulaciones = mysqli_fetch_array ($resultPostulaciones);
+		if (empty ($rowPostulaciones)) {
+		?> 
+	
+	
           <form method="POST" style="width:100%;height:81%;font-family:Arial;" action="CrearViajeModificado.php?viaje_id=<?php echo 
           $viaje_id ?>" class="input" onsubmit="return ValidarViaje()">
           <table class="FormularioPublicarViaje">
           <td id="viajeOcasional">
           <label class="LabelFormularios"> Dia </label>
-          <input type="text" id="fecha" name="fecha" class="FormularioVehiculos" value= <?php echo $fecha ?> >
+          <input type="date" id="fecha" name="fecha" class="FormularioVehiculos" value= <?php echo $fecha ?> >
           </td>
           </tr>
           <tr>
@@ -152,10 +161,27 @@ if(isset($ID)){ //SI INICIO SESION?>
        </tr>
      </table>
      </form>
-  <?php
+	 <div class="LineaPiePagina"></div>
+	 
+	<?php
+	} else {
+	?>	
+	<div style="font-family:Arial; text-align: center; font-weight: bold; color: white; font-size: 150%;">
+	<br><br><br><br>
+		No se puede modificar el viaje, porque tiene postulaciones pendientes o aceptadas
+		<br><br>
+		<a style= "text-decoration: none; color: white;" href="2. MiViaje.php?id=<?php echo $viaje_id;?>" >
+		Por favor cancele las postulaciones aceptadas, o rechace las pendientes antes de continuar 
+		</a>
+		<br><br><br><br>
+	</div>
+	
+	 
+<?php
+}
 }//END DEL IF SI ES QUE ESTA INICIADO SESION
 ?>
-<div class="LineaPiePagina"></div>
+
 </body>
 </html>
 

@@ -58,7 +58,7 @@
 		$rowVehiculo = mysqli_fetch_array($resultadoConsultaVehiculo);
 		$vehiculoViaje = $rowVehiculo['modelo'] . ' ' .$rowVehiculo['patente'];
 		$vehiculoViaje = $rowVehiculo['modelo'];
-		$asientosDisponibles = $rowVehiculo['asientos'];
+		$asientosDisponibles = ($rowVehiculo['asientos'] - 1);
 		?>
 		<div>
 			<p class="p_titulo"> Detalles del viaje </p>
@@ -88,11 +88,11 @@
 					<span class="span_detalle"> <?php echo "Precio total: $" . utf8_encode($precio)?> </span>
 					<br><br>
 					<span class="span_detalle"> Precio por persona: $
-					<?php echo(round($precio/$asientosDisponibles));?>
+					<?php echo(round($precio/($asientosDisponibles + 1)));?>
 					</span>
 				</div>
 				<div class="div_vertical">
-					<span class="span_detalle"> Lugares totales: <?php echo($asientosDisponibles) ?> </span>
+					<span class="span_detalle"> Lugares totales: <?php echo(($asientosDisponibles +1)) ?> </span>
 					<br><br>
 					<span class="span_detalle"> Lugares disponibles:
 					<?php
@@ -115,14 +115,19 @@
 				<br><br><br><br>
 			</div>
 			<div class="div_submit">
-			<form name="formulario" method="post" >
+			<!-- <form name="formulario" method="post" >
 				<input type="hidden" name="idVehiculo" value="<?php echo $id_Vehiculo ?>">
 				<input type="hidden" name="idViaje" value="<?php echo $viaje_id ?>">
 				<input type="hidden" name="idPostulacion" value="<?php echo $idPostulacion ?>">
 				<input type="submit" value="Modificar viaje" class= "boton_postulacion_viaje" formaction="php/2. aceptarPostulacion.php" >
 				<input type="submit" value="Eliminar viaje" class= "boton_postulacion_viaje" formaction="php/2. rechazarPostulacion.php">
-			</form>
-			</div>
+				</form> -->
+				<br><br><br>
+				<div>
+					<a href="modificarViaje.php?id_viaje=<?php echo $viaje_id ?>"><span class= "boton_postulacion_viaje_get"> Modificar Viaje </span></a>
+					<a href="EliminarViaje.php?id_viaje=<?php echo $viaje_id ?>"><span class="boton_postulacion_viaje_get" > Cancelar Viaje </span></a>
+				</div>
+				<br>
 			<div>
 				<br> <hr>
 				<p class="p_titulo"> Postulaciones Aceptadas </p>

@@ -11,7 +11,7 @@
 	$resconsultaPostulaciones = mysqli_query($link,$consultaPostulaciones);
 	$rUNO = mysqli_fetch_array($resconsultaPostulaciones);
     if (!empty($rUNO)){ //se aceptó al menos un pasajero
-    	mysqli_query($link, "UPDATE postulaciones SET idEstado=6 WHERE idViaje=$viaje_id");
+    	mysqli_query($link, "UPDATE postulaciones SET idEstado=7 WHERE idViaje=$viaje_id");
        	$consultacalif ="SELECT * FROM calificacion WHERE idUsuarioAutor = $ID AND rol = 'conductor'";
        	$comentario = 'Penalizacion por eliminar un viaje con postulantes aceptados';
 		$puntuacion = -1;

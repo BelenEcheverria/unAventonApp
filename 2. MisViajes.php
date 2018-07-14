@@ -171,13 +171,15 @@ $usuario -> session ($usuarioID, $admin);
 		<div>
 			<div class="ListadoBotonesDelViajeComoConductor">
 				<?php
-				if (($idEstadoPostulacion != 3) and ($idEstadoPostulacion != 6) and ($idEstadoPostulacion != 7)) { ?>
+				if (($idEstadoPostulacion != 3) and ($idEstadoPostulacion != 6) and ($idEstadoPostulacion != 7) and ($idEstadoPostulacion != 2) and ($idEstadoPostulacion != 7)) { ?>
 					<a href="confirmacionCancelarPostulacion.php?estadoPostulacion=<?php echo $idEstadoPostulacion; ?>&idViaje=<?php echo $id_viaje ?>"> <div class="BotonCancelarModificar">Cancelar</div> </a>
 				<?php
 				} ?>
 				<div class="estadoPostulacion">Postulacion: <?php echo $estadoPostulacion['estado'];
 				if ($idEstadoPostulacion == 6) { echo " por el condutor"; }
-				if ($idEstadoPostulacion == 3) { echo " por el usuario"; } ?> </div>
+				if ($idEstadoPostulacion == 2) { echo " por el condutor"; }
+				if ($idEstadoPostulacion == 3) { echo " por el usuario"; }
+				if ($idEstadoPostulacion == 7) { echo " por el condutor"; }	?> </div>
 			</div>
 			<div class="ListadoViajesPasajero_detalle">
 				<div class= "div_vertical_detalle" >

@@ -4,6 +4,7 @@
 	include "php/classLogin.php";
 	$usuario= new usuario();
 	$usuario -> session ($usuarioID, $admin);
+	$ID= $usuarioID;
 ?>
 <html>
 <head>
@@ -25,12 +26,14 @@
 	<div class="imagenInicioSesion"> <br>
 		<?php 
 				if (isset($_GET['mensaje'])){
-				echo ($_GET['mensaje'] . "<br><br>");
+				echo ("Su viaje se superpone con otro, por favor intentenuevamete");
 				echo ("Por favor intente nuevamente");
 			}
 		?>
 		<br><br>
-		<a href="modificarViaje.php"> Click aqui para volver a intentar </a>
+		<!-- <a href="modificarViaje.php"> Click aqui para volver a intentar </a>
+		falta mandarle el id -->
+		<a href="2. MisViajes.php?id=<?php echo $ID ?>"> Click aqui para volver a intentar </a>
 </div>
 </body>
 </html>

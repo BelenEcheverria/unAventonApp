@@ -325,7 +325,57 @@
 					?>
 				</div>
 			</div>
-		</div>		
+		</div>
+	<hr><br>
+	<p class="p_titulo"> Preguntas al conductor </p>
+	<div class="PreguntaViaje">
+		<?php
+		$query30= "SELECT * FROM preguntas WHERE idViaje = $viaje_id";
+		$result30= mysqli_query ($link, $query30) or die ('Consulta fallida ' .mysqli_error($link));
+		while ($pregunta = mysqli_fetch_array ($result30)) { ?>
+			<div class="UnaPregunta">
+				<div style="margin-top:0.5%;float:left;text-align:left;width:48%;margin-left:2%;">
+					<?php $usuarioPregunta= $pregunta['idUsuario'];
+					$idPregunta = $pregunta['id'];
+					$query40= "SELECT * FROM usuarios WHERE id = $usuarioPregunta";
+					$result40= mysqli_query ($link, $query40) or die ('Consulta fallida ' .mysqli_error($link));
+					$usuarioAutor= mysqli_fetch_array ($result40);
+					echo ($usuarioAutor['nombre'] . " " . $usuarioAutor['apellido'])
+					?>
+				</div>
+				<div style="float:right;text-align:right;width:48%;margin-right:2%;margin-top:0.5%;">
+				<?php echo ($pregunta['fecha'])?>
+				</div>
+				<div style="float:left;width:48%;margin-left:2%;margin-top:1%;">
+				<?php echo ($pregunta['pregunta'])?>
+				</div>
+			</div>
+			<?php
+			$consultaRespuesta = "SELECT * FROM respuestas WHERE idPregunta = $idPregunta";
+			$resultConsulta = mysqli_query ($link, $consultaRespuesta) or die ('Consulta fallida ' .mysqli_error($link));
+			$respuesta = mysqli_fetch_array ($resultConsulta);
+			if (empty($respuesta)){ ?>
+				<div>
+					<form action="php/agregarRespuestaBase.php" method="post">
+						<input type="text" name="respuesta" class="EscribirUnaRespuesta" placeholder="Escribe una respuesta" required/>
+						<input type="hidden" name="idPregunta" value="<?php echo $idPregunta; ?>">
+						<input type="hidden" name="idViaje" value="<?php echo $viaje_id ?>">
+						<input type="submit" class="BotonEnviarRespuesta" value="Responder">
+					</form>
+				</div>
+			<?php 
+			} else { ?>
+				<div class="Respuesta">
+					<div style="float:right;text-align:right;width:48%;margin-right:2%;margin-top:0.5%;">
+					<?php echo $respuesta['fecha']?>
+					</div>
+					<div style="float:left;margin-left:5%;margin-top:3%;">
+					<?php echo $respuesta['respuesta']?>
+					</div>
+				</div> <?php
+			}
+		}	?>
+	</div>
 	<?php	
 	}		
 	catch (Exception $e) {

@@ -30,7 +30,7 @@ hr {
 
 .div_body_detalle {
 	text-align: center;
-	margin-left: 10;
+	margin-left: 5%;
 	
 }
 
@@ -60,6 +60,9 @@ hr {
 .p_titulo {
 	text-align: center;
 	font-size: 150%;
+	color: white;
+	font-family: Arial, sans-serif;
+	font-weight: bold;
 }
 
 .p_informacion_empty {

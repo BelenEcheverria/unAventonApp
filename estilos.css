@@ -97,6 +97,31 @@
 	font-weight:800;
 	font-size:15px;
 }
+.BotonEnviarRespuesta {
+	float:right;
+	border:6px solid #ffa500;
+	border-radius:8px;
+	width:10%;
+	background-color:#F16868;
+	color:white;
+	font-family:Arial;
+	font-weight:bold;
+	margin-right:45%;
+	margin-bottom:2%;
+}
+.BotonEliminarPregunta {
+	float:right;
+	border:6px solid #ffa500;
+	border-radius:4px;
+	width:15%;
+	background-color:#F16868;
+	color:white;
+	font-family:Arial;
+	font-weight:bold;
+	margin-right:42.5%;
+	margin-bottom:2%;
+	margin-top:1%;
+}
 .BotonBuscar {
 	background-color:#F16868; 
     color:white; 
@@ -361,6 +386,16 @@
 	text-align: center;
 	float:left;
 }
+.EscribirUnaRespuesta {
+	height:10%;
+	width:90%;
+	background-color:white;
+	font-size:15px;
+	font-weight:bold;
+	margin-left:5%;
+	margin-right:5%;
+	margin-bottom:2%;
+}
 .estadoPostulacion {
     color: white;
     font-size: 18px;
@@ -592,6 +627,26 @@
 	opacity:0.9;
 	background-color:#ffa500;
 }
+.PreguntaViaje {
+	margin-left:14%;
+	margin-right:14%;
+	margin-top:2%;
+	margin-bottom:4%;
+	background-color:MediumVioletRed;
+	width:70%;
+	float:left;
+}
+.Respuesta {
+	height:10%;
+	width:90%;
+	background-color:white;
+	font-size:15px;
+	font-weight:bold;
+	color:grey;
+	margin-left:5%;
+	margin-right:5%;
+	margin-bottom:5%;
+}
 .SeMeTerminoLaOriginalidad {
 	color:white;
 	font-size:25px;
@@ -636,6 +691,16 @@
 	margin-right:5%;
 	margin-top:2%;
 	margin-bottom:2%;
+}
+.UnaPregunta {
+	height:10%;
+	width:90%;
+	background-color:#F16868;
+	font-size:15px;
+	font-weight:bold;
+	margin-left:5%;
+	margin-right:5%;
+	margin-top:5%;
 }
 .UnConductorPasajero {
 	text-shadow:3px 3px 4px #f00,

@@ -43,27 +43,24 @@
      $horarioconduracion=$horapartida+$durhoras;
    if((isset($tipo)) && (isset($dias)) && (isset($origen)) && (isset($destino)) && (isset($fecha)) OR (isset($fechainicial)) && (isset($fechafinal)) && ($horapartida != 0) && ($minutospartida !== null) && ($duracionhoras != 0) && ($duracionmin !== null) && (isset($vehiculo)) && ($precio != 0) && (isset($texto))){
       if ($tipo=="1"){ //OCASIONAL
-<<<<<<< HEAD
              $buscarViajes = "SELECT * FROM viajes WHERE idConductor=$ID AND (hora>=$horapartida AND hora<=$horarioconduracion AND fecha=$fecha AND idVehiculo=$vehiculo)";
              $resultviajes = mysqli_query($link,$buscarViajes);
              $rUNO = mysqli_fetch_array($resultviajes);
              if (!empty($rUNO)){
-=======
-	  		 $puedePublicar = true; 
+	  		     $puedePublicar = true; 
              $buscarVehichulo = "SELECT * FROM viajes WHERE idVehiculo = $vehiculo";
              $resultVehiculo = mysqli_query($link,$buscarVehichulo);
-			 echo "<br> <br>";
-			 echo $buscarVehichulo;
+			       echo "<br> <br>";
+			       echo $buscarVehichulo;
              while ($rVehiculo = mysqli_fetch_array($resultVehiculo)){
-				if ($rVehiculo['fecha'] == $fecha) {
-					$horaEnViaje= $rVehiculo['hora'] + $rVehiculo['duracionHoras'];
-					if ($horapartida < $horaEnViaje) {
-						$puedePublicar = false;
-					}
-				}
-			 }			 
+				    if ($rVehiculo['fecha'] == $fecha) {
+					  $horaEnViaje= $rVehiculo['hora'] + $rVehiculo['duracionHoras'];
+					  if ($horapartida < $horaEnViaje) {
+						  $puedePublicar = false;
+					   }
+				    }
+			     }			 
              if ($puedePublicar == false){
->>>>>>> d4e057e6ffa373195f707a081801051eba0ad183
                 $mensaje = "Su viaje se superpone con otro ya ingresado, ingrese otro horario, elija otro día o cambie de vehículo.";
 				header("Location: ErrorPublicarViaje.php?mensaje=$mensaje"); 
              }

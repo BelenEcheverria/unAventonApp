@@ -112,15 +112,11 @@ if(isset($ID)){ //SI INICIO SESION
                   <tr>
                     <td>
                         <label class="LabelFormularios"> Duracion estimada </label>
-                        <input type="int" id="duracionhoras" name="duracionhoras" class="FormularioVehiculos" placeholder="Horas...">
-                        <br>
-                        <input type="int" id="duracionmin" name="duracionmin" class="FormularioVehiculos" placeholder="Minutos..."> 
+                        <input type="time" type="text" id="duracionhoras" name="duracionhoras" class="FormularioVehiculos"> 
                     </td>
                      <td>
                         <label class="LabelFormularios"> Hora de partida </label>
-                        <input type="text" id="horapartida" name="horapartida" class="FormularioVehiculos" placeholder="Horas...">
-                        <br>
-                        <input type="int" id="minutospartida" name="minutospartida" class="FormularioVehiculos" placeholder="Minutos...">
+                        <input type="time" id="horapartida" name="horapartida" class="FormularioVehiculos">
                       </td>
                     </tr>
                     <tr>

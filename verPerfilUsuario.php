@@ -31,38 +31,16 @@
 			<tr>
 				<td>
 					<div class="CantidadDeVotos">
-						Viajes Realizados: 
-						<?php
-						$query= "SELECT COUNT(*) FROM viajes WHERE idConductor = $id AND (idEstado= 4 OR idEstado= 3) ";
-						$result= mysqli_query ($link, $query) or die ('Consulta fallida ' .mysqli_error($link));
-						$data = mysqli_fetch_array ($result);
-						echo ($data[0]);
-						?>
-					</div>
-				</td>
-			</tr>
-			<tr>
-				<td>
-					<div class="CantidadDeVotos">
-						Votos positivos:
+						Puntuacion:
 						<?php
 						$query10= "SELECT COUNT(*) FROM calificacion WHERE idUsuarioCalificado = $id AND puntuacion= 1 AND rol= 'conductor' ";
 						$result10= mysqli_query ($link, $query10) or die ('Consulta fallida ' .mysqli_error($link));
 						$data10 = mysqli_fetch_array ($result10);
-						echo ($data10[0]);
-						?>
-					</div>
-				</td>
-			</tr>
-			<tr>
-				<td>
-					<div class="CantidadDeVotos">
-						Votos negativos:
-						<?php
 						$query20= "SELECT COUNT(*) FROM calificacion WHERE idUsuarioCalificado = $id AND puntuacion= -1 AND rol= 'conductor' ";
 						$result20= mysqli_query ($link, $query20) or die ('Consulta fallida ' .mysqli_error($link));
 						$data20 = mysqli_fetch_array ($result20);
-						echo ($data20[0]);
+						$puntuacion = $data10[0] - $data20[0];
+						echo $puntuacion;
 						?>
 					</div>
 				</td>
@@ -189,43 +167,20 @@
 		<tr>
 			<td>
 				<div class="CantidadDeVotos">
-					Viajes Realizados:
+					Puntuacion:
 					<?php
-						$query= "SELECT COUNT(*) FROM postulaciones WHERE idUsuario= $id AND idEstado= 4";
-						$result= mysqli_query ($link, $query) or die ('Consulta fallida ' .mysqli_error($link));
-						$data = mysqli_fetch_array ($result);
-						echo ($data[0]);
-						?>
-				</div>
-			</td>
-		</tr>
-		<tr>
-			<td>
-				<div class="CantidadDeVotos">
-					Votos Positivos:
-					<?php
-						$query10= "SELECT COUNT(*) FROM calificacion WHERE idUsuarioCalificado = $id AND puntuacion= 1 AND rol= 'pasajero' ";
-						$result10= mysqli_query ($link, $query10) or die ('Consulta fallida ' .mysqli_error($link));
-						$data10 = mysqli_fetch_array ($result10);
-						echo ($data10[0]);
+					$query10= "SELECT COUNT(*) FROM calificacion WHERE idUsuarioCalificado = $id AND puntuacion= 1 AND rol= 'pasajero' ";
+					$result10= mysqli_query ($link, $query10) or die ('Consulta fallida ' .mysqli_error($link));
+					$data10 = mysqli_fetch_array ($result10);
+					$query20= "SELECT COUNT(*) FROM calificacion WHERE idUsuarioCalificado = $id AND puntuacion= -1 AND rol= 'pasajero' ";
+					$result20= mysqli_query ($link, $query20) or die ('Consulta fallida ' .mysqli_error($link));
+					$data20 = mysqli_fetch_array ($result20);
+					$puntuacion = $data10[0] - $data20[0];
+					echo $puntuacion;
 					?>
 				</div>
 			</td>
 		</tr>
-		<tr>
-			<td>
-				<div class="CantidadDeVotos">
-					Votos Negativos:
-					<?php
-						$query10= "SELECT COUNT(*) FROM calificacion WHERE idUsuarioCalificado = $id AND puntuacion= -1 AND rol= 'pasajero' ";
-						$result10= mysqli_query ($link, $query10) or die ('Consulta fallida ' .mysqli_error($link));
-						$data10 = mysqli_fetch_array ($result10);
-						echo ($data10[0]);
-					?>
-				</div>
-			</td>
-		</tr>
-		<tr>
 			<td>
 				<div class="ComentariosConductor">
 						<?php

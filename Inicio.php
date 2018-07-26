@@ -18,17 +18,37 @@
 ?>
 <div style="width:100%;height:81%;font-family: Arial;">
 	<div class="Menu" style="width:12%;">
-		<!-- <div class="CajaMenuBusqueda">
-			<form method="POST" style="margin-top:15px"action="crearcuenta.php" class="input" onsubmit="return validar()">
+		 <div class="CajaMenuBusqueda">
+			<form method="POST" style="margin-top:15px" action="ListaFiltrada.php" class="input" onsubmit="return validar()">
 				<label class="LabelFormularios"> Origen </label>
-				<input type="password" id="clave1" name="password" class="FormularioMenuBusqueda" placeholder="Ingresa desde dónde viajas">
+				<select class="FormularioVehiculos" id = "origen" name = "origen" value="<?php echo $destino ?>">          
+                    <?php
+                        $consulta_ciudades = "SELECT * FROM ciudades ORDER BY ciudad ASC";
+                        $result_Destino = mysqli_query($link,$consulta_ciudades); ?>
+                        <option value= "">Ingrese desde donde viaja</option> <?php              
+                        while($fila = mysqli_fetch_array($result_Destino)){
+                            echo "<option value='". $fila['id'] . "'>" . $fila['ciudad'] . " </option>";
+                            echo "<a href='?ciudad=" . $fila['id'] . "'>" . $id . " </a> ";
+                        }
+                    ?>
+                </select>
 				<label class="LabelFormularios"> Destino </label>
-				<input type="password" id="clave2" name="password2" class="FormularioMenuBusqueda" placeholder="Ingresa hacia dónde viajas">
+				<select class="FormularioVehiculos" id = "destino" name = "destino" value="<?php echo $destino ?>">          
+                    <?php
+                        $consulta_ciudades = "SELECT * FROM ciudades ORDER BY ciudad ASC";
+                        $result_Destino = mysqli_query($link,$consulta_ciudades); ?>
+                        <option value= "">Ingrese hacia donde viaja</option> <?php              
+                        while($fila = mysqli_fetch_array($result_Destino)){
+                            echo "<option value='". $fila['id'] . "'>" . $fila['ciudad'] . " </option>";
+                            echo "<a href='?ciudad=" . $fila['id'] . "'>" . $id . " </a> ";
+                        }
+                    ?>
+                </select>
 				<label class="LabelFormularios"> Fecha </label>
 				<input type="date" class="FormularioMenuBusqueda" name="fecha">
 				<div><input type="submit" class="BotonBuscar" value="Buscar"></div>
 			</form>
-		</div> -->
+		</div>
 	</div>
 	<br>
 	<div class="ParteViajes">
@@ -46,13 +66,17 @@
 						</table>	
 				<div>
 		<?php 
-		$fecha_actual = (date("Y-m-d"));
+		$fecha_actual = date('Y/m/d h:i:s', time());
+		echo $fecha_actual;
 		$query= "SELECT * FROM viajes";
 		$result = mysqli_query($link, $query);
 		// cambiar el estado a los viajes pasados
 		while ($viajes = mysqli_fetch_array($result)){ 
-			$fecha_viaje = $viajes['fecha'];
-			if ($fecha_viaje < $fecha_actual){
+			$f = $viajes['fecha'];
+			$dt = new DateTime($f);
+			$fechaBase = ($dt->format('Y/m/d h:i:s'));
+			echo $fecha_viaje;
+			if ($fecha_viaje <= $fecha_actual){
 				$id_viaje_update= $viajes['id'];
 				$queryUpdate = "UPDATE viajes SET idEstado=3 WHERE id= $id_viaje_update";
 				$resultUpdate = mysqli_query($link, $queryUpdate);
@@ -78,10 +102,17 @@
 		$nuevafecha = strtotime ( '+30 day' , strtotime ( $fecha ) ) ;
 		$nuevafecha = date ( 'Y-m-d' , $nuevafecha );
 		$sql= "SELECT * FROM viajes WHERE idEstado=1 ORDER BY fecha, hora ASC";
+
+		/*$fecha = date('Y/m/d h:i:s', time());
+		$nuevafecha = strtotime('+30 day', strtotime($fecha));
+		$nuevafecha = date('Y/m/d h:i:s', $nuevafecha);
+		$sql= "SELECT * FROM viajes WHERE idEstado=1 ORDER BY fecha, horaPartida ASC";
+		*/
 		$result = mysqli_query($link, $sql); //traer los viajes vector de vectores
 	   	if($result){
 	   		$cantidad_viajes = mysqli_num_rows($result);
-	   	} //Obtener la cantidad todal de viajes
+	   	} //Obtener la cantidad total de viajes
+	   	echo $cantidad_viajes;
 	   	$tamaño_paginas = 7;
 	   	if(isset($_GET["pagina"])){
 	   		$pagina=$_GET["pagina"];

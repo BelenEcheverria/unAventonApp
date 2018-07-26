@@ -1,4 +1,4 @@
-<?php
+?php
     include_once "php/conection.php"; // conectar y seleccionar la base de datos
     $link = conectar();
 	include_once "php/classLogin.php";
@@ -17,80 +17,35 @@
 	include "MenuBarra.php";
 ?>
 <div style="width:100%;height:81%;font-family: Arial;">
-	<div class="Menu" style="width:12%;">
-		 <div class="CajaMenuBusqueda">
-			<form method="POST" style="margin-top:15px" action="ListaFiltrada.php" class="input" onsubmit="return validar()">
-				<label class="LabelFormularios"> Origen </label>
-				<select class="FormularioVehiculos" id = "origen" name = "origen" value="<?php echo $destino ?>">          
-                    <?php
-                        $consulta_ciudades = "SELECT * FROM ciudades ORDER BY ciudad ASC";
-                        $result_Destino = mysqli_query($link,$consulta_ciudades); ?>
-                        <option value= "">Ingrese desde donde viaja</option> <?php              
-                        while($fila = mysqli_fetch_array($result_Destino)){
-                            echo "<option value='". $fila['id'] . "'>" . $fila['ciudad'] . " </option>";
-                            echo "<a href='?ciudad=" . $fila['id'] . "'>" . $id . " </a> ";
-                        }
-                    ?>
-                </select>
-				<label class="LabelFormularios"> Destino </label>
-				<select class="FormularioVehiculos" id = "destino" name = "destino" value="<?php echo $destino ?>">          
-                    <?php
-                        $consulta_ciudades = "SELECT * FROM ciudades ORDER BY ciudad ASC";
-                        $result_Destino = mysqli_query($link,$consulta_ciudades); ?>
-                        <option value= "">Ingrese hacia donde viaja</option> <?php              
-                        while($fila = mysqli_fetch_array($result_Destino)){
-                            echo "<option value='". $fila['id'] . "'>" . $fila['ciudad'] . " </option>";
-                            echo "<a href='?ciudad=" . $fila['id'] . "'>" . $id . " </a> ";
-                        }
-                    ?>
-                </select>
-				<label class="LabelFormularios"> Fecha </label>
-				<input type="date" class="FormularioMenuBusqueda" name="fecha">
-				<div><input type="submit" class="BotonBuscar" value="Buscar"></div>
-			</form>
-		</div>
-	</div>
+	$viajes_origen = $_POST['origen'];
+	$viajes_destino = $_POST['destino'];
+	$viajes_fecha = $_POST['fecha'];
 	<br>
 	<div class="ParteViajes">
-				<div class="ViajesInfoHorizontal">
-						<table style=" height:60%;width:85%; margin-left:2%;font-weight: bold; color: white;">
-							<tr >
-							<td class="AlineacionViajesInfoHorizontal">Origen</td> 
-							<td class="AlineacionViajesInfoHorizontal">Destino</td> 
-							<td class="AlineacionViajesInfoHorizontal">Fecha</td> 
-							<td class="AlineacionViajesInfoHorizontal">Hora</td>
-							<td class="AlineacionViajesInfoHorizontal">Precio asiento</td>
-							<td class="AlineacionViajesInfoHorizontal">Vehiculo</td> 
-							<td class="AlineacionViajesInfoHorizontal">A.disponibles</td>
-							</tr>
-						</table>	
-				<div>
-				
-		<?php 
-		$fecha_actual = date('Y/m/d h:i:s', time());
-		echo $fecha_actual;
+	<?php	
+		if (($viajes_origen != null) && ($viajes_destino != null) && ($viajes_fecha != null)){
+
+		}
+		
+		$fecha_actual = (date("Y-m-d"));
 		$query= "SELECT * FROM viajes";
 		$result = mysqli_query($link, $query);
 		while ($viajes = mysqli_fetch_array($result)){ 
-			$f = $viajes['fecha'];
-			$dt = new DateTime($f);
-			$fechaBase = ($dt->format('Y/m/d h:i:s'));
-			echo $fecha_viaje;
-			if ($fecha_viaje <= $fecha_actual){
+			$fecha_viaje = $viajes['fecha'];
+			if ($fecha_viaje < $fecha_actual){
 				$id_viaje_update= $viajes['id'];
 				$queryUpdate = "UPDATE viajes SET idEstado=4 WHERE id= $id_viaje_update";
 				$resultUpdate = mysqli_query($link, $queryUpdate);
 			}
 		}	
-		$fecha = date('Y/m/d h:i:s', time());
-		$nuevafecha = strtotime('+30 day', strtotime($fecha));
-		$nuevafecha = date('Y/m/d h:i:s', $nuevafecha);
-		$sql= "SELECT * FROM viajes WHERE idEstado=1 ORDER BY fecha, horaPartida ASC";
+		$fecha = date('Y-m-d');
+		$nuevafecha = strtotime ( '+30 day' , strtotime ( $fecha ) ) ;
+		$nuevafecha = date ( 'Y-m-d' , $nuevafecha );
+		$sql= "SELECT * FROM viajes WHERE idEstado=1 AND fecha= origen=$viajes_origen AND destino=$viajes_destino ORDER BY fecha, hora ASC";
 		$result = mysqli_query($link, $sql); //traer los viajes vector de vectores
 	   	if($result){
 	   		$cantidad_viajes = mysqli_num_rows($result);
-	   	} //Obtener la cantidad total de viajes
-	   	echo $cantidad_viajes;
+	   	} //Obtener la cantidad todal de viajes
 	   	$tamaño_paginas = 7;
 	   	if(isset($_GET["pagina"])){
 	   		$pagina=$_GET["pagina"];
@@ -178,11 +133,3 @@
  	</footer>
 </body>
 </html>
-<!--
-Cuando creamos o accedemos al contenido de variables de sesión debemos llamar a la función session_start() antes de cualquier salida de etiquetas HTML, copiar:
-	include_once "php/classLogin.php";
-	$usuario= new usuario();
-	$usuario -> session ($usuarioID, $admin);
-Tengamos en cuenta que en cualquier otra página del sitio tenemos acceso a las variables de sesión sólo con llamar inicialmente a la función session_start().
--->
-

@@ -67,16 +67,14 @@
 				<div>
 		<?php 
 		$fecha_actual = date('Y/m/d h:i:s', time());
-		echo $fecha_actual;
 		$query= "SELECT * FROM viajes";
 		$result = mysqli_query($link, $query);
 		// cambiar el estado a los viajes pasados
 		while ($viajes = mysqli_fetch_array($result)){ 
-			$f = $viajes['fecha'];
-			$dt = new DateTime($f);
+			$fecha_viaje = $viajes['fecha'];
+			$dt = new DateTime($fecha_viaje);
 			$fechaBase = ($dt->format('Y/m/d h:i:s'));
-			echo $fecha_viaje;
-			if ($fecha_viaje <= $fecha_actual){
+			if (1 == 2){
 				$id_viaje_update= $viajes['id'];
 				$queryUpdate = "UPDATE viajes SET idEstado=3 WHERE id= $id_viaje_update";
 				$resultUpdate = mysqli_query($link, $queryUpdate);
@@ -94,14 +92,12 @@
 					$query5= "UPDATE postulaciones SET idEstado=4 WHERE id= $id_postulacion_update";
 					$result5= mysqli_query($link, $query5);
 				}
-				
 			}
 		}	
-		
 		$fecha = date('Y-m-d');
 		$nuevafecha = strtotime ( '+30 day' , strtotime ( $fecha ) ) ;
 		$nuevafecha = date ( 'Y-m-d' , $nuevafecha );
-		$sql= "SELECT * FROM viajes WHERE idEstado=1 ORDER BY fecha, hora ASC";
+		$sql= "SELECT * FROM viajes WHERE idEstado=1 ORDER BY fecha, horaPartida ASC";
 
 		/*$fecha = date('Y/m/d h:i:s', time());
 		$nuevafecha = strtotime('+30 day', strtotime($fecha));
@@ -134,8 +130,7 @@
 					$id_Origen = $viajes['idOrigen'];
 					$id_Vehiculo = $viajes['idVehiculo'];
 					$dia = $viajes['fecha'];
-					$horaPartida = $viajes['hora'];
-					$minutosPartida = $viajes['minuto'];
+					$horaPartida = $viajes['horaPartida'];
 					$precio= $viajes['precio'];
 					$conductor_id = $viajes['idConductor'];
 
@@ -164,8 +159,7 @@
 							<td class="AlineacionCajasListaViajesHorizontal"><?php echo utf8_encode($origenViaje);?></td> 
 							<td class="AlineacionCajasListaViajesHorizontal"><?php echo utf8_encode($destinoViaje);?></td> 
 							<td class="AlineacionCajasListaViajesHorizontal"><?php echo utf8_encode($dia);?></td> 
-							<td class="AlineacionCajasListaViajesHorizontal"><?php echo utf8_encode($horaPartida);?>:<?php echo utf8_encode($minutosPartida); if ($minutosPartida == 0) { echo 0;}
-							?></td>
+							<td class="AlineacionCajasListaViajesHorizontal"><?php echo utf8_encode($horaPartida);?></td>
 							<td class="AlineacionCajasListaViajesHorizontal">$<?php echo utf8_encode((round($precio/$asientosDisponibles)));?></td>
 							<td class="AlineacionCajasListaViajesHorizontal"><?php echo utf8_encode($vehiculoViaje);?></td> 
 							<td class="AlineacionCajasListaViajesHorizontal"><?php echo utf8_encode($asientosDisponibles-1);?></td> 

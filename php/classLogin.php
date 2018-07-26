@@ -13,7 +13,7 @@
 					$nombre = mysqli_real_escape_string ($link, $_POST['nombreU']);
 					$password = mysqli_real_escape_string ($link, $_POST['contraU']);
 					//realizamos la consulta sql 
-					$query58 = "SELECT * FROM usuarios WHERE mail= '".$nombre."' AND password= '".$password."';" ;
+					$query58 = "SELECT * FROM usuarios WHERE mail= '".$nombre."' AND password= '".$password."' AND estaActivo= 1;" ;
 					$resultado58 = mysqli_query($link, $query58) or die ('Consulta query58 fallida ' .mysqli_error($link));;
 					/*si el número de filas devuelto por la variable resultado es 1,significa que en la base de datos blog, en la tabla usuarios existe una fila que coincide con los datos ingresados.
 					luego nos envia a la pagina inicioSesion, con las variables de sesion creados y exito setado */

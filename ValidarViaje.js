@@ -38,6 +38,16 @@ function Eliminar(){
 		return false;
 	}
 }
+function EliminarC(){
+	var ok = confirm('Está seguro que desea eliminar su cuenta?');
+	if (ok){
+		return true;
+	}
+	else{
+		return false;
+	}
+}
+
 function DarDeBajaPostulacion(){
 	var ok = confirm('Usted sera penalizado con una calificacion negativa, desea continuar?');
 	if (ok){

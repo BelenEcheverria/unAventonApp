@@ -31,12 +31,13 @@
 			<tr>
 				<td>
 					<div class="CantidadDeVotos">
-						Puntuacion:
+						Calificacion:
 						<?php
-						$query10= "SELECT COUNT(*) FROM calificacion WHERE idUsuarioCalificado = $id AND puntuacion= 1 AND rol= 'conductor' ";
+						$query10= "SELECT COUNT(*) FROM calificacion WHERE idUsuarioCalificado = $id AND puntuacion= 1 AND (rol= 'conductor' OR rol= 'Conductor') ";
 						$result10= mysqli_query ($link, $query10) or die ('Consulta fallida ' .mysqli_error($link));
 						$data10 = mysqli_fetch_array ($result10);
 						$query20= "SELECT COUNT(*) FROM calificacion WHERE idUsuarioCalificado = $id AND puntuacion= -1 AND rol= 'conductor' ";
+						$query20= "SELECT COUNT(*) FROM calificacion WHERE idUsuarioCalificado = $id AND puntuacion= -1 AND (rol= 'conductor' OR rol= 'Conductor') ";
 						$result20= mysqli_query ($link, $query20) or die ('Consulta fallida ' .mysqli_error($link));
 						$data20 = mysqli_fetch_array ($result20);
 						$puntuacion = $data10[0] - $data20[0];
@@ -49,7 +50,7 @@
 				<td>
 					<div class="ComentariosConductor">
 						<?php
-						$query30= "SELECT * FROM calificacion WHERE idUsuarioCalificado = $id AND rol= 'conductor' ";
+						$query30= "SELECT * FROM calificacion WHERE idUsuarioCalificado = $id AND (rol= 'conductor' OR rol= 'Conductor') ";
 						$result30= mysqli_query ($link, $query30) or die ('Consulta fallida ' .mysqli_error($link));
 						while ($comentario = mysqli_fetch_array ($result30)) {
 						?>
@@ -167,8 +168,9 @@
 		<tr>
 			<td>
 				<div class="CantidadDeVotos">
-					Puntuacion:
+					Calificacion:
 					<?php
+
 					$query10= "SELECT COUNT(*) FROM calificacion WHERE idUsuarioCalificado = $id AND puntuacion= 1 AND rol= 'pasajero' ";
 					$result10= mysqli_query ($link, $query10) or die ('Consulta fallida ' .mysqli_error($link));
 					$data10 = mysqli_fetch_array ($result10);
@@ -184,7 +186,7 @@
 			<td>
 				<div class="ComentariosConductor">
 						<?php
-						$query30= "SELECT * FROM calificacion WHERE idUsuarioCalificado = $id AND rol= 'pasajero' ";
+						$query30= "SELECT * FROM calificacion WHERE idUsuarioCalificado = $id AND (rol= 'pasajero' OR rol= 'Pasajero') ";
 						$result30= mysqli_query ($link, $query30) or die ('Consulta fallida ' .mysqli_error($link));
 						while ($comentario = mysqli_fetch_array ($result30)) {
 						?>

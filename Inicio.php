@@ -45,19 +45,35 @@
 							</tr>
 						</table>	
 				<div>
-				
 		<?php 
 		$fecha_actual = (date("Y-m-d"));
 		$query= "SELECT * FROM viajes";
 		$result = mysqli_query($link, $query);
+		// cambiar el estado a los viajes pasados
 		while ($viajes = mysqli_fetch_array($result)){ 
 			$fecha_viaje = $viajes['fecha'];
 			if ($fecha_viaje < $fecha_actual){
 				$id_viaje_update= $viajes['id'];
-				$queryUpdate = "UPDATE viajes SET idEstado=4 WHERE id= $id_viaje_update";
+				$queryUpdate = "UPDATE viajes SET idEstado=3 WHERE id= $id_viaje_update";
 				$resultUpdate = mysqli_query($link, $queryUpdate);
+				// agregar las calificaciones pendientes
+				$conductor= $viajes['idConductor'];
+				$queryPasajeros= "SELECT * FROM postulaciones WHERE idViaje= $id_viaje_update AND idEstado= 1";
+				$resultPasajeros= mysqli_query($link, $queryPasajeros);
+				while ($rowPasajeros = mysqli_fetch_array($resultPasajeros)){
+					$pasajero= $rowPasajeros['idUsuario'];
+					$query7= "INSERT INTO calificacionesPendientes (idUsuarioAutor, idUsuarioCalificado, idViaje) VALUES ($conductor, $pasajero, $id_viaje_update)";
+					$result7= mysqli_query($link, $query7);
+					$query8= "INSERT INTO calificacionesPendientes (idUsuarioAutor, idUsuarioCalificado, idViaje) VALUES ($pasajero, $conductor, $id_viaje_update)";
+					$result8= mysqli_query($link, $query8);
+					$id_postulacion_update = $rowPasajeros['id'];
+					$query5= "UPDATE postulaciones SET idEstado=4 WHERE id= $id_postulacion_update";
+					$result5= mysqli_query($link, $query5);
+				}
+				
 			}
 		}	
+		
 		$fecha = date('Y-m-d');
 		$nuevafecha = strtotime ( '+30 day' , strtotime ( $fecha ) ) ;
 		$nuevafecha = date ( 'Y-m-d' , $nuevafecha );

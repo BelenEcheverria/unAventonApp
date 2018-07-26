@@ -125,7 +125,7 @@
 				<br><br><br>
 				<div>
 					<a href="modificarViaje.php?id_viaje=<?php echo $viaje_id ?>"><span class= "boton_postulacion_viaje_get"> Modificar Viaje </span></a>
-					<a href="EliminarViaje.php?id_viaje=<?php echo $viaje_id ?>"><span class="boton_postulacion_viaje_get" > Cancelar Viaje </span></a>
+					<a href="EliminarViaje.php?id_viaje=<?php echo $viaje_id ?>"><span class="boton_postulacion_viaje_get" onclick="return Eliminar()" > Cancelar Viaje </span></a>
 				</div>
 				<br>
 			<div>

@@ -59,7 +59,7 @@ if(isset($ID)){ //SI INICIO SESION
                 <td id="selectorDeDias">
                       <label for="dias" class="LabelFormularios"> Dias </label>
                        <br><br/>
-                      <select class="js-example-basic-multiple" id = "dias" name="dias[]" multiple="multiple">
+                      <select class="js-example-basic-multiple" name="dias[]" multiple="multiple">
                         <option value='1'>Lunes</option>
                         <option value='2'>Martes</option>
                         <option value='3'>Miercoles</option>
@@ -112,17 +112,17 @@ if(isset($ID)){ //SI INICIO SESION
                   <tr>
                     <td>
                         <label class="LabelFormularios"> Duracion estimada </label>
-                        <input type="time" type="text" id="duracionhoras" name="duracionhoras" class="FormularioVehiculos"> 
+                        <input type="int" type="text" name="duracion" class="FormularioVehiculos"> 
                     </td>
                      <td>
                         <label class="LabelFormularios"> Hora de partida </label>
-                        <input type="time" id="horapartida" name="horapartida" class="FormularioVehiculos">
+                        <input type="time" name="horaPartida" class="FormularioVehiculos">
                       </td>
                     </tr>
                     <tr>
                       <td>
                         <label class="LabelFormularios"> Precio </label>
-                        <input type="number" id="precio" name="precio" class="FormularioVehiculos" placeholder="Ingrese precio total del viaje...">
+                        <input type="number" name="precio" class="FormularioVehiculos" placeholder="Ingrese precio total del viaje...">
                       </td>
                     </tr>
                     <tr>

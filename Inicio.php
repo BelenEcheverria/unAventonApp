@@ -66,15 +66,15 @@
 						</table>	
 				<div>
 		<?php 
-		$fecha_actual = date('Y/m/d h:i:s', time());
+		$fecha_actual = date('Y/m/d');
 		$query= "SELECT * FROM viajes";
 		$result = mysqli_query($link, $query);
 		// cambiar el estado a los viajes pasados
 		while ($viajes = mysqli_fetch_array($result)){ 
 			$fecha_viaje = $viajes['fecha'];
 			$dt = new DateTime($fecha_viaje);
-			$fechaBase = ($dt->format('Y/m/d h:i:s'));
-			if (1 == 2){
+			$fecha_viaje = ($dt->format('Y/m/d'));
+			if ($fecha_actual > $fecha_viaje){
 				$id_viaje_update= $viajes['id'];
 				$queryUpdate = "UPDATE viajes SET idEstado=3 WHERE id= $id_viaje_update";
 				$resultUpdate = mysqli_query($link, $queryUpdate);
@@ -108,7 +108,6 @@
 	   	if($result){
 	   		$cantidad_viajes = mysqli_num_rows($result);
 	   	} //Obtener la cantidad total de viajes
-	   	echo $cantidad_viajes;
 	   	$tamaño_paginas = 7;
 	   	if(isset($_GET["pagina"])){
 	   		$pagina=$_GET["pagina"];
@@ -159,7 +158,7 @@
 							<td class="AlineacionCajasListaViajesHorizontal"><?php echo utf8_encode($origenViaje);?></td> 
 							<td class="AlineacionCajasListaViajesHorizontal"><?php echo utf8_encode($destinoViaje);?></td> 
 							<td class="AlineacionCajasListaViajesHorizontal"><?php echo utf8_encode($dia);?></td> 
-							<td class="AlineacionCajasListaViajesHorizontal"><?php echo utf8_encode($horaPartida);?></td>
+							<td class="AlineacionCajasListaViajesHorizontal"><?php echo substr($horaPartida,0,5);?></td>
 							<td class="AlineacionCajasListaViajesHorizontal">$<?php echo utf8_encode((round($precio/$asientosDisponibles)));?></td>
 							<td class="AlineacionCajasListaViajesHorizontal"><?php echo utf8_encode($vehiculoViaje);?></td> 
 							<td class="AlineacionCajasListaViajesHorizontal"><?php echo utf8_encode($asientosDisponibles-1);?></td> 

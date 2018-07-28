@@ -32,57 +32,105 @@
      $precio = ceil($precioTOTAL/$asientosDisponibles);
      $texto=$_POST['texto'];
 	 //CREO PARTIDA CON FECHA Y HORA
-	$partida = $fecha.' '.$horapartida;
-	$partida = new DateTime($partida);
+  $partida = $fecha.' '.$horapartida.':00';
+  $fechaInicio = date_create_from_format("Y-m-d H:i:s", $partida);
 	//CREO LLEGADA CON DURACION
+  $Llegada = date_create_from_format("Y-m-d H:i:s", $partida);
 	$PT = 'PT';
 	$min = 'H00M';
 	$cadena = $PT.$duracion.$min;
 	$intervalo = new DateInterval($cadena);
-	echo date_format($partida, "d/m/y h:i:s");
-  echo '<br>';
-	$llegada = $partida;
-	echo date_format($llegada, "d/m/y h:i:s");
-  echo '<br>';
-  $llegada->add($intervalo);
+  $fechaFin =  date_create_from_format("Y-m-d H:i:s", date_format($Llegada, "Y-m-d H:i:s"));
+  $fechaFin->add($intervalo);
+  $result = $fechaFin->format('Y-m-d-H-i-s');
+  $krr = explode('-',$result);
+  $llegada = implode("",$krr);
 	if((isset($tipo)) && (!empty($origen)) && (!empty($destino)) && ((!empty($fecha)) OR ((isset($fechainicial)) && (isset($fechafinal)))) && (isset($horapartida)) && (($duracion != 0) && (isset($vehiculo)) && ($precio != 0) && (isset($texto)))){
 
       if ($tipo=="1"){ //OCASIONAL
-      	  $puedePublicar = true;
+      	  $puedePublicar = false;
           $buscarVehichulo = "SELECT * FROM viajes WHERE idVehiculo = $vehiculo";
           $resultVehiculo = mysqli_query($link,$buscarVehichulo);
           $rVehiculo = mysqli_fetch_array($resultVehiculo);
           if (!empty($rVehiculo)){
               $resultVehiculo = mysqli_query($link,$buscarVehichulo); 
               while ($rVehiculo = mysqli_fetch_array($resultVehiculo)){
-                $cadenaUno=$rVehiculo['fecha'].$rVehiculo['horaPartida'];
-                $cadenaUno= new DateTime($cadenaUno);
-                echo 'CadenaUNO:';
-                echo date_format($cadenaUno, "d/m/y h:i:s");
-                echo '<br>';
+                $horapartida = $rVehiculo['horaPartida'];
+                $horapartida = substr($rVehiculo['horaPartida'],0,5);
+                $fecha = $rVehiculo['fecha'];
+                $cadenaUno = $fecha.' '.$horapartida.':00';
+                $Inicio = date_create_from_format("Y-m-d H:i:s", $cadenaUno);
                 $duracion=$rVehiculo['duracion'];
                 $PT = 'PT';
                 $min = 'H00M';
                 $cadena = $PT.$duracion.$min;
                 $intervalo = new DateInterval($cadena);
-                $cadenaDos = $cadenaUno;
+                $cadenaDos = date_create_from_format("Y-m-d H:i:s", date_format($Inicio, "Y-m-d H:i:s"));
                 $cadenaDos->add($intervalo);
-                echo 'CadenaDOS:';
-                echo date_format($cadenaDos, "d/m/y h:i:s");
+                echo 'Partida:';
+                echo $partida;
                 echo '<br>';
-                var_dump($partida > $cadenaDos);
-                var_dump($partida > $cadenaUno);
-                if (($cadenaUno > $partida)){
-                  echo 'partida';
-                  $puedePublicar = false;
+                echo 'Llegada:';
+                echo date_format($fechaFin, "Y-m-d H:i:s");
+                echo '<br>';
+                echo 'CadenaUno:';
+                echo $cadenaUno;
+                echo '<br>';
+                echo 'CadenaDos:';
+                echo date_format($cadenaDos, "Y-m-d H:i:s");
+                echo '<br>';
+                $ano = substr($llegada,0,4);
+                echo $ano;
+                echo '<br>';
+                $mes = substr($llegada,4,2);
+                echo $mes;
+                echo '<br>';
+                $dia = substr($llegada,6,2);
+                echo $dia;
+                echo '<br>';
+                $hora = substr($llegada,8,2);
+                echo $hora;
+                echo '<br>';
+                $minuto = substr($llegada,10,2);
+                echo $minuto;
+                echo '<br>';
+                $segundo = substr($llegada,12,2);
+                echo $segundo;
+                echo '<br>';
+                $llegada = $ano.'-'.$mes.'-'.$dia.' '.$hora.':'.$minuto.':'.$segundo;
+                echo 'String:';
+                echo $llegada;
+                echo '<br>';
+                var_dump($partida < $cadenaUno);
+                echo '<br>';
+                var_dump($llegada < $cadenaUno);
+                echo '<br>';
+                var_dump($fechaInicio > $cadenaDos);
+                echo '<br>';
+                var_dump($fechaFin > $cadenaDos);
+                echo '<br>';
+                if ((($partida < $cadenaUno) && ($fechaFin < $cadenaUno)) || 
+                    (($fechaInicio > $cadenaDos) && ($fechaFin > $CadenaDos))) {
+                    $puedePublicar = true;  
                 }
-                var_dump($llegada > $cadenaDos);
-                var_dump($llegada > $cadenaUno);
-                if (($llegada < $cadenaDos)){
-                    $puedePublicar = false;
-                    echo 'llegada';
+                if (($partida < $cadenaUno) && ($llegada < $cadenaUno)){
+                  echo 'El viaje es anterior';
+                  echo '<br>';
+                }
+                if (($fechaInicio > $cadenaDos) && ($fechaFin > $CadenaDos)){
+                  echo 'El viaje es posterior';
+                  echo '<br>';
+                }
+                if (($partida > $cadenaUno) && ($fechaInicio < $cadenaDos)){
+                  echo 'La partida esta en el medio';
+                  echo '<br>';
+                }
+                if (($llegada > $cadenaUno) && ($fechaFin < $cadenaDos)){
+                  echo 'La llegada esta en el medio';
+                  echo '<br>';
                 }
               }
+          $puedePublicar = false;
             }      
           if ($puedePublicar == false){
               $mensaje = "Su viaje se superpone con otro ya ingresado, ingrese otro horario, elija otro día o cambie de vehículo.";

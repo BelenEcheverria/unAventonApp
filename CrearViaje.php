@@ -39,45 +39,61 @@
 	$min = 'H00M';
 	$cadena = $PT.$duracion.$min;
 	$intervalo = new DateInterval($cadena);
-	//echo $intervalo;
 	echo date_format($partida, "d/m/y h:i:s");
+  echo '<br>';
 	$llegada = $partida;
-	$llegada->add($intervalo);
 	echo date_format($llegada, "d/m/y h:i:s");
-	if((isset($tipo)) && (isset($origen)) && (isset($destino)) && ((isset($fecha)) OR ((isset($fechainicial)) && (isset($fechafinal)))) && ($horapartida != 0) && (($duracion != 0) && (isset($vehiculo)) && ($precio != 0) && (isset($texto))){
-	    $puedePublicar = true;
-        $buscarViajes = "SELECT * FROM viajes WHERE idConductor=$ID AND (horaPartida>=$horapartida AND fecha=$fecha AND idVehiculo=$vehiculo)";
-        $resultviajes = mysqli_query($link,$buscarViajes);
-        $rUNO = mysqli_fetch_array($resultviajes);
-        if (!empty($rUNO)){
-	  		$puedePublicar = true; 
-		$buscarVehichulo = "SELECT * FROM viajes WHERE idVehiculo = $vehiculo";
-        $resultVehiculo = mysqli_query($link,$buscarVehichulo);
-			echo "<br> <br>";
-			echo $buscarVehichulo;
-        while ($rVehiculo = mysqli_fetch_array($resultVehiculo)){
-			if ($rVehiculo['fecha'] == $fecha) {
-				$horaEnViaje= $rVehiculo['hora'] + $rVehiculo['duracionHoras'];
-				if ($horapartida < $horaEnViaje) {
-					$puedePublicar = false;
-				}
-			}
-		}			 
-        if ($puedePublicar == false){
-            $mensaje = "Su viaje se superpone con otro ya ingresado, ingrese otro horario, elija otro día o cambie de vehículo.";
-			header("Location: ErrorPublicarViaje.php?mensaje=$mensaje"); 
-        }
+  echo '<br>';
+  $llegada->add($intervalo);
+	if((isset($tipo)) && (!empty($origen)) && (!empty($destino)) && ((!empty($fecha)) OR ((isset($fechainicial)) && (isset($fechafinal)))) && (isset($horapartida)) && (($duracion != 0) && (isset($vehiculo)) && ($precio != 0) && (isset($texto)))){
+
       if ($tipo=="1"){ //OCASIONAL
-             else{  //NO TIENE VIAJES CON DEUDA, NI DEBE CALIFICACIONES, NI COINCIDE CON FECHAS INGRESADAS
-               mysqli_query($link, "INSERT INTO viajes(fecha, hora, minuto, duracionHoras, duracionMinutos, precio, texto, idEstado, idOrigen, idDestino, idVehiculo, idConductor ) VALUES ('$fecha', '$_POST[horapartida]', '$_POST[minutospartida]', '$_POST[duracionhoras]', '$_POST[duracionmin]', '$precio', '$_POST[texto]', '1', '$_POST[origen]', '$_POST[destino]', '$_POST[vehiculo]', '$ID')");
-
-			  header ("Location: Inicio.php"); 
-
-              // header("Location: Inicio.php"); 
-
-             }
-		}
-	  }
+      	  $puedePublicar = true;
+          $buscarVehichulo = "SELECT * FROM viajes WHERE idVehiculo = $vehiculo";
+          $resultVehiculo = mysqli_query($link,$buscarVehichulo);
+          $rVehiculo = mysqli_fetch_array($resultVehiculo);
+          if (!empty($rVehiculo)){
+              $resultVehiculo = mysqli_query($link,$buscarVehichulo); 
+              while ($rVehiculo = mysqli_fetch_array($resultVehiculo)){
+                $cadenaUno=$rVehiculo['fecha'].$rVehiculo['horaPartida'];
+                $cadenaUno= new DateTime($cadenaUno);
+                echo 'CadenaUNO:';
+                echo date_format($cadenaUno, "d/m/y h:i:s");
+                echo '<br>';
+                $duracion=$rVehiculo['duracion'];
+                $PT = 'PT';
+                $min = 'H00M';
+                $cadena = $PT.$duracion.$min;
+                $intervalo = new DateInterval($cadena);
+                $cadenaDos = $cadenaUno;
+                $cadenaDos->add($intervalo);
+                echo 'CadenaDOS:';
+                echo date_format($cadenaDos, "d/m/y h:i:s");
+                echo '<br>';
+                var_dump($partida > $cadenaDos);
+                var_dump($partida > $cadenaUno);
+                if (($cadenaUno > $partida)){
+                  echo 'partida';
+                  $puedePublicar = false;
+                }
+                var_dump($llegada > $cadenaDos);
+                var_dump($llegada > $cadenaUno);
+                if (($llegada < $cadenaDos)){
+                    $puedePublicar = false;
+                    echo 'llegada';
+                }
+              }
+            }      
+          if ($puedePublicar == false){
+              $mensaje = "Su viaje se superpone con otro ya ingresado, ingrese otro horario, elija otro día o cambie de vehículo.";
+              //header("Location: ErrorPublicarViaje.php?mensaje=$mensaje"); 
+          }    
+          else{  //NO TIENE VIAJES CON DEUDA, NI DEBE CALIFICACIONES, NI COINCIDE CON FECHAS INGRESADAS
+              mysqli_query($link, "INSERT INTO viajes(fecha, horaPartida, duracion, precio, texto, idEstado, idOrigen, idDestino, idVehiculo, idConductor ) VALUES ('$fecha', '$_POST[horaPartida]', '$_POST[duracion]', '$precio', '$_POST[texto]', '1', '$_POST[origen]', '$_POST[destino]', '$_POST[vehiculo]', '$ID')");
+              echo 'Se publico el viaje';
+    			    //header ("Location: Inicio.php"); 
+          }
+	    }
       else{//PERIODICO
             $begin = new DateTime($fechainicial);
             $end = new DateTime($fechafinal);
@@ -99,7 +115,7 @@
                       header("Location: ErrorPublicarViaje.php?mensaje=$mensaje"); 
                    }
                    else{  //NO TIENE VIAJES CON DEUDA, NI DEBE CALIFICACIONES, NI COINCIDE CON FECHAS INGRESADAS
-                     mysqli_query($link, "INSERT INTO viajes(fecha, hora, minuto, duracionHoras, duracionMinutos, precio, texto, idEstado, idOrigen, idDestino, idVehiculo, idConductor ) VALUES ('$fechaBase', '$_POST[horapartida]', '$_POST[minutospartida]', '$_POST[duracionhoras]', '$_POST[duracionmin]', '$_POST[precio]', '$_POST[texto]', '1', '$_POST[origen]', '$_POST[destino]', '$_POST[vehiculo]', '$ID')");
+                     mysqli_query($link, "INSERT INTO viajes(fecha, horaPartida, duracion, precio, texto, idEstado, idOrigen, idDestino, idVehiculo, idConductor ) VALUES ('$fechaBase', '$_POST[horapartida]', '$_POST[duracion]', '$_POST[precio]', '$_POST[texto]', '1', '$_POST[origen]', '$_POST[destino]', '$_POST[vehiculo]', '$ID')");
                      header("Location: Inicio.php"); 
                    }
                 }
@@ -110,6 +126,6 @@
       $mensaje="No ingreso los datos";
       $_SESSION["error"]="No ingresó todos los datos";
       echo "No ingreso todos los datos";
-      header("Location: ErrorPublicarViaje.php?mensaje=$mensaje"); 
-    } 
+      //header("Location: ErrorPublicarViaje.php?mensaje=$mensaje"); 
+    }
 ?>

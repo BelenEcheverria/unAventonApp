@@ -318,7 +318,7 @@
 	background-color:#F16868;
 	border:6px solid #F16868;
 	border-radius:30px;
-	width:80%;
+	width:180%;
 	float:left;
 }
 .CajaNombreYCierreSesion {
@@ -612,7 +612,7 @@
 .ParteViajes {
 	width:75%;
 	height:100%;
-	float:left;
+	float:right;
 }
 
 .ParteViajesDeAUno {

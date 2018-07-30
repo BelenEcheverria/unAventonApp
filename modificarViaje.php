@@ -17,7 +17,7 @@ $link = conectar();
   $row = mysqli_fetch_array($result);
   $fecha = $row['fecha'];
   $duracion = $row['duracion'];
-  $horaPartida = $row['hora'];
+  $horaPartida = $row['horaPartida'];
   $precio = $row['precio'];
   $texto = $row['texto'];
   $estado =$row['idEstado'];
@@ -69,6 +69,7 @@ include "MenuBarra.php";
 if(isset($ID)){ //SI INICIO SESION?>
 	
 		<?php
+    echo $horaPartida;
 		$queryPostulaciones = "SELECT * FROM postulaciones WHERE idViaje = $viaje_id AND (idEstado = 1 OR idEstado = 5)";
 		$resultPostulaciones =  mysqli_query($link,$queryPostulaciones); 
 		$rowPostulaciones = mysqli_fetch_array ($resultPostulaciones);
@@ -119,7 +120,7 @@ if(isset($ID)){ //SI INICIO SESION?>
           </td>
           <td>
           <label class="LabelFormularios"> Hora de partida </label>
-          <input type="time" id="horapartida" name="horapartida" class="FormularioVehiculos" value=<?php echo substr($horaPartida,0,5) ?>>
+          <input type="time" id="horapartida" name="horapartida" class="FormularioVehiculos" value=<?php echo date("H:i:s",$horaPartida); ?>>
           <br>
           </td>
           </tr>

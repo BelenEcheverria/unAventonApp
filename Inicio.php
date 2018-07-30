@@ -21,7 +21,7 @@
 		 <div class="CajaMenuBusqueda">
 			<form method="POST" style="margin-top:15px" action="ListaFiltrada.php" class="input" onsubmit="return validar()">
 				<label class="LabelFormularios"> Origen </label>
-				<select class="FormularioVehiculos" id = "origen" name = "origen" value="<?php echo $origen ?>">          
+				<select class="FormularioVehiculos" id = "origen" name = "origen" value="<?php echo $origen ?>"/required>          
                     <?php
                         $consulta_ciudades = "SELECT * FROM ciudades ORDER BY ciudad ASC";
                         $result_Origen = mysqli_query($link,$consulta_ciudades); ?>
@@ -33,7 +33,7 @@
                     ?>
                 </select>
 				<label class="LabelFormularios"> Destino </label>
-				<select class="FormularioVehiculos" id = "destino" name = "destino" value="<?php echo $destino ?>">          
+				<select class="FormularioVehiculos" id = "destino" name = "destino" value="<?php echo $destino ?>"/required>          
                     <?php
                         $consulta_ciudades = "SELECT * FROM ciudades ORDER BY ciudad ASC";
                         $result_Destino = mysqli_query($link,$consulta_ciudades); ?>

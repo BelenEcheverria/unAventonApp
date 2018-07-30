@@ -15,41 +15,11 @@
 <?php
 	include "Header.php";
 	include "MenuBarra.php";
+$origen=$_POST['origen'];
+$destino=$_POST['destino'];
+$fechapedida=$_POST['fecha'];
 ?>
 <div style="width:100%;height:81%;font-family: Arial;">
-	<div class="Menu" style="width:12%;">
-		 <div class="CajaMenuBusqueda">
-			<form method="POST" style="margin-top:15px" action="ListaFiltrada.php" class="input" onsubmit="return validar()">
-				<label class="LabelFormularios"> Origen </label>
-				<select class="FormularioVehiculos" id = "origen" name = "origen" value="<?php echo $origen ?>">          
-                    <?php
-                        $consulta_ciudades = "SELECT * FROM ciudades ORDER BY ciudad ASC";
-                        $result_Origen = mysqli_query($link,$consulta_ciudades); ?>
-                        <option value= "">Ingrese desde donde viaja</option> <?php              
-                        while($fila = mysqli_fetch_array($result_Origen)){
-                            echo "<option value='". $fila['id'] . "'>" . $fila['ciudad'] . " </option>";
-                            echo "<a href='?ciudad=" . $fila['id'] . "'>" . $id . " </a> ";
-                        }
-                    ?>
-                </select>
-				<label class="LabelFormularios"> Destino </label>
-				<select class="FormularioVehiculos" id = "destino" name = "destino" value="<?php echo $destino ?>">          
-                    <?php
-                        $consulta_ciudades = "SELECT * FROM ciudades ORDER BY ciudad ASC";
-                        $result_Destino = mysqli_query($link,$consulta_ciudades); ?>
-                        <option value= "">Ingrese hacia donde viaja</option> <?php              
-                        while($fila = mysqli_fetch_array($result_Destino)){
-                            echo "<option value='". $fila['id'] . "'>" . $fila['ciudad'] . " </option>";
-                            echo "<a href='?ciudad=" . $fila['id'] . "'>" . $id . " </a> ";
-                        }
-                    ?>
-                </select>
-				<label class="LabelFormularios"> Fecha </label>
-				<input type="date" class="FormularioMenuBusqueda" name="fecha">
-				<div><input type="submit" class="BotonBuscar" value="Buscar"></div>
-			</form>
-		</div>
-	</div>
 	<br>
 	<div class="ParteViajes">
 				<div class="ViajesInfoHorizontal">
@@ -95,19 +65,19 @@
 			}
 		}	
 		$fecha = date('Y-m-d');
-		$nuevafecha = strtotime ( '+30 day' , strtotime ( $fecha ) ) ;
-		$nuevafecha = date ( 'Y-m-d' , $nuevafecha );
-		$sql= "SELECT * FROM viajes WHERE idEstado=1 ORDER BY fecha, horaPartida ASC";
-
-		/*$fecha = date('Y/m/d h:i:s', time());
-		$nuevafecha = strtotime('+30 day', strtotime($fecha));
-		$nuevafecha = date('Y/m/d h:i:s', $nuevafecha);
-		$sql= "SELECT * FROM viajes WHERE idEstado=1 ORDER BY fecha, horaPartida ASC";
-		*/
+		$nuevafecha = strtotime ( '+30 day' ,strtotime($fecha));
+		$nuevafecha = date( 'Y-m-d' , $nuevafecha);
+		if(!empty($fechapedida)){
+		    $sql= "SELECT * FROM viajes WHERE idEstado=1 AND idOrigen=$origen AND idDestino=$destino AND DATE(fecha)='$fechapedida' ORDER BY horaPartida ASC";
+		}
+		else{
+			$sql= "SELECT * FROM viajes WHERE idEstado=1 AND idOrigen=$origen AND idDestino=$destino ORDER BY fecha, horaPartida ASC";
+		}
 		$result = mysqli_query($link, $sql); //traer los viajes vector de vectores
 	   	if($result){
 	   		$cantidad_viajes = mysqli_num_rows($result);
 	   	} //Obtener la cantidad total de viajes
+	   	echo $cantidad_viajes;
 	   	$tamaño_paginas = 7;
 	   	if(isset($_GET["pagina"])){
 	   		$pagina=$_GET["pagina"];
@@ -193,11 +163,3 @@
  	</footer>
 </body>
 </html>
-<!--
-Cuando creamos o accedemos al contenido de variables de sesión debemos llamar a la función session_start() antes de cualquier salida de etiquetas HTML, copiar:
-	include_once "php/classLogin.php";
-	$usuario= new usuario();
-	$usuario -> session ($usuarioID, $admin);
-Tengamos en cuenta que en cualquier otra página del sitio tenemos acceso a las variables de sesión sólo con llamar inicialmente a la función session_start().
--->
-

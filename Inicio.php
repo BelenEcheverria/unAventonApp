@@ -74,7 +74,8 @@
 			$fecha_viaje = $viajes['fecha'];
 			$dt = new DateTime($fecha_viaje);
 			$fecha_viaje = ($dt->format('Y/m/d'));
-			if ($fecha_actual > $fecha_viaje){
+			$estado = $viajes['idEstado'];
+			if (($fecha_actual > $fecha_viaje) and ($estado <> 4)){
 				$id_viaje_update= $viajes['id'];
 				$queryUpdate = "UPDATE viajes SET idEstado=3 WHERE id= $id_viaje_update";
 				$resultUpdate = mysqli_query($link, $queryUpdate);

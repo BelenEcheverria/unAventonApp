@@ -1,8 +1,2 @@
-* Corregir en pivotal la HU ver datos de usuario
-* En Bienvenida.php la parte de agregar imagen que queda afuera de la tabla
-* Agregar la imagen de despues de registrarse
-
-Perfil de usuario
-*edad en vez de nacimiento
-*mail solo si hubo viajes
-* promedio de puntuaciones?
+* Revisar el precio por asiento, como quedo la cuenta
+* Revisar en CalificacionesPendientes la lista de viajes (formato y datos)

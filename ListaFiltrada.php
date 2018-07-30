@@ -77,7 +77,6 @@ $fechapedida=$_POST['fecha'];
 	   	if($result){
 	   		$cantidad_viajes = mysqli_num_rows($result);
 	   	} //Obtener la cantidad total de viajes
-	   	echo $cantidad_viajes;
 	   	$tamaño_paginas = 7;
 	   	if(isset($_GET["pagina"])){
 	   		$pagina=$_GET["pagina"];

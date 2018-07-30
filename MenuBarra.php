@@ -15,6 +15,7 @@
 			<li><a href="EditarMisDatos.php?id=<?php echo $usuarioID ?> "> Editar Perfil</a></li>
 			<li><a href="2. MisViajes.php?id=<?php echo $usuarioID ?> "> Mis viajes </a></li>
 			<li><a href="3. CalificacionesPendientes.php "> Calificar </a></li>
+			<li><a href="3. PagosPendientes.php "> Pagar </a></li>
 			<li><a href="EliminarCuenta.php">Eliminar cuenta</a></li>
 		</ul>
 	</div>

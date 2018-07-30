@@ -16,10 +16,8 @@ $link = conectar();
   $result = mysqli_query($link,$q);
   $row = mysqli_fetch_array($result);
   $fecha = $row['fecha'];
-  $duracion = $row['duracionHoras'];
-  $duracionMinutos = $row['duracionMinutos'];
+  $duracion = $row['duracion'];
   $horaPartida = $row['hora'];
-  $minutosPartida = $row['minuto'];
   $precio = $row['precio'];
   $texto = $row['texto'];
   $estado =$row['idEstado'];
@@ -116,15 +114,13 @@ if(isset($ID)){ //SI INICIO SESION?>
           <tr>
           <td>
           <label class="LabelFormularios"> Duracion estimada </label>
-          <input type="int" id="duracionhoras" name="duracionhoras" class="FormularioVehiculos" value=<?php echo $duracion ?>>
+          <input type="int" id="duracionhoras" name="duracion" class="FormularioVehiculos" value=<?php echo $duracion ?>>
           <br>
-          <input type="int" id="duracionmin" name="duracionmin" class="FormularioVehiculos" value=<?php echo $duracionMinutos ?>> 
           </td>
           <td>
           <label class="LabelFormularios"> Hora de partida </label>
-          <input type="text" id="horapartida" name="horapartida" class="FormularioVehiculos" value=<?php echo $horaPartida ?>>
+          <input type="time" id="horapartida" name="horapartida" class="FormularioVehiculos" value=<?php echo substr($horaPartida,0,5) ?>>
           <br>
-          <input type="int" id="minutospartida" name="minutospartida" class="FormularioVehiculos" value=<?php echo $minutosPartida ?>>
           </td>
           </tr>
           <tr>

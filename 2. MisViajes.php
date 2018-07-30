@@ -35,11 +35,9 @@ $usuario -> session ($usuarioID, $admin);
 				$id_Origen = $viajes['idOrigen'];
 				$id_Vehiculo = $viajes['idVehiculo'];
 				$dia = $viajes['fecha'];
-				$horaPartida = $viajes['hora'];
-				$minutosPartida = $viajes['minuto'];
+				$horaPartida = $viajes['horaPartida'];
 				$precioTotal = $viajes['precio'];	
-				$duracionHoras = $viajes['duracionHoras'];
-				$duracionMinutos = $viajes['duracionMinutos'];
+				$duracionHoras = $viajes['duracion'];
 			    /*---------------AGREGO QUE MUESTRE El Destino---------------*/
 				$consultaDestino = "SELECT * FROM ciudades where id=$id_Destino";
 				$resultadoConsultaDest = mysqli_query($link,$consultaDestino);
@@ -70,11 +68,11 @@ $usuario -> session ($usuarioID, $admin);
 						</div>
 						<div class="div_vertical_detalle">
 							<span class="InformacionViajeLineaSuperior_detalle">Fecha: <?php echo utf8_encode($dia);?></span> <br><br>
-							<span class="InformacionViajeLineaSuperior_detalle">Salida: <?php echo utf8_encode($horaPartida);?>:<?php echo ($minutosPartida);if ($minutosPartida == 0) {echo 0;}?></span>
+							<span class="InformacionViajeLineaSuperior_detalle">Salida: <?php echo substr($horaPartida,0,5);?></span>
 						</div>
 						<div class="div_vertical_detalle">
 							<span class="InformacionViajeLineaSuperior_detalle">Vehiculo: <?php echo utf8_encode($vehiculoViaje);?></span> <br><br>
-							<span class="InformacionViajeLineaSuperior_detalle">Duracion aprox: <?php echo $duracionHoras; echo 'h'; ?> <?php if ($duracionMinutos != 0) {echo $duracionMinutos; echo "min";} ?></span>
+							<span class="InformacionViajeLineaSuperior_detalle">Duracion aprox: <?php echo $duracionHoras; echo 'hs'; ?></span>
 						</div>
 						<div class="div_vertical_detalle">
 							<span class="InformacionViajeLineaSuperior_detalle">Precio total: <?php echo '$'; echo $precioTotal; ?></span> <br><br>
@@ -131,14 +129,12 @@ $usuario -> session ($usuarioID, $admin);
 			$id_Origen = $viajes['idOrigen'];
 			$id_Vehiculo = $viajes['idVehiculo'];
 			$dia = $viajes['fecha'];
-			$horaPartida = $viajes['hora'];
-			$minutosPartida = $viajes['minuto'];
+			$horaPartida = $viajes['horaPartida'];
 			$precio= $viajes['precio'];	
 			$idEstadoViaje = $viajes['idEstado'];
 			$idConductor = $viajes['idConductor'];
 			$idEstadoPostulacion = $viajes['estadoPostulacion'];
-			$duracionHoras = $viajes['duracionHoras'];
-			$duracionMinutos = $viajes['duracionMinutos'];
+			$duracionHoras = $viajes['duracion'];
 			/*---------------AGREGO QUE MUESTRE El Destino---------------*/
 			$consultaDestino = "SELECT * FROM ciudades where id=$id_Destino";
 			$resultadoConsultaDest = mysqli_query($link,$consultaDestino);
@@ -189,8 +185,8 @@ $usuario -> session ($usuarioID, $admin);
 				</div>
 				<div class= "div_vertical_detalle">
 					<span class="InformacionViajeLineaSuperior_detalle">Fecha: <?php echo $dia; ?></span> <br><br>
-					<span class="InformacionViajeLineaSuperior_detalle">Salida: <?php echo $horaPartida; ?>:<?php echo $minutosPartida; if ($minutosPartida == 0) { echo "0";} ?></span> <br><br>
-					<span class="InformacionViajeLineaSuperior_detalle">Duracion aprox: <?php echo $duracionHoras; echo 'h'; ?><?php if ($duracionMinutos != 0 ) {echo $duracionMinutos; echo 'min';}?></span>
+					<span class="InformacionViajeLineaSuperior_detalle">Salida: <?php echo substr($horaPartida,0,5);?></span> <br><br>
+					<span class="InformacionViajeLineaSuperior_detalle">Duracion aprox: <?php echo $duracionHoras; echo 'h'; ?></span>
 				</div>
 				<div class= "div_vertical_detalle">
 					<span class="InformacionViajeLineaSuperior_detalle">Vehiculo: <?php echo $vehiculoViaje; ?></span> <br><br>

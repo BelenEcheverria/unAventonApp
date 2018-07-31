@@ -77,75 +77,80 @@ $fechapedida=$_POST['fecha'];
 	   	if($result){
 	   		$cantidad_viajes = mysqli_num_rows($result);
 	   	} //Obtener la cantidad total de viajes
-	   	$tamaño_paginas = 7;
-	   	if(isset($_GET["pagina"])){
-	   		$pagina=$_GET["pagina"];
-	   	}
-	   	else{	
-	   		$pagina = 1;
-		}
-	   	$empezar_desde =($pagina-1)*$tamaño_paginas;
-	   	$total_paginas = ceil($cantidad_viajes/$tamaño_paginas);
-	   	$sql_limite = mysqli_query($link, $sql . " LIMIT $empezar_desde,$tamaño_paginas");
-	   	?>
-		<tr>
-		<div class="ListadoViajes">
-		    <?php
-			while ($viajes = mysqli_fetch_array($sql_limite)){
-				if ( $viajes['fecha']<= $nuevafecha) {
-					$id_viaje = $viajes['id'];
-					$id_Destino = $viajes['idDestino'];
-					$id_Origen = $viajes['idOrigen'];
-					$id_Vehiculo = $viajes['idVehiculo'];
-					$dia = $viajes['fecha'];
-					$horaPartida = $viajes['horaPartida'];
-					$precio= $viajes['precio'];
-					$conductor_id = $viajes['idConductor'];
-
-					/*---------------AGREGO QUE MUESTRE El Destino---------------*/
-					$consultaDestino = "SELECT * FROM ciudades where id=$id_Destino";
-					$resultadoConsultaDest = mysqli_query($link,$consultaDestino);
-					$rowCiudadDest = mysqli_fetch_array($resultadoConsultaDest);
-					$destinoViaje = $rowCiudadDest['ciudad'];
-
-					//---------------AGREGO QUE MUESTRE El Origen---------------
-					$consultaOrigen = "SELECT * FROM ciudades where id=$id_Origen";
-					$resultadoConsulta = mysqli_query($link,$consultaOrigen);
-					$rowCiudad = mysqli_fetch_array($resultadoConsulta);
-					$origenViaje = $rowCiudad['ciudad'];
-
-					//---------------AGREGO QUE MUESTRE Los asientos del vehiculo---------------
-					$consultaVehiculo = "SELECT * FROM vehiculos where id=$id_Vehiculo";
-					$resultadoConsultaVehiculo = mysqli_query($link,$consultaVehiculo);
-					$rowVehiculo = mysqli_fetch_array($resultadoConsultaVehiculo);
-					$vehiculoViaje = $rowVehiculo['modelo'];
-					$asientosDisponibles = $rowVehiculo['asientos'];
-					?>
+	   	if ($cantidad_viajes !=0){
+				   	$tamaño_paginas = 7;
+				   	if(isset($_GET["pagina"])){
+				   		$pagina=$_GET["pagina"];
+				   	}
+				   	else{	
+				   		$pagina = 1;
+					}
+				   	$empezar_desde =($pagina-1)*$tamaño_paginas;
+				   	$total_paginas = ceil($cantidad_viajes/$tamaño_paginas);
+				   	$sql_limite = mysqli_query($link, $sql . " LIMIT $empezar_desde,$tamaño_paginas");
+				   	?>
+					<tr>
 					<div class="ListadoViajes">
-						<table style="width:80%; margin-left:2%;">
-							<tr>
-							<td class="AlineacionCajasListaViajesHorizontal"><?php echo utf8_encode($origenViaje);?></td> 
-							<td class="AlineacionCajasListaViajesHorizontal"><?php echo utf8_encode($destinoViaje);?></td> 
-							<td class="AlineacionCajasListaViajesHorizontal"><?php echo utf8_encode($dia);?></td> 
-							<td class="AlineacionCajasListaViajesHorizontal"><?php echo substr($horaPartida,0,5);?></td>
-							<td class="AlineacionCajasListaViajesHorizontal">$<?php echo utf8_encode((round($precio/$asientosDisponibles)));?></td>
-							<td class="AlineacionCajasListaViajesHorizontal"><?php echo utf8_encode($vehiculoViaje);?></td> 
-							<td class="AlineacionCajasListaViajesHorizontal"><?php echo utf8_encode($asientosDisponibles-1);?></td> 
-							</tr>
-							
-						<div class="BotonReservarAsiento">
-							<?php
-							if ( $conductor_id == $usuarioID )
-							{ ?>
-							<a href="2. MiViaje.php?id=<?php echo $id_viaje; ?>"> Ver viaje </a>
-						<?php } else { ?>
-							<a href="verviaje.php?id_viaje=<?php echo $id_viaje ?>"> Ver viaje </a>
-						<?php } ?>
-						</div>
-					</table>
-				    </div>
-				<?php } }?>
-			</tr>	
+					    <?php
+						while ($viajes = mysqli_fetch_array($sql_limite)){
+							if ( $viajes['fecha']<= $nuevafecha) {
+								$id_viaje = $viajes['id'];
+								$id_Destino = $viajes['idDestino'];
+								$id_Origen = $viajes['idOrigen'];
+								$id_Vehiculo = $viajes['idVehiculo'];
+								$dia = $viajes['fecha'];
+								$horaPartida = $viajes['horaPartida'];
+								$precio= $viajes['precio'];
+								$conductor_id = $viajes['idConductor'];
+
+								/*---------------AGREGO QUE MUESTRE El Destino---------------*/
+								$consultaDestino = "SELECT * FROM ciudades where id=$id_Destino";
+								$resultadoConsultaDest = mysqli_query($link,$consultaDestino);
+								$rowCiudadDest = mysqli_fetch_array($resultadoConsultaDest);
+								$destinoViaje = $rowCiudadDest['ciudad'];
+
+								//---------------AGREGO QUE MUESTRE El Origen---------------
+								$consultaOrigen = "SELECT * FROM ciudades where id=$id_Origen";
+								$resultadoConsulta = mysqli_query($link,$consultaOrigen);
+								$rowCiudad = mysqli_fetch_array($resultadoConsulta);
+								$origenViaje = $rowCiudad['ciudad'];
+
+								//---------------AGREGO QUE MUESTRE Los asientos del vehiculo---------------
+								$consultaVehiculo = "SELECT * FROM vehiculos where id=$id_Vehiculo";
+								$resultadoConsultaVehiculo = mysqli_query($link,$consultaVehiculo);
+								$rowVehiculo = mysqli_fetch_array($resultadoConsultaVehiculo);
+								$vehiculoViaje = $rowVehiculo['modelo'];
+								$asientosDisponibles = $rowVehiculo['asientos'];
+								?>
+								<div class="ListadoViajes">
+									<table style="width:80%; margin-left:2%;">
+										<tr>
+										<td class="AlineacionCajasListaViajesHorizontal"><?php echo utf8_encode($origenViaje);?></td> 
+										<td class="AlineacionCajasListaViajesHorizontal"><?php echo utf8_encode($destinoViaje);?></td> 
+										<td class="AlineacionCajasListaViajesHorizontal"><?php echo utf8_encode($dia);?></td> 
+										<td class="AlineacionCajasListaViajesHorizontal"><?php echo substr($horaPartida,0,5);?></td>
+										<td class="AlineacionCajasListaViajesHorizontal">$<?php echo utf8_encode((round($precio/$asientosDisponibles)));?></td>
+										<td class="AlineacionCajasListaViajesHorizontal"><?php echo utf8_encode($vehiculoViaje);?></td> 
+										<td class="AlineacionCajasListaViajesHorizontal"><?php echo utf8_encode($asientosDisponibles-1);?></td> 
+										</tr>
+										
+									<div class="BotonReservarAsiento">
+										<?php
+										if ( $conductor_id == $usuarioID )
+										{ ?>
+										<a href="2. MiViaje.php?id=<?php echo $id_viaje; ?>"> Ver viaje </a>
+									<?php } else { ?>
+										<a href="verviaje.php?id_viaje=<?php echo $id_viaje ?>"> Ver viaje </a>
+									<?php } ?>
+									</div>
+								</table>
+							    </div>
+							<?php } }?>
+						</tr>	<?php
+					} //fin cantidad
+					else{
+							header('Location: Listaerror.php');
+					}?>
 	</div>
 </div>
 	 <footer>

@@ -23,8 +23,8 @@
 		<br></br>
 		<div class= "registrar">
 			<h1 style="color:white;text-align:center;font-family:Arial;font-weight:750;text-shadow:5px 5px 5px #aaa;"> Desea volver a ser parte de un aventon? </h1> 
-			<a href="Inicio_SesionDOS.php"><button class="BotonCancelarModificar">  Si  </button></a>
-			<a class="BotonCancelarModificar" href="Inicio.php">  No  </a>
+			<a href="Inicio_SesionDOS.php"><button class="BotonEliminarC">  Si  </button></a>
+			<a href="Inicio.php"><button class="BotonEliminarC">  No  </button></a>
 		</div>		
 	<?php }
 	catch (Exception $e) {

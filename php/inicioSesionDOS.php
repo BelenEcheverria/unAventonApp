@@ -13,4 +13,3 @@
 		header("Location: ../Inicio_SesionDOS.php?mensaje=$mensaje");
 	}
 ?>
-	

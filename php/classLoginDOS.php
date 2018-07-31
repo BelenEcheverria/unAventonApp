@@ -14,7 +14,7 @@
 					$password = mysqli_real_escape_string ($link, $_POST['contraU']);
 					//realizamos la consulta sql 
 					if ($reactivo){
-						mysqli_query($link, "UPDATE usuarios SET estaActivo=1 WHERE nombre='$nombre' AND password='$password'");
+						mysqli_query($link, "UPDATE usuarios SET estaActivo=1 WHERE mail= '".$nombre."'");
 					}
 					$query58 = "SELECT * FROM usuarios WHERE mail= '".$nombre."' AND password= '".$password."' AND estaActivo= 1;" ;
 					$resultado58 = mysqli_query($link, $query58) or die ('Consulta query58 fallida ' .mysqli_error($link));;

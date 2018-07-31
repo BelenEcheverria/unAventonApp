@@ -23,8 +23,8 @@
 		<br></br>
 		<div class= "registrar">
 			<h1 style="color:white;text-align:center;font-family:Arial;font-weight:750;text-shadow:5px 5px 5px #aaa;"> Está seguro que desea eliminar su cuenta? </h1> 
-			<a href="EliminarCuentaBase.php"><button class="BotonCancelarModificar" onclick="return EliminarC()">  Si  </button></a>
-			<a class="BotonCancelarModificar" href="inicio.php">  No  </a>
+			<a href="EliminarCuentaBase.php"><button class="BotonEliminarC" onclick="return EliminarC()">  Si  </button></a>
+			<a href="Inicio.php"><button class="BotonEliminarC">  No  </button></a>
 		</div>		
 	<?php }
 	catch (Exception $e) {

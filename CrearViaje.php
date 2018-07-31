@@ -121,12 +121,12 @@
           }      
           if ($puedePublicar == false){
               $mensaje = "Su viaje se superpone con otro ya ingresado, ingrese otro horario, elija otro día o cambie de vehículo.";
-              //header("Location: ErrorPublicarViaje.php?mensaje=$mensaje"); 
+              header("Location: ErrorPublicarViaje.php?mensaje=$mensaje"); 
           }    
           else{  //NO TIENE VIAJES CON DEUDA, NI DEBE CALIFICACIONES, NI COINCIDE CON FECHAS INGRESADAS
-              mysqli_query($link, "INSERT INTO viajes(fecha, horaPartida, duracion, precio, texto, idEstado, idOrigen, idDestino, idVehiculo, idConductor ) VALUES ('$lafecha', '$_POST[horaPartida]', '$_POST[duracion]', '$precio', '$_POST[texto]', '1', '$_POST[origen]', '$_POST[destino]', '$_POST[vehiculo]', '$ID')");
+              mysqli_query($link, "INSERT INTO viajes(fecha, horaPartida, duracion, precio, texto, idEstado, idOrigen, idDestino, idVehiculo, idConductor ) VALUES ('$lafecha', '$_POST[horaPartida]', '$_POST[duracion]', '$precioTOTAL', '$_POST[texto]', '1', '$_POST[origen]', '$_POST[destino]', '$_POST[vehiculo]', '$ID')");
               echo 'Se publico el viaje';
-    			    //header ("Location: Inicio.php"); 
+    			    header ("Location: Inicio.php"); 
           }
 	    }
       else{//PERIODICO
@@ -249,7 +249,7 @@
                     }      
                     if ($puedePublicar == false){
                         $mensaje = "Su viaje se superpone con otro ya ingresado, ingrese otro horario, elija otro día o cambie de vehículo.";
-                        //header("Location: ErrorPublicarViaje.php?mensaje=$mensaje"); 
+                        header("Location: ErrorPublicarViaje.php?mensaje=$mensaje"); 
                   }
                    else{  //NO TIENE VIAJES CON DEUDA, NI DEBE CALIFICACIONES, NI COINCIDE CON FECHAS INGRESADAS
                      mysqli_query($link, "INSERT INTO viajes(fecha, horaPartida, duracion, precio, texto, idEstado, idOrigen, idDestino, idVehiculo, idConductor ) VALUES ('$fechaBase', '$_POST[horaPartida]', '$_POST[duracion]', '$_POST[precio]', '$_POST[texto]', '1', '$_POST[origen]', '$_POST[destino]', '$_POST[vehiculo]', '$ID')");
@@ -263,7 +263,6 @@
       $mensaje="No ingreso los datos";
       $_SESSION["error"]="No ingresó todos los datos";
       echo "No ingreso todos los datos";
-      //header("Location: ErrorPublicarViaje.php?mensaje=$mensaje"); 
+      header("Location: ErrorPublicarViaje.php?mensaje=$mensaje"); 
     }
-    echo $puedePublicar;
 ?>

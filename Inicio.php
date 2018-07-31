@@ -98,13 +98,7 @@
 		$fecha = date('Y-m-d');
 		$nuevafecha = strtotime ( '+30 day' , strtotime ( $fecha ) ) ;
 		$nuevafecha = date ( 'Y-m-d' , $nuevafecha );
-		$sql= "SELECT * FROM viajes WHERE idEstado=1 ORDER BY fecha, horaPartida ASC";
-
-		/*$fecha = date('Y/m/d h:i:s', time());
-		$nuevafecha = strtotime('+30 day', strtotime($fecha));
-		$nuevafecha = date('Y/m/d h:i:s', $nuevafecha);
-		$sql= "SELECT * FROM viajes WHERE idEstado=1 ORDER BY fecha, horaPartida ASC";
-		*/
+		$sql= "SELECT * FROM viajes WHERE idEstado=1 AND DATE(fecha)<='$nuevafecha' ORDER BY fecha, horaPartida ASC";
 		$result = mysqli_query($link, $sql); //traer los viajes vector de vectores
 	   	if($result){
 	   		$cantidad_viajes = mysqli_num_rows($result);

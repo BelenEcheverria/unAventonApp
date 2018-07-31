@@ -18,6 +18,7 @@
 	?>
 		<div class="tituloMisViajes"> Calificaciones pendientes como Conductor </div>
 		<?php	
+		$hayElementos = false;
 		$query= "SELECT * FROM viajes WHERE (idEstado=3 OR idEstado=4) AND idConductor= $id ORDER BY fecha ASC";
 		$result = mysqli_query($link, $query);
 		while($viajes = mysqli_fetch_array($result)){ 
@@ -26,11 +27,9 @@
 			$id_Origen = $viajes['idOrigen'];
 			$id_Vehiculo = $viajes['idVehiculo'];
 			$dia = $viajes['fecha'];
-			$horaPartida = $viajes['hora'];
-			$minutosPartida = $viajes['minuto'];
+			$horaPartida = $viajes['horaPartida'];
 			$precioTotal = $viajes['precio'];	
-			$duracionHoras = $viajes['duracionHoras'];
-			$duracionMinutos = $viajes['duracionMinutos'];
+			$duracionHoras = $viajes['duracion'];
 		    /*---------------AGREGO QUE MUESTRE El Destino---------------*/
 			$consultaDestino = "SELECT * FROM ciudades where id=$id_Destino";
 			$resultadoConsultaDest = mysqli_query($link,$consultaDestino);
@@ -63,11 +62,11 @@
 					</div>
 					<div class="div_vertical_detalle">
 						<span class="InformacionViajeLineaSuperior_detalle">Fecha: <?php echo utf8_encode($dia);?></span> <br><br>
-						<span class="InformacionViajeLineaSuperior_detalle">Salida: <?php echo utf8_encode($horaPartida);?>:<?php echo ($minutosPartida);if ($minutosPartida == 0) {echo 0;}?></span>
+						<span class="InformacionViajeLineaSuperior_detalle">Salida: <?php echo substr($horaPartida,0,5);?></span>
 					</div>
 					<div class="div_vertical_detalle">
 						<span class="InformacionViajeLineaSuperior_detalle">Vehiculo: <?php echo utf8_encode($vehiculoViaje);?></span> <br><br>
-						<span class="InformacionViajeLineaSuperior_detalle">Duracion aprox: <?php echo $duracionHoras; echo 'h'; ?> <?php if ($duracionMinutos != 0) {echo $duracionMinutos; echo "min";} ?></span>
+						<span class="InformacionViajeLineaSuperior_detalle">Duracion aprox: <?php echo $duracionHoras; echo 'hs';?></span>
 					</div>
 					<div class="div_vertical_detalle">
 						<span class="InformacionViajeLineaSuperior_detalle">Precio total: <?php echo '$'; echo $precioTotal; ?></span> <br><br>
@@ -93,21 +92,30 @@
 		<div class="tituloMisViajes"> Calificaciones pendientes como Pasajero </div>
 		<?php	
 		$query= "SELECT *
-		FROM viajes v INNER JOIN postulaciones p ON  v.id = p.idViaje
+		FROM viajes v INNER JOIN postulaciones p ON  v.id = p.idViaje 
 		WHERE (v.idEstado=3 OR v.idEstado=4) AND p.idEstado = 4 AND p.idUsuario= $id
 		ORDER BY v.fecha ASC";
+
 		$result = mysqli_query($link, $query);
 		while($viajes = mysqli_fetch_array($result)){ 
+			$viajeID= $viajes['idViaje'];
+
+			$query2= "SELECT *
+			FROM calificacionesPendientes 
+			WHERE idUsuarioAutor = $id AND idViaje = $viajeID";
+		
+			$result2 = mysqli_query($link, $query2);
+			$viajes2 = mysqli_fetch_array($result2);
+			if (!empty($viajes2)){
+
 			$id_viaje = $viajes['idViaje'];
 			$id_Destino = $viajes['idDestino'];
 			$id_Origen = $viajes['idOrigen'];
 			$id_Vehiculo = $viajes['idVehiculo'];
 			$dia = $viajes['fecha'];
-			$horaPartida = $viajes['hora'];
-			$minutosPartida = $viajes['minuto'];
+			$horaPartida = $viajes['horaPartida'];
 			$precioTotal = $viajes['precio'];	
-			$duracionHoras = $viajes['duracionHoras'];
-			$duracionMinutos = $viajes['duracionMinutos'];
+			$duracionHoras = $viajes['duracion'];
 		    /*---------------AGREGO QUE MUESTRE El Destino---------------*/
 			$consultaDestino = "SELECT * FROM ciudades where id=$id_Destino";
 			$resultadoConsultaDest = mysqli_query($link,$consultaDestino);
@@ -127,12 +135,14 @@
 			//
 			$id_conductor = $viajes['idConductor'];
 			$query2 = "SELECT * FROM calificacionesPendientes WHERE idViaje = $id_viaje";
+
 			$result2 = mysqli_query($link, $query2);
 			$row2 = mysqli_fetch_array($result2);
 			if (!empty($row2)){
+				$hayElementos= true;
 			?>
 				<div class="ListadoBotonesDelViajeComoConductor">
-					<a href="3. CalificarUsuario.php?id_usuario=<?php echo $id_conductor ?>"><div class="BotonCalificarUsuarios"> Calificar Conductor </div></a>
+					<a href="3. CalificarUsuario.php?id_usuario=<?php echo $id_conductor?>&id_viaje=<?php echo$id_viaje ?>"><div class="BotonCalificarUsuarios"> Calificar Conductor </div></a>
 				</div>
 				<div class="ListadoViajesConductor_detalle">
 					<div class="div_vertical_detalle">
@@ -141,11 +151,11 @@
 					</div>
 					<div class="div_vertical_detalle">
 						<span class="InformacionViajeLineaSuperior_detalle">Fecha: <?php echo utf8_encode($dia);?></span> <br><br>
-						<span class="InformacionViajeLineaSuperior_detalle">Salida: <?php echo utf8_encode($horaPartida);?>:<?php echo ($minutosPartida);if ($minutosPartida == 0) {echo 0;}?></span>
+						<span class="InformacionViajeLineaSuperior_detalle">Salida: <?php echo substr($horaPartida,0,5);?></span>
 					</div>
 					<div class="div_vertical_detalle">
 						<span class="InformacionViajeLineaSuperior_detalle">Vehiculo: <?php echo utf8_encode($vehiculoViaje);?></span> <br><br>
-						<span class="InformacionViajeLineaSuperior_detalle">Duracion aprox: <?php echo $duracionHoras; echo 'h'; ?> <?php if ($duracionMinutos != 0) {echo $duracionMinutos; echo "min";} ?></span>
+						<span class="InformacionViajeLineaSuperior_detalle">Duracion aprox: <?php echo $duracionHoras; echo 'hs';?></span>
 					</div>
 					<div class="div_vertical_detalle">
 						<span class="InformacionViajeLineaSuperior_detalle">Precio total: <?php echo '$'; echo $precioTotal; ?></span> <br><br>
@@ -166,8 +176,11 @@
 				</div>
 		<?php
 			}
-		}
+			}
+
+	}
 		?>
+
 	<?php	
 	} catch (Exception $e) {
 	?>

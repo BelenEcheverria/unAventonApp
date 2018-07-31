@@ -55,7 +55,12 @@
 		while ($usuarioTabla= mysqli_fetch_array ($result25)){
 			if ($usuario == $usuarioTabla['mail']){
 				$cumple2= false;
-				$mensaje="El mail ingresado ya tiene una cuenta asociada, por favor ingrese otro";
+				if ($usuarioTabla['estaActivo']==1){
+					$mensaje="El mail ingresado ya tiene una cuenta asociada, por favor ingrese otro";	
+				}
+				else{
+					header ("Location: ../cuentaCreada.php?usuario=<?php echo $usuario;?>"); 
+				}
 			}
 		}
 	}

@@ -25,7 +25,7 @@
 		$nombre2= $row2['nombre'] . " " . $row2['apellido'];	
 	?>
 		<div class= "nombreUsuario">
-		<a class= "nombreUsuario" href= "3. CalificarUsuario.php?id_usuario=<?php echo $id1 ?>"> <?php echo $nombre2 ?> </a>
+		<a class= "nombreUsuario" href= "3. CalificarUsuario.php?id_usuario=<?php echo $id1?>&id_viaje=<?php echo$viaje_id ?>"> <?php echo $nombre2 ?> </a>
 		<br><br></div>
 	<?php
 	}

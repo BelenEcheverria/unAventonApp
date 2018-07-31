@@ -11,10 +11,8 @@
    	$result = mysqli_query($link,$q);
 	$row = mysqli_fetch_array($result);
 	$fecha = $row['fecha'];
-	$duracion = $row['duracionHoras'];
-	$duracionMinutos = $row['duracionMinutos'];
-	$horaPartida = $row['hora'];
-	$minutosPartida = $row['minuto'];
+	$duracion = $row['duracion'];
+	$horaPartida = $row['horaPartida'];
 	$precio = $row['precio'];
 	$texto = $row['texto'];
 	$estado =$row['idEstado'];
@@ -71,20 +69,11 @@ include "MenuBarra.php";
 					<span class="span_detalle"> <?php echo "Destino: " .utf8_encode($destinoViaje)?> </span>
 				</div>
 				<div class="div_vertical">
-					<span class="span_detalle"> <?php echo "Horario de salida: " .utf8_encode($horaPartida)?><?php echo":" . utf8_encode($minutosPartida); if ($minutosPartida == 0) { echo 0;}?>
+					<span class="span_detalle"> <?php echo "Horario de salida: " . substr($horaPartida,0,5);?>
 					</span>
 					<br><br>
-					<?php 
-					if ($duracionMinutos != 0){
-					?>
-						<span> <?php echo "Duracion aproximada: " . utf8_encode($duracion)?><?php echo ":" . utf8_encode($duracionMinutos)?> Hs </span>
-					<?php
-					} else {
-					?>
-						<span> <?php echo "Duracion aproximada: " . utf8_encode($duracion)?> Hs </span>
-					<?php
-					}
-					?>
+					<span> <?php echo "Duracion aproximada: " . utf8_encode($duracion)?> Hs </span>
+
 				</div>
 				<div class="div_vertical">
 					<span class="span_detalle"> <?php echo "Precio total: $" . utf8_encode($precio)?> </span>

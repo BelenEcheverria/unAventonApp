@@ -40,6 +40,8 @@
 					<input type="button" value="Iniciar sesi&oacute;n" class="BotonEntrar" onclick="validarInicioSesion()">
 					<br> <br>
 					<a href="Registrarse.php" id="link_registro">¿No tenes cuenta? Registrate </a>
+					<br><br>
+					<a href="RecuperarContra.php"> Recuperar contraseña </a>
 			</form>
 		</div>
 		<?php

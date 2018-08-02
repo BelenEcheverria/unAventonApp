@@ -89,6 +89,7 @@
 			}
 		}
 		?>
+		<hr>
 		<div class="tituloMisViajes"> Calificaciones pendientes como Pasajero </div>
 		<?php	
 		$query= "SELECT *
@@ -99,7 +100,6 @@
 		$result = mysqli_query($link, $query);
 		while($viajes = mysqli_fetch_array($result)){ 
 			$viajeID= $viajes['idViaje'];
-
 			$query2= "SELECT *
 			FROM calificacionesPendientes 
 			WHERE idUsuarioAutor = $id AND idViaje = $viajeID";

@@ -618,6 +618,9 @@
     border-top-right-radius: 8px;
 	border-style:groove;
 }
+.nombreRojo {
+	color:blue;
+}
 .Paginacion {
     display: inline-block;
 }

@@ -113,7 +113,7 @@ include "MenuBarra.php";
 					$result2 = mysqli_query ($link, $query2) or die ('Consuluta query1 fallida: ' .mysqli_error($link));
 					$usuarioConductorNombre = mysqli_fetch_array ($result2);
 					?>
-					<a href= "verPerfilUsuario.php?id=<?php echo $usuarioConductorID?>"> <?php echo ($usuarioConductorNombre ['nombre'] . ' ' . $usuarioConductorNombre ['apellido']); ?>
+					<a class="nombreRojo" href= "verPerfilUsuario.php?id=<?php echo $usuarioConductorID?>"> <?php echo ($usuarioConductorNombre ['nombre'] . ' ' . $usuarioConductorNombre ['apellido']); ?>
 					<a/>
 					</span>
 				</div>

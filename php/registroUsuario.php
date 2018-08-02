@@ -49,22 +49,23 @@
 			$mensaje= "No se ingreso el nombre y/o apellido";
 	}
 	$cumple2=true;
-		if ($cumple1 == true){
-		$query25= ("SELECT mail FROM usuarios");
+	$usuarioActivo=false;//AGREGAR
+	if ($cumple1 == true){
+		$query25= ("SELECT * FROM usuarios");
 		$result25= mysqli_query ($link, $query25) or die ('Consulta fallida ' .mysqli_error());
 		while ($usuarioTabla= mysqli_fetch_array ($result25)){
 			if ($usuario == $usuarioTabla['mail']){
 				$cumple2= false;
 				if ($usuarioTabla['estaActivo']==1){
+					$usuarioActivo=true;
 					$mensaje="El mail ingresado ya tiene una cuenta asociada, por favor ingrese otro";	
-				}
-				else{
-					header ("Location: ../cuentaCreada.php?usuario=<?php echo $usuario;?>"); 
 				}
 			}
 		}
 	}
-		
+	if ($usuarioActivo==false){
+		header ("Location: ../cuentaCreada.php?usuario=<?php echo $usuario;?>"); 
+	}
 	$date= $_POST['nacimiento'];
 	function isBirthDate($date)
 	{
